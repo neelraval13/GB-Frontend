@@ -1,13 +1,14 @@
 import React from 'react'
+import HomePage from './components/Home'
+import './styles/global/global.css'
 
 const App = () => {
 
 
   return (
-    <div>
-      App
-
-    </div>
+    <>
+      <HomePage />
+    </>
   )
 }
 
