@@ -4,7 +4,7 @@ import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import logoImage from "../../assets/company/gb.png";
-import "./Login.css";
+import "./Login.scss";
 
 function Login() {
   return (
