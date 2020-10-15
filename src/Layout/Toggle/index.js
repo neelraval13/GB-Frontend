@@ -1,10 +1,10 @@
 import React from 'react'
-import { Container, Form, FormCheck, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { connect } from 'react-redux'
 import { setDarkTheme, setLightTheme } from '../../appRedux/actions/Settings';
 
 const ToggleSwitch = (props) => {
-    const [swt2, setSwt2] = React.useState(props.theme == 'dark');
+    const [swt2, setSwt2] = React.useState(props.theme === 'dark');
     const handleSwitch = () =>{
         
         if(swt2 === true) props.lightTheme();
