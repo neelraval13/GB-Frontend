@@ -1,36 +1,52 @@
-.home-grid{
-    display: grid;
-    height:100vh;
-    grid-template-columns: .3fr 6fr .3fr;
-    padding-top: 50px;
+.home-grid {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 0.3fr 6fr 0.3fr;
+	padding-top: 50px;
 }
 
-.left-drawer{
-    height: 100%;
-    grid-row: 1;
-    grid-column: 1;
-    background-color: #292b2f;
+.left-drawer {
+	height: 100%;
+	grid-row: 1;
+	grid-column: 1;
+	background-color: rgb(24, 25, 28);
 }
 
-.right-drawer{
-    height: 100%;
-    grid-row: 1;
-    grid-column: 3;   
-    background-color:#292b2f;
+.right-drawer {
+	height: 100%;
+	grid-row: 1;
+	grid-column: 3;
+	background-color: #292b2f;
 }
-.center-container{
-    height: 100%;
-    grid-row: 1;
-    grid-column: 2;
-    background-color: #18191c;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+.center-container {
+	height: 100%;
+	grid-row: 1;
+	grid-column: 2;
+	background-color: #18191c;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
 }
-.container-content{
-    padding: 0px 100px;
-    
+.container-content {
+	padding: 0px 100px;
 }
 
-.container-right{
-    padding: 0px 20px;
+.container-right {
+	padding: 0px 20px;
+}
+
+.MuiListItemText-root a {
+	color: white;
+}
+
+.MuiPaper-root {
+	background-color: #292b2f !important;
+}
+
+.MuiListItemIcon-root {
+	color: white !important;
+	font-size: 23px !important;
+}
+
+.MuiSvgIcon-root {
+	color: white;
 }
