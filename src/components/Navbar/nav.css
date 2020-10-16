@@ -7,10 +7,14 @@
 
 a.nav-link{
     
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-weight: 500 !important;
     margin-right: 5px;
     padding-top: 10px;
+}
+
+#findFriends{
+
 }
 .nav-logo{
     width: 200px;

@@ -23,14 +23,18 @@
 	grid-row: 1;
 	grid-column: 2;
 	background-color: #18191c;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
+	display: flex;
+	flex-direction: row;
+	
 }
 .container-content {
-	padding: 0px 100px;
+	flex: 1 60%;
+	margin: 0px 130px;
+	width: 40%;
 }
 
 .container-right {
+	flex: 1 40%;
 	padding: 0px 20px;
 }
 

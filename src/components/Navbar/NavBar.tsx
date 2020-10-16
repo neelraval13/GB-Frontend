@@ -8,14 +8,18 @@ import ToggleSwitch from '../../Layout/Toggle';
 
 
 
+interface Props{
+  navColor:string;
+  navLogo:string;
+  textColor:string;
+}
 
-
-const AppHeader = (props) => {
+const NavBar : React.FC<Props> = (props) => {
     const [show, setShow] = useState(false)
     const [target, setTarget] = useState(null);
     const ref = useRef(null)
 
-    const handleClick = (event) => {
+    const handleClick = (event:any) => {
         setShow(!show);
         setTarget(event.target);
       };
@@ -32,7 +36,7 @@ const AppHeader = (props) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" style={{width:500,alignItems:'center'}}>
              <Form.Control type="email" placeholder="Search Friends" />
-             <Nav.Link href="#deets" style={{color:props.textColor}}> FindFriends</Nav.Link> 
+             <Nav.Link href="#deets" style={{color:props.textColor}} id="findFriends"> FindFriends</Nav.Link> 
           </Nav>
 
           <Nav>
@@ -41,7 +45,6 @@ const AppHeader = (props) => {
             <Nav.Link href="#deets" style={{color:props.textColor}}>Stream</Nav.Link>
             <Nav.Link href="#deets" style={{color:props.textColor}}>Notification</Nav.Link>
             <Nav.Link eventKey={2} href="#memes" onClick={handleClick} style={{color:props.textColor}}>
-             <img src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg" className="rounded avatar" alt="avatar"/>
               Profile
               <FaAngleDown  />
             </Nav.Link>
@@ -65,7 +68,8 @@ const AppHeader = (props) => {
         </>
     )
 }
-const mapStateToProps = (state) =>{
+
+const mapStateToProps = (state:any) =>{
   return{
     navColor:state.settings.navBg,
     navLogo:state.settings.navLogo,
@@ -73,11 +77,11 @@ const mapStateToProps = (state) =>{
   }
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch:any) =>{
   return{
 
   }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

@@ -1,13 +1,16 @@
 import React from 'react'
 import HomeGridLayout from '../../Layout/Grid/HomeGridLayout'
-import AppHeader from '../Navbar'
+import AddPost from '../AddPost/AddPost'
+import NavBar from '../Navbar/NavBar'
+
 
 const HomePage = () => {
     return (
         <div>
-            <AppHeader />
+       <NavBar/>
             <HomeGridLayout>
-              
+                    <AddPost/>
+                
             </HomeGridLayout>
         </div>
     )
