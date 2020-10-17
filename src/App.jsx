@@ -13,10 +13,10 @@ const App = () => {
   return (
    <Router>
      <Switch>
-       <Route exact path='/'>
+       {/* <Route exact path='/'>
             <Login />
-       </Route>
-       <Route exact path='/home'>
+       </Route> */}
+       <Route path='/'>
             <HomePage />
        </Route>
      </Switch>
