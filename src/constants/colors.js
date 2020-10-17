@@ -8,4 +8,4 @@ export const darkNavColor = '#292b2f'
 export const lightNavColor = '#fff'
 
 export const darkTextColor = '#fff'
-export const lightTextColor = 'black'
+export const lightTextColor = '#888DA8'

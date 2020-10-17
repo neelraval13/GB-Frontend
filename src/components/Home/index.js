@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeGridLayout from '../../Layout/Grid/HomeGridLayout'
-import AddPost from '../AddPost/AddPost'
+import AddPost from '../AddPost/AddPost.js'
 import NavBar from '../Navbar/NavBar'
 
 
@@ -9,7 +9,7 @@ const HomePage = () => {
         <div>
        <NavBar/>
             <HomeGridLayout>
-                    <AddPost/>
+                   <AddPost/>
                 
             </HomeGridLayout>
         </div>

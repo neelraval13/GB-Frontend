@@ -3,9 +3,9 @@ import {Card} from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 
-const CardLayout = (props) => {
+const CustomCard = (props) => {
     return (
-        <Card style={{ height:'15rem',marginTop:20,backgroundColor:props.cardColor,color:props.textColor}}>
+        <Card style={{ height:'16rem',marginTop:20,backgroundColor:props.cardColor,color:props.textColor}}>
            {props.children}
             
         </Card>
@@ -23,4 +23,4 @@ const mapStateToProps = (state) =>{
 }
 
 
-export default connect(mapStateToProps,null)(CardLayout)
+export default connect(mapStateToProps,null)(CustomCard)

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent:'space-between'
   },
   icons:{
-      fontSize:30,
+      fontSize:24,
       color:'white',
       margin: theme.spacing(1),
   },
