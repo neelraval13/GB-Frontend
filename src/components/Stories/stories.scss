@@ -1,0 +1,49 @@
+.stories-section{
+    
+    width: 520px;
+    margin-top: 30px;
+    background-color: #4e4c4c;
+    height: 190px;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+
+    .stories-container{
+        padding-top: 5px;
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+        display: none;
+        }
+    }
+}
+
+.story-card{
+    min-width: 100px;
+    max-width: 110px;
+    height: 130px;
+    border-radius: 8px;
+    margin-right: 10px;
+    
+    .add-icon{
+        z-index: 100;
+        font-size: 28px;
+        color: rgb(255, 255, 255);
+        margin-left: -95px;
+        margin-top: 90px;
+    }
+    .add-icon:hover{
+        color: rgb(253, 146, 23);
+    }
+}
+
+.story-thumbnail{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}

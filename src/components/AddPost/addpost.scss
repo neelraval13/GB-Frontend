@@ -1,6 +1,6 @@
 
 .addpost-card{
-	margin-top: 50px;
+	margin-top: 20px;
 	min-height: 200px;
 	background-color: #fff;
 	
@@ -36,6 +36,11 @@
 	
 	
 }
+
+.dark-tabs{
+	background: #232529;
+}
+
 .dark-tabs,.dark-tabbed{
 	border-bottom: 1px solid #2d3136;
 }
@@ -61,6 +66,7 @@
 	transition: all 0.3s;
 	
 }
+
 .dark-tab > label{
 	background:#2d3136;
 	color: #888DA8;
@@ -72,8 +78,12 @@
 	color: #888DA8;
 }
 
-.tab:hover label {
-	color: #333;
+.light-tab:hover label {
+	color: #676a7a;
+}
+
+.dark-tab:hover label {
+	color: rgb(255, 42, 42);
 }
 
 .tab-content {
@@ -100,7 +110,7 @@
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .dark-tab:nth-of-type(2) label,
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .dark-tab:nth-of-type(3) label{
 	border: 1px solid #202225;
-	background:#2d3136;
+	background:#232529;
 	color: #888DA8;
 	& .icon{
 		color: #FF5E3A;

@@ -43,16 +43,19 @@ const AntSwitch = withStyles((theme) => ({
   checked: {},
 }))(Switch);
 
+
 const ToggleSwitch = (props) => {
   const [state, setState] = React.useState({
-    checkedC: true,
+    checkedC: props.theme === 'dark',
   });
 
   const handleChange = (event) => {
     if(state.checkedC){
+        localStorage.setItem('theme','light')
         props.lightTheme()
     }else{
-        props.darkTheme()
+      localStorage.setItem('theme','dark')
+      props.darkTheme()
     }
     setState({ ...state, [event.target.name]: event.target.checked });
   };

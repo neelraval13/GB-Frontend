@@ -9,8 +9,11 @@ a.nav-link{
     
     font-size: 13px !important;
     font-weight: 500 !important;
-    margin-right: 5px;
-    padding-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #findFriends{

@@ -35,7 +35,7 @@ const NavBar : React.FC<Props> = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav"  />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" style={{width:500,alignItems:'center'}}>
-             <Form.Control type="email" placeholder="Search Friends" />
+             <Form.Control type="email" placeholder="Search Friends" style={{backgroundColor:'#f5f5f5'}}/>
              <Nav.Link href="#deets" style={{color:props.textColor}} id="findFriends"> FindFriends</Nav.Link> 
           </Nav>
 
