@@ -37,20 +37,3 @@
 	flex: 1 40%;
 	padding: 0px 20px;
 }
-
-.MuiListItemText-root a {
-	color: white;
-}
-
-.MuiPaper-root {
-	background-color: #292b2f !important;
-}
-
-.MuiListItemIcon-root {
-	color: white !important;
-	font-size: 23px !important;
-}
-
-.MuiSvgIcon-root {
-	color: white;
-}
