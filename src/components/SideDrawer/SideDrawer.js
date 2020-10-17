@@ -16,7 +16,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import {NavLink} from 'react-router-dom';
 import {MdHome, MdChatBubble, MdVideocam, MdGroup, MdWork, MdQuestionAnswer, MdPages} from "react-icons/md";
 import {SiCoursera} from "react-icons/si";
-import "./sidedrawer.css";
 
 const drawerWidth = 240;
 
@@ -72,6 +71,21 @@ const useStyles = makeStyles((theme) =>
         width: theme.spacing(9) + 1
       }
     },
+    drawerDark: {
+      backgroundColor: "#292b2f",
+    },
+    drawerLight: {
+      backgroundColor: "#fff",
+    },
+    textLight: {
+      color: "white",
+    },
+    textDark: {
+      color: "black",
+    },
+    icons:{
+      fontSize: 23
+    },
     toolbar: {
       display: "flex",
       alignItems: "center",
@@ -92,6 +106,51 @@ const SideDrawer = (props) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const drawerItems = [
+    {
+      id: 1,
+      item: "Home",
+      icon: <MdHome />
+    },
+    {
+      id: 2,
+      item: "Chat",
+      icon: <MdChatBubble />
+    },
+    {
+      id: 3,
+      item: "Pages",
+      icon: <MdPages />
+    },
+    {
+      id: 4,
+      item: "Videos",
+      icon: <MdVideocam />
+    },
+    {
+      id: 5,
+      item: "Groups",
+      icon: <MdGroup />
+    },
+    {
+      id: 6,
+      item: "Courses",
+      icon: <SiCoursera />
+    },
+    {
+      id: 7,
+      item: "Questions",
+      icon: <MdQuestionAnswer />
+    },
+    {
+      id: 8,
+      item: "Jobs",
+      icon: <MdWork />
+    },
+  ];
+
+  let dark = props.Theme === 'dark';
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -99,6 +158,7 @@ const SideDrawer = (props) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -110,6 +170,9 @@ const SideDrawer = (props) => {
         })}
         classes={{
           paper: clsx({
+          [classes.drawerDark]: dark,
+          [classes.drawerLight]: !dark
+        }, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open
           })
@@ -118,91 +181,55 @@ const SideDrawer = (props) => {
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
+              <ChevronRightIcon className={clsx(classes.icons, {
+                [classes.textLight]: dark,
+                [classes.textDark]: !dark
+              })} />
             ) : (
-              <ChevronLeftIcon />
+              <ChevronLeftIcon className={clsx(classes.icons, {
+                [classes.textLight]: dark,
+                [classes.textDark]: !dark
+              })} />
             )}
           </IconButton>
         </div>
         <Divider />
         <List>
           <ListItem button>
-             <IconButton
+            <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             className={clsx(classes.menuButton, {
               [classes.hide]: open
-            })}
-          >
-            <MenuIcon />
-          </IconButton>
+            })}>
+              <MenuIcon className={clsx(classes.icons, {
+                [classes.textLight]: dark,
+                [classes.textDark]: !dark
+              })}/>
+            </IconButton>
           </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-                <MdHome />
-            </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/home">Home</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-            <ListItemIcon>
-                <MdChatBubble />
-            </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/chat">Chat</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <MdPages />
+          {drawerItems.map((item) => {
+            return(
+              <ListItem button>
+                <ListItemIcon className={clsx(classes.icons, {
+                [classes.textLight]: dark,
+                [classes.textDark]: !dark
+              })}>
+                {item.icon}
               </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Pages">Pages</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <MdVideocam />
-              </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Videos">Videos</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <MdGroup />
-              </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Groups">Groups</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <SiCoursera />
-              </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Courses">Courses</NavLink>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <MdQuestionAnswer />
-              </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Questions">Questions</NavLink>
+              <ListItemText
+                className={clsx({
+                [classes.textLight]: dark,
+                [classes.textDark]: !dark
+                })}
+              >
+                <NavLink to={`/${item.item}`} style = {{color: props.textColor}}>{item.item}</NavLink>
               </ListItemText>
               </ListItem>
-              <ListItem button>
-                <ListItemIcon>
-                <MdWork />
-                </ListItemIcon>
-              <ListItemText>
-                <NavLink to="/Jobs">Jobs</NavLink>
-              </ListItemText>
-            </ListItem>
+            )
+          })}
         </List>
       </Drawer>
     </div>
@@ -211,7 +238,8 @@ const SideDrawer = (props) => {
 
 const mapStateToProps = (state) =>{
     return{
-        backgroundColor:state.settings.bgColor
+        textColor:state.settings.textColor,
+        Theme: state.settings.theme
     }
 }
 
