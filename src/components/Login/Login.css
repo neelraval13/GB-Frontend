@@ -4,5 +4,96 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-inner-wrapper {
+  margin: 3% 15% 0 15%;
+  width: 70%;
+}
+
+.login-inner-wrapper .brand-logo {
+  max-width: 350px;
+}
+
+.login-inner-wrapper .logo-wrapper {
+  height: 20%;
+}
+
+.login-main {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-main .welcome-message {
+  width: 50%;
+}
+
+.login-main .welcome-message h1 {
+  margin-bottom: 10%;
+  font-weight: 300;
+}
+
+.login-main .welcome-message p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.login-card {
+  color: black;
+  width: 40%;
+  height: 90%;
+  -ms-flex-item-align: start;
+      align-self: start;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-card .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-card .tabs .tab {
+  height: 50%;
+  width: 80px;
+}
+
+.login-card .tabs .tab button {
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  color: #888da8;
+  border: none;
+}
+
+.login-card .tabs .tab button:focus {
+  outline: none;
+}
+
+.login-card .tabs .tab .active button {
+  background-color: #fff;
+  color: #0d1427;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 /*# sourceMappingURL=Login.css.map */

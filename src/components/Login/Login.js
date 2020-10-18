@@ -1,13 +1,7 @@
-import React from "react";
-import logoImage from "../../assets/company/gb.png";
-import "./Login.css";
+import React, { Component } from "react";
 
-function Login() {
-  return (
-    <div className="login-wrapper">
-      hello
-    </div>
-  );
+export default class Login extends Component {
+	render() {
+		return <div>Login</div>;
+	}
 }
-
-export default Login;

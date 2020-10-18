@@ -1,7 +1,76 @@
-.login-wrapper {
-	height: 100vh;
-	background-image: url("../../assets/backgrounds/landing.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+.login {
+	&-wrapper {
+		height: 100vh;
+		background-image: url("../../assets/backgrounds/landing.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		color: white;
+		display: flex;
+	}
+
+	&-inner-wrapper {
+		margin: 3% 15% 0 15%;
+		width: 100% - 30%;
+		.brand-logo {
+			max-width: 350px;
+		}
+		.logo-wrapper {
+			height: 20%;
+		}
+	}
+
+	&-main {
+		height: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.welcome-message {
+			width: 50%;
+			h1 {
+				margin-bottom: 10%;
+				font-weight: 300;
+			}
+			p {
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+			}
+		}
+	}
+
+	&-card {
+		color: black;
+		width: 40%;
+		height: 90%;
+		align-self: start;
+		background-color: #fff;
+		display: flex;
+
+		.tabs {
+			display: flex;
+			flex-direction: column;
+			.tab {
+				height: 50%;
+				width: 80px;
+				button {
+					height: 100%;
+					width: 100%;
+					font-size: 25px;
+					color: #888da8;
+					border: none;
+					&:focus {
+						outline: none;
+					}
+				}
+				.active {
+					button {
+						background-color: #fff;
+						color: #0d1427;
+						transition: 0.2s;
+					}
+				}
+			}
+		}
+	}
 }
