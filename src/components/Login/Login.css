@@ -1,0 +1,8 @@
+.login-wrapper {
+  height: 100vh;
+  background-image: url("../../assets/backgrounds/landing.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*# sourceMappingURL=Login.css.map */
