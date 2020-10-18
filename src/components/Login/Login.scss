@@ -1,64 +1,76 @@
-* {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-}
+.login {
+	&-wrapper {
+		height: 100vh;
+		background-image: url("../../assets/backgrounds/landing.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		color: white;
+		display: flex;
+	}
 
-.login__bgImage {
-  background-image: url(https://c4.wallpaperflare.com/wallpaper/201/410/351/5bf50ef157753-wallpaper-preview.jpg);
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  .header {
-    background-color: transparent;
+	&-inner-wrapper {
+		margin: 3% 15% 0 15%;
+		width: 100% - 30%;
+		.brand-logo {
+			max-width: 350px;
+		}
+		.logo-wrapper {
+			height: 20%;
+		}
+	}
 
-    .header__logo {
-      width: 23%;
-      padding-top: 40px;
-      position: relative;
-      left: -25px;
-    }
-  }
-  .login__body {
-    position: relative;
-    top: 340px;
-    left: -85px;
-    color: #fff;
-    height: 300px;
-    // font-size: $font-size;
-    .body__left {
-      height: 300px;
-    }
-    .heading {
-      .welcome {
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-      h6 {
-        margin-top: 40px;
-      }
-    }
-    Button {
-      background-color: transparent;
-      border: 2px solid white;
-      font-size: 20px;
-      padding: 5px 30px;
-      font-weight: bold;
+	&-main {
+		height: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.welcome-message {
+			width: 50%;
+			h1 {
+				margin-bottom: 10%;
+				font-weight: 300;
+			}
+			p {
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+			}
+		}
+	}
 
-      margin-top: 30px;
-    }
-    .body__right {
-      position: relative;
-      bottom: 180px;
-      left: 150px;
-      Button {
-        width: 100%;
-      }
-      p {
-        margin-top: 5px;
-        text-align: center;
-      }
-    }
-  }
+	&-card {
+		color: black;
+		width: 40%;
+		height: 90%;
+		align-self: start;
+		background-color: #fff;
+		display: flex;
+
+		.tabs {
+			display: flex;
+			flex-direction: column;
+			.tab {
+				height: 50%;
+				width: 80px;
+				button {
+					height: 100%;
+					width: 100%;
+					font-size: 25px;
+					color: #888da8;
+					border: none;
+					&:focus {
+						outline: none;
+					}
+				}
+				.active {
+					button {
+						background-color: #fff;
+						color: #0d1427;
+						transition: 0.2s;
+					}
+				}
+			}
+		}
+	}
 }
