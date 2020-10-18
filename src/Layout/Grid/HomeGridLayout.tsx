@@ -7,7 +7,11 @@ import "./homegrid.css";
 const HomeGridLayout = (props: any) => {
 	return (
 		<div className="home-grid">
-			<SideDrawer />
+			<div
+				className="left-drawer"
+				style={{ backgroundColor: props.backgroundColor }}>
+				<SideDrawer />
+			</div>
 			<div
 				className="center-container"
 				style={{ backgroundColor: props.backgroundColor }}>
