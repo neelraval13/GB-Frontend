@@ -1,6 +1,6 @@
 .stories-section{
     
-    width: 520px;
+    width: 670px;
     margin-top: 30px;
     background-color: #4e4c4c;
     height: 190px;
@@ -28,16 +28,37 @@
     height: 130px;
     border-radius: 8px;
     margin-right: 10px;
-    
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
     .add-icon{
-        z-index: 100;
-        font-size: 28px;
+        z-index: 10;
+        font-size: 45px;
         color: rgb(255, 255, 255);
-        margin-left: -95px;
-        margin-top: 90px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
     .add-icon:hover{
         color: rgb(253, 146, 23);
+    }
+    .avatar-img{
+        margin-top: 5px;
+        margin-left: 5px;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 50px;
+    }
+
+    & h4{
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 5px;
     }
 }
 
@@ -47,3 +68,7 @@
     object-fit: cover;
     border-radius: 8px;
 }
+
+
+  
+  

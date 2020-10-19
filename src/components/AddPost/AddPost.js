@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {Card} from 'react-bootstrap'
 import { MdVideoLibrary } from "react-icons/md";
 import { IoMdImages } from "react-icons/io";
 import { IoLogoGameControllerB } from "react-icons/io";

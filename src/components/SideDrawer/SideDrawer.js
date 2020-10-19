@@ -24,6 +24,7 @@ import {
 	MdPages,
 } from "react-icons/md";
 import { SiCoursera } from "react-icons/si";
+import { handleDrawerClose, handleDrawerOpen } from "../../appRedux/actions/Settings";
 
 const drawerWidth = 240;
 
@@ -112,7 +113,7 @@ const useStyles = makeStyles(theme =>
 const SideDrawer = props => {
 	const classes = useStyles();
 	const theme = useTheme();
-	const [open, setOpen] = React.useState(false);
+	
 
 	const drawerItems = [
 		{
@@ -159,13 +160,7 @@ const SideDrawer = props => {
 
 	let dark = props.Theme === "dark";
 
-	const handleDrawerOpen = () => {
-		setOpen(true);
-	};
 
-	const handleDrawerClose = () => {
-		setOpen(false);
-	};
 
 	return (
 		<div className={classes.root}>
@@ -173,8 +168,8 @@ const SideDrawer = props => {
 			<Drawer
 				variant="permanent"
 				className={clsx(classes.drawer, {
-					[classes.drawerOpen]: open,
-					[classes.drawerClose]: !open,
+					[classes.drawerOpen]: props.showDrawer,
+					[classes.drawerClose]: !props.showDrawer,
 				})}
 				classes={{
 					paper: clsx(
@@ -183,13 +178,13 @@ const SideDrawer = props => {
 							[classes.drawerLight]: !dark,
 						},
 						{
-							[classes.drawerOpen]: open,
-							[classes.drawerClose]: !open,
+							[classes.drawerOpen]: props.showDrawer,
+							[classes.drawerClose]: !props.showDrawer,
 						}
 					),
 				}}>
 				<div className={classes.toolbar}>
-					<IconButton onClick={handleDrawerClose}>
+					<IconButton onClick={props.drawerClose}>
 						{theme.direction === "rtl" ? (
 							<ChevronRightIcon
 								className={clsx(classes.icons, {
@@ -209,23 +204,7 @@ const SideDrawer = props => {
 				</div>
 				<Divider />
 				<List>
-					<ListItem button>
-						<IconButton
-							color="inherit"
-							aria-label="open drawer"
-							onClick={handleDrawerOpen}
-							edge="start"
-							className={clsx(classes.menuButton, {
-								[classes.hide]: open,
-							})}>
-							<MenuIcon
-								className={clsx(classes.icons, {
-									[classes.textLight]: dark,
-									[classes.textDark]: !dark,
-								})}
-							/>
-						</IconButton>
-					</ListItem>
+					
 					{drawerItems.map(item => {
 						return (
 							<ListItem button>
@@ -260,7 +239,14 @@ const mapStateToProps = state => {
 	return {
 		textColor: state.settings.textColor,
 		Theme: state.settings.theme,
+		showDrawer:state.settings.showDrawer,
 	};
 };
 
-export default connect(mapStateToProps, null)(SideDrawer);
+const mapDispatchToProps = dispatch => {
+	return {
+		drawerOpen:() => dispatch(handleDrawerOpen()),
+		drawerClose:() => dispatch(handleDrawerClose())
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);
