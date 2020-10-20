@@ -10,18 +10,18 @@
 	}
 
 	&-inner-wrapper {
-		margin: 3% 15% 0 15%;
-		width: 100% - 30%;
+		margin: 3% 10% 0 15%;
+		width: 100% - 25%;
 		.brand-logo {
 			max-width: 350px;
 		}
 		.logo-wrapper {
-			height: 20%;
+			height: 10%;
 		}
 	}
 
 	&-main {
-		height: 80%;
+		height: 90%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
