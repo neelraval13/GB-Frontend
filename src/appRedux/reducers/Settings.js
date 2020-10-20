@@ -1,6 +1,7 @@
 import { 
    SET_DARK_THEME,
-   SET_LIGHT_THEME
+   SET_LIGHT_THEME,
+   SET_DRAWER_VISIBLE
  } from "../../constants/actionTypes"
  
 import { 
@@ -24,7 +25,8 @@ const INIT_STATE ={
     cardBg:darkCardColor,
     bgColor:darkBgColor,
     textColor:darkTextColor,
-    navLogo:darkNavLogo
+    navLogo:darkNavLogo,
+    showDrawer:false,
     
 }
 
@@ -50,6 +52,11 @@ const SettingsReducer =  (state=INIT_STATE,action) =>{
                 bgColor:lightBgColor,
                 textColor:lightTextColor,
                 navLogo:lightNavLogo
+            }
+        case SET_DRAWER_VISIBLE:
+            return{
+                ...state,
+                showDrawer:action.payload
             }
         
         default :
