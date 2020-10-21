@@ -10,6 +10,30 @@ $timestamp-color:rgb(67, 186, 255);
     .dark-more-options{
         color: #fff;
     }
+
+    .likes-comments-sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(243, 243, 243);
+
+        .likes-inline{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .likes-count{
+                margin-left: 10px;
+            }
+            
+        }
+
+        .comments-count,.likes-count{
+            font-size: 14px;
+            font-weight: 500;
+            color: #000000;
+        }
+    }
 }
 
 .card-header-content{
@@ -44,12 +68,13 @@ $timestamp-color:rgb(67, 186, 255);
 }
 
 .card-container{
+    margin-top: 15px;
     width: fit-content;
     & > img{
         width: 100%;
         height: 400px;
         object-fit: cover;
-        border-radius: 10px;
+       
     }
 }
 
@@ -59,7 +84,10 @@ $timestamp-color:rgb(67, 186, 255);
     height: 50px;
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
-    
+     
+    .timeline-btn{
+        margin: 0px 2px;
+    }
 
     .light-timeline-btn{
         background-color: transparent;
@@ -93,7 +121,7 @@ $timestamp-color:rgb(67, 186, 255);
     border-bottom: 1px solid #161616;
 }
 .post-description{
-    padding: 10px 0px;
+    padding: 20px 15px;
 }
 
 .light-description{
@@ -120,6 +148,12 @@ $timestamp-color:rgb(67, 186, 255);
 }
 
 .post-comment-section{
+    padding: 0px 10px;
+
+    .extra-comments{
+        color: #8d8c8c;
+        cursor: pointer;
+    }
     .user-comments{
         display: flex;
         flex-direction: row;
@@ -162,6 +196,22 @@ $timestamp-color:rgb(67, 186, 255);
     .light-user-comments-inline{
         background-color: #F1F3F4;
         
+    }
+
+    .current-user-comment{
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: row;
+
+        .comment-input{
+            width: 80%;
+            border: 0;
+            outline: none;
+            background-color: #F1F3F4;
+            border-radius: 20px;
+            height: 35px;
+            padding: 0px 20px;
+        }
     }
 }
 

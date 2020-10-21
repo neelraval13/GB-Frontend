@@ -45,24 +45,24 @@ const CardButtons :React.FC<Props>= (props) => {
     <Button
         variant="contained"
         color="inherit"
-        className={`${props.theme}-timeline-btn`}
+        className={`${props.theme}-timeline-btn timeline-btn`}
         startIcon={<ThumbUpAltOutlinedIcon />}
         
     >
-        126 Liked
+       Like
     </Button>
     <Button
         variant="contained"
         color="inherit"
-        className={`${props.theme}-timeline-btn`}
+        className={`${props.theme}-timeline-btn timeline-btn`}
         startIcon={<FavoriteBorderOutlinedIcon />}
     >
-        18 comments
+        comments
     </Button>
     <Button
         variant="contained"
     color="inherit"
-        className={`${props.theme}-timeline-btn`}
+        className={`${props.theme}-timeline-btn timeline-btn`}
         startIcon={<ShareOutlinedIcon />}
     >
         Send
@@ -70,7 +70,7 @@ const CardButtons :React.FC<Props>= (props) => {
     <Button
         variant="contained"
         color="inherit"
-        className={`${props.theme}-timeline-btn`}
+        className={`${props.theme}-timeline-btn timeline-btn`}
         startIcon={<BookmarkBorderOutlinedIcon />}
     >
         Saved

@@ -20,7 +20,9 @@ const HomeGridLayout = (props: any) => {
 					<TrendingCard />
 				</div>
 			</div>
-			<div className="right-drawer"></div>
+			<div className="right-drawer">
+				
+			</div>
 		</div>
 	);
 };

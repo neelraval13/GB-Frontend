@@ -7,6 +7,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import CommentSection from './CommentSection';
 import CardButtons from './CardButtons';
+import ThumbUpAlt from '@material-ui/icons/ThumbUpAlt';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -65,6 +66,14 @@ const TimelineCard = (props:any) => {
                     <img alt='post-img' src='https://images.pexels.com/photos/3405456/pexels-photo-3405456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' />
             </div>
             
+            <div className='likes-comments-sections'>
+                  <div className='likes-inline'>
+                     <ThumbUpAlt /> <span className='likes-count'>126</span>
+                  </div>
+                  <div className='comments-count'>
+                   16 comments
+                  </div>
+            </div>
             <CardButtons theme={props.theme} />
 
 
