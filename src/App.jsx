@@ -8,12 +8,9 @@ const App = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/">
-					<Landing />
-				</Route>
-				<Route path="/home">
-					<HomePage />
-				</Route>
+				<Route exact path="/" component={Landing} />
+				<Route path="/register" component={Landing} />
+				<Route path="/home" component={HomePage} />
 			</Switch>
 		</Router>
 	);

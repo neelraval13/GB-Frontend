@@ -71,6 +71,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 1px solid #e6ecf5;
 }
 
 .login-card .tabs .tab {
@@ -90,10 +91,82 @@
   outline: none;
 }
 
+.login-card .tabs .tab button:hover {
+  cursor: pointer;
+}
+
 .login-card .tabs .tab .active button {
   background-color: #fff;
   color: #0d1427;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+.login-form-wrapper .form-header {
+  border-bottom: 1px solid #e6ecf5;
+  width: 100%;
+}
+
+.login-form-wrapper .form-header p {
+  padding: 25px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.login-form-inner {
+  width: 90%;
+  margin: 5%;
+  text-align: center;
+}
+
+.login-form-inner form .bottom-opt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2% 0;
+}
+
+.login-form-inner .or {
+  font-size: 11px;
+  color: #8b8b8b;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+.login-form-inner .or .line {
+  background-color: #e6ecf5;
+  width: 43%;
+  height: 2px;
+}
+
+.login-form-inner .register-link {
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-top: 3%;
+}
+
+.login-form-inner .register-link a {
+  text-decoration: none;
+  color: #0d1427;
 }
 /*# sourceMappingURL=Login.css.map */

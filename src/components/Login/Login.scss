@@ -50,6 +50,7 @@
 		.tabs {
 			display: flex;
 			flex-direction: column;
+			border: 1px solid #e6ecf5;
 			.tab {
 				height: 50%;
 				width: 80px;
@@ -62,6 +63,9 @@
 					&:focus {
 						outline: none;
 					}
+					&:hover {
+						cursor: pointer;
+					}
 				}
 				.active {
 					button {
@@ -69,6 +73,58 @@
 						color: #0d1427;
 						transition: 0.2s;
 					}
+				}
+			}
+		}
+	}
+
+	&-form {
+		&-wrapper {
+			width: 100%;
+			overflow: auto;
+			.form-header {
+				border-bottom: 1px solid #e6ecf5;
+				width: 100%;
+				p {
+					padding: 25px;
+					font-size: 15px;
+					font-weight: 600;
+				}
+			}
+		}
+		&-inner {
+			width: 90%;
+			margin: 5%;
+			text-align: center;
+			form {
+				.bottom-opt {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin: 2% 0;
+				}
+			}
+			.or {
+				font-size: 11px;
+				color: #8b8b8b;
+				text-transform: uppercase;
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				margin-top: 5%;
+				.line {
+					background-color: #e6ecf5;
+					width: 43%;
+					height: 2px;
+				}
+			}
+			.register-link {
+				font-size: 13px;
+				color: #8b8b8b;
+				margin-top: 3%;
+				a {
+					text-decoration: none;
+					color: #0d1427;
 				}
 			}
 		}
