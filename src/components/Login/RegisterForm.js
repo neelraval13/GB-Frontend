@@ -93,7 +93,6 @@ const RegisterForm = props => {
 				id="date"
 				label={formProps.label}
 				type="date"
-				defaultValue="2000-04-28"
 				className={classes.textField}
 				variant="outlined"
 				InputLabelProps={{
@@ -122,6 +121,7 @@ const RegisterForm = props => {
 	const renderCheckbox = ({ input, label }) => (
 		<div>
 			<FormControlLabel
+				className={classes.textField}
 				control={
 					<Checkbox
 						checked={input.value ? true : false}
