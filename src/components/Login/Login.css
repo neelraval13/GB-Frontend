@@ -137,6 +137,15 @@
   margin: 2% 0;
 }
 
+.login-form-inner form .reg-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .login-form-inner .or {
   font-size: 11px;
   color: #8b8b8b;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 export default class Register extends Component {
 	onSubmit = formvalues => {
@@ -8,14 +8,12 @@ export default class Register extends Component {
 	};
 	render() {
 		return (
-			<div className="login-tab-wrapper">
-				<div className="login-form-wrapper">
-					<div className="form-header">
-						<p>Register to Gamersback</p>
-					</div>
-					<div className="register-form-inner">
-						<LoginForm onSubmit={this.onSubmit} />
-					</div>
+			<div className="login-form-wrapper">
+				<div className="form-header">
+					<p>Register to Gamersback</p>
+				</div>
+				<div className="login-form-inner">
+					<RegisterForm onSubmit={this.onSubmit} />
 				</div>
 			</div>
 		);
