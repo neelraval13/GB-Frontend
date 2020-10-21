@@ -7,7 +7,6 @@ import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
@@ -24,7 +23,6 @@ import {
 	MdPages,
 } from "react-icons/md";
 import { SiCoursera } from "react-icons/si";
-import { handleDrawerClose, handleDrawerOpen } from "../../appRedux/actions/Settings";
 
 const drawerWidth = 240;
 
@@ -66,7 +64,7 @@ const useStyles = makeStyles(theme =>
 				easing: theme.transitions.easing.sharp,
 				duration: theme.transitions.duration.enteringScreen,
 			}),
-			zIndex: 1200,
+			zIndex: 0,
 		},
 		drawerClose: {
 			transition: theme.transitions.create("width", {
@@ -107,13 +105,26 @@ const useStyles = makeStyles(theme =>
 			flexGrow: 1,
 			padding: theme.spacing(3),
 		},
+		listItems: {
+			"& a": { textDecoration: "none" },
+			"&:hover, &:active": {
+				borderRadius: "4px",
+				width: "99.9%",
+				margin: "0 auto",
+			},
+		},
+		listItemsDark: {
+			"&:hover, &:active": { backgroundColor: "#575757" },
+		},
+		listItemsLight: {
+			"&:hover, &:active": { backgroundColor: "#e8f0fe" },
+		},
 	})
 );
 
 const SideDrawer = props => {
 	const classes = useStyles();
 	const theme = useTheme();
-	
 
 	const drawerItems = [
 		{
@@ -160,8 +171,6 @@ const SideDrawer = props => {
 
 	let dark = props.Theme === "dark";
 
-
-
 	return (
 		<div className={classes.root}>
 			<CssBaseline />
@@ -204,10 +213,14 @@ const SideDrawer = props => {
 				</div>
 				<Divider />
 				<List>
-					
 					{drawerItems.map(item => {
 						return (
-							<ListItem button>
+							<ListItem
+								className={clsx(classes.listItems, {
+									[classes.listItemsDark]: dark,
+									[classes.listItemsLight]: !dark,
+								})}
+								button>
 								<ListItemIcon
 									className={clsx(classes.icons, {
 										[classes.textLight]: dark,
@@ -239,14 +252,8 @@ const mapStateToProps = state => {
 	return {
 		textColor: state.settings.textColor,
 		Theme: state.settings.theme,
-		showDrawer:state.settings.showDrawer,
+		showDrawer: state.settings.showDrawer,
 	};
 };
 
-const mapDispatchToProps = dispatch => {
-	return {
-		drawerOpen:() => dispatch(handleDrawerOpen()),
-		drawerClose:() => dispatch(handleDrawerClose())
-	};
-};
-export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);
+export default connect(mapStateToProps, null)(SideDrawer);
