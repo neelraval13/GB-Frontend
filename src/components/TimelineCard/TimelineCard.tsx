@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
     },
     large: {
-        width: theme.spacing(7),
-        height: theme.spacing(7),
+        width: theme.spacing(5),
+        height: theme.spacing(5),
         marginRight:theme.spacing(2),
       },
       button: {
@@ -46,7 +46,7 @@ const TimelineCard = (props:any) => {
 
 
     return (
-        <div className={`timeline-card ${props.theme}-section-bg`}>
+        <div className={`timeline-card ${props.theme}-section-bg main-container-card`}>
             <div className='card-header-content'>
                 <div className='card-header-content-left'>
                     <Avatar alt="Remy Sharp" className={classes.large} src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
@@ -66,7 +66,7 @@ const TimelineCard = (props:any) => {
                     <img alt='post-img' src='https://images.pexels.com/photos/3405456/pexels-photo-3405456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' />
             </div>
             
-            <div className='likes-comments-sections'>
+            <div className={`${props.theme}-likes-comments-sections likes-comments-sections`}>
                   <div className='likes-inline'>
                      <ThumbUpAlt /> <span className='likes-count'>126</span>
                   </div>
@@ -83,7 +83,7 @@ const TimelineCard = (props:any) => {
                             our training phase.
                             </span></h3>
                     </div>
-                    <div className={`${props.theme}-hastags`}>
+                    <div className={`${props.theme}-hastags hastags`}>
                             <h3>#Gamersback</h3>
                     </div>
             </div>
