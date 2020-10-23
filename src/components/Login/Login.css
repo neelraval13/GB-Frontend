@@ -16,15 +16,15 @@
 }
 
 .login-inner-wrapper .brand-logo {
-  max-width: 350px;
+  max-width: 250px;
 }
 
 .login-inner-wrapper .logo-wrapper {
-  height: 10%;
+  height: 20%;
 }
 
 .login-main {
-  height: 90%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,8 +41,8 @@
 }
 
 .login-main .welcome-message h1 {
-  margin-bottom: 10%;
-  font-weight: 300;
+  margin-bottom: 5%;
+  font-weight: 600;
 }
 
 .login-main .welcome-message p {
@@ -52,12 +52,11 @@
 }
 
 .login-card {
-  color: black;
-  width: 40%;
-  height: 90%;
+  width: 35%;
+  height: 82%;
   -ms-flex-item-align: start;
       align-self: start;
-  background-color: #fff;
+  background-color: #202225;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,12 +70,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #e6ecf5;
+  border: 1px solid #2d3136;
 }
 
 .login-card .tabs .tab {
   height: 50%;
-  width: 80px;
+  width: 60px;
 }
 
 .login-card .tabs .tab button {
@@ -84,6 +83,7 @@
   width: 100%;
   font-size: 25px;
   color: #888da8;
+  background-color: #2d3136;
   border: none;
 }
 
@@ -96,8 +96,8 @@
 }
 
 .login-card .tabs .tab .active button {
-  background-color: #fff;
-  color: #0d1427;
+  background-color: #232529;
+  color: #fff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -108,19 +108,20 @@
 }
 
 .login-form-wrapper .form-header {
-  border-bottom: 1px solid #e6ecf5;
+  border-bottom: 1px solid #2d3136;
   width: 100%;
 }
 
 .login-form-wrapper .form-header p {
-  padding: 25px;
+  padding: 17px;
   font-size: 15px;
   font-weight: 600;
+  color: #fff;
 }
 
 .login-form-inner {
-  width: 90%;
-  margin: 5%;
+  width: 92%;
+  margin: 0 4%;
   text-align: center;
 }
 
@@ -134,7 +135,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 2% 0;
 }
 
 .login-form-inner form .reg-name {
@@ -144,6 +144,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.login-form-inner form .reg-name .reg-form-name-flex-item {
+  width: 45%;
 }
 
 .login-form-inner .or {
@@ -159,7 +163,6 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-top: 5%;
 }
 
 .login-form-inner .or .line {
@@ -176,6 +179,28 @@
 
 .login-form-inner .register-link a {
   text-decoration: none;
-  color: #0d1427;
+  color: #ff713a;
+}
+
+.MuiFormLabel-root {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.MuiIconButton-root {
+  color: #fff !important;
+}
+
+.MuiInputBase-root {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.MuiSelect-icon {
+  color: #fff !important;
 }
 /*# sourceMappingURL=Login.css.map */

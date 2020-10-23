@@ -13,23 +13,23 @@
 		margin: 3% 10% 0 15%;
 		width: 100% - 25%;
 		.brand-logo {
-			max-width: 350px;
+			max-width: 250px;
 		}
 		.logo-wrapper {
-			height: 10%;
+			height: 20%;
 		}
 	}
 
 	&-main {
-		height: 90%;
+		height: 70%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		.welcome-message {
 			width: 50%;
 			h1 {
-				margin-bottom: 10%;
-				font-weight: 300;
+				margin-bottom: 5%;
+				font-weight: 600;
 			}
 			p {
 				padding: 0;
@@ -40,25 +40,25 @@
 	}
 
 	&-card {
-		color: black;
-		width: 40%;
-		height: 90%;
+		width: 35%;
+		height: 82%;
 		align-self: start;
-		background-color: #fff;
+		background-color: #202225;
 		display: flex;
 
 		.tabs {
 			display: flex;
 			flex-direction: column;
-			border: 1px solid #e6ecf5;
+			border: 1px solid #2d3136;
 			.tab {
 				height: 50%;
-				width: 80px;
+				width: 60px;
 				button {
 					height: 100%;
 					width: 100%;
 					font-size: 25px;
 					color: #888da8;
+					background-color: #2d3136;
 					border: none;
 					&:focus {
 						outline: none;
@@ -69,8 +69,8 @@
 				}
 				.active {
 					button {
-						background-color: #fff;
-						color: #0d1427;
+						background-color: #232529;
+						color: #fff;
 						transition: 0.2s;
 					}
 				}
@@ -83,29 +83,32 @@
 			width: 100%;
 			overflow: auto;
 			.form-header {
-				border-bottom: 1px solid #e6ecf5;
+				border-bottom: 1px solid #2d3136;
 				width: 100%;
 				p {
-					padding: 25px;
+					padding: 17px;
 					font-size: 15px;
 					font-weight: 600;
+					color: #fff;
 				}
 			}
 		}
 		&-inner {
-			width: 90%;
-			margin: 5%;
+			width: 92%;
+			margin: 0 4%;
 			text-align: center;
 			form {
 				.bottom-opt {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
-					margin: 2% 0;
 				}
 				.reg-name {
 					display: flex;
 					justify-content: space-between;
+					.reg-form-name-flex-item {
+						width: 45%;
+					}
 				}
 			}
 			.or {
@@ -115,7 +118,6 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-evenly;
-				margin-top: 5%;
 				.line {
 					background-color: #e6ecf5;
 					width: 43%;
@@ -128,9 +130,31 @@
 				margin-top: 3%;
 				a {
 					text-decoration: none;
-					color: #0d1427;
+					color: #ff713a;
 				}
 			}
 		}
 	}
+}
+
+.MuiFormLabel-root {
+	color: #fff !important;
+	font-family: "Montserrat", sans-serif !important;
+}
+
+.MuiIconButton-root {
+	color: #fff !important;
+}
+
+.MuiInputBase-root {
+	color: #fff !important;
+	font-family: "Montserrat", sans-serif !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+	border-color: #fff !important;
+}
+
+.MuiSelect-icon {
+	color: #fff !important;
 }

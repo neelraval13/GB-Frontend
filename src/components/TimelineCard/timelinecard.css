@@ -1,0 +1,319 @@
+.timeline-card {
+  min-height: 550px;
+  margin: 20px 0px;
+  padding: 10px;
+}
+
+.timeline-card .dark-more-options {
+  color: #fff;
+}
+
+.timeline-card .likes-comments-sections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 15px 8px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.timeline-card .likes-comments-sections .likes-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timeline-card .likes-comments-sections .likes-inline .likes-count {
+  margin-left: 10px;
+}
+
+.timeline-card .likes-comments-sections .comments-count, .timeline-card .likes-comments-sections .likes-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.timeline-card .dark-likes-comments-sections {
+  border-bottom: 1px solid #414141;
+  color: #fff;
+}
+
+.timeline-card .dark-likes-comments-sections .likes-count {
+  color: #fff;
+}
+
+.timeline-card .dark-likes-comments-sections .comments-count {
+  color: #fff;
+}
+
+.card-header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 20px 15px 0px;
+}
+
+.card-header-content .card-header-content-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-header-content .more-options {
+  padding: 10 !important;
+  margin: 0 !important;
+}
+
+.card-header-content .timeline-inner-text {
+  font-size: 13px;
+  color: #838583;
+  font-weight: 500;
+}
+
+.card-header-content .time-stamp {
+  color: #43baff;
+  font-size: 13px;
+}
+
+.card-container {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.card-container > img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 50px;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+
+.card-footer-content .timeline-btn {
+  font-size: 13px;
+  text-transform: capitalize;
+  margin: 0px 2px;
+}
+
+.card-footer-content .light-timeline-btn {
+  background-color: transparent;
+  width: 50%;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card-footer-content .light-timeline-btn:hover {
+  color: #0084ff;
+  background-color: #dadada9f;
+  -webkit-box-shadow: 5px 2px 10px 2px #f5f5f5;
+          box-shadow: 5px 2px 10px 2px #f5f5f5;
+}
+
+.card-footer-content .dark-timeline-btn {
+  background-color: transparent;
+  width: 50%;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+}
+
+.card-footer-content .dark-timeline-btn:hover {
+  color: rgba(238, 59, 59, 0.664);
+  background-color: #2c2c2c9f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dark-card-footer-content {
+  border-top: 1px solid #161616;
+  border-bottom: 1px solid #161616;
+}
+
+.post-description {
+  padding: 15px;
+}
+
+.post-description .hastags h3 {
+  margin: 0px !important;
+}
+
+.light-description {
+  color: black;
+}
+
+.light-description h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.light-description h3 span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dark-description {
+  color: #fff;
+}
+
+.dark-description h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.dark-description h3 span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.post-comment-section {
+  padding: 0px 15px;
+}
+
+.post-comment-section .extra-comments-wrapper {
+  margin-bottom: 8px;
+}
+
+.post-comment-section .extra-comments {
+  color: #8d8c8c;
+  cursor: pointer;
+}
+
+.post-comment-section .user-comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 14px;
+}
+
+.post-comment-section .user-comments-inline {
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.post-comment-section .light-user-comments-inline:before {
+  content: " ";
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #F1F3F4;
+  border-left: none;
+  border-bottom: 8px solid transparent;
+}
+
+.post-comment-section .dark-user-comments-inline:before {
+  content: " ";
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #000000;
+  border-left: none;
+  border-bottom: 8px solid transparent;
+}
+
+.post-comment-section .dark-user-comments-inline {
+  background-color: #1616169d;
+  color: #fff;
+}
+
+.post-comment-section .light-user-comments-inline {
+  background-color: #F1F3F4;
+}
+
+.post-comment-section .current-user-comment {
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.post-comment-section .current-user-comment .comment-input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  height: 35px;
+  padding: 0px 20px;
+}
+
+.post-comment-section .current-user-comment .dark-comment-input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  background-color: #1616169d;
+  border-radius: 20px;
+  height: 35px;
+  padding: 0px 20px;
+  color: #fff;
+}
+
+.post-comment-section .current-user-comment .light-comment-input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  background-color: #F1F3F4;
+  border-radius: 20px;
+  height: 35px;
+  padding: 0px 20px;
+}
+/*# sourceMappingURL=timelinecard.css.map */

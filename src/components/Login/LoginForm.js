@@ -5,6 +5,8 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Checkbox from "@material-ui/core/Checkbox";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
@@ -16,13 +18,19 @@ import { Field, reduxForm } from "redux-form";
 
 const useStyles = makeStyles(theme => ({
 	textField: {
-		marginTop: theme.spacing(2),
-		marginBottom: theme.spacing(2),
+		marginTop: theme.spacing(1.5),
+		marginBottom: theme.spacing(1.5),
 		width: "100%",
+		color: "white",
 	},
 	button: {
-		height: "56px",
-		backgroundColor: "#0d1427",
+		height: "40px",
+		fontSize: "12px",
+		backgroundColor: "#ff713a",
+	},
+	inputStyles: {
+		color: "white",
+		fontFamily: ["Monsterrat", "Sans-Serif"].join(","),
 	},
 }));
 
@@ -47,6 +55,10 @@ const LoginForm = props => {
 					label={formProps.label}
 					className={classes.textField}
 					variant="outlined"
+					size="small"
+					InputProps={{
+						className: classes.inputStyles,
+					}}
 				/>
 			</div>
 		);
@@ -57,6 +69,10 @@ const LoginForm = props => {
 			<OutlinedInput
 				{...formProps.input}
 				labelWidth={120}
+				size="small"
+				InputProps={{
+					classes: classes.inputStyles,
+				}}
 				id="outlined-adornment-password"
 				type={showPass ? "text" : "password"}
 				endAdornment={
@@ -81,17 +97,26 @@ const LoginForm = props => {
 					<Checkbox
 						checked={input.value ? true : false}
 						onChange={input.onChange}
+						icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+						checkedIcon={<CheckBoxIcon fontSize="small" />}
 						color="primary"
 					/>
 				}
 				label={label}
+				className={classes.smaller}
 			/>
 		</div>
 	);
 
 	const renderPassword = formProps => {
 		return (
-			<FormControl className={classes.textField} variant="outlined">
+			<FormControl
+				InputProps={{
+					classes: classes.inputStyles,
+				}}
+				className={classes.textField}
+				variant="outlined"
+				size="small">
 				<InputLabel htmlFor="outlined-adornment-password">
 					Your Password
 				</InputLabel>
@@ -111,7 +136,9 @@ const LoginForm = props => {
 					label="Remember Me?"
 				/>
 				<div className="f-p">
-					<Button color="primary">Forgot Password?</Button>
+					<Button size="small" color="secondary">
+						Forgot Password?
+					</Button>
 				</div>
 			</div>
 
