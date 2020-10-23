@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
         width: theme.spacing(5),
         height: theme.spacing(5),
         marginRight:theme.spacing(2),
+      },
+      currentUser:{
+        width: theme.spacing(5),
+        height: theme.spacing(5),
+        marginRight:theme.spacing(2),
       }
   }),
 );
@@ -31,6 +36,9 @@ const CommentSection : React.FC<Props>= (props) => {
     const classes = useStyles()
     return (
         <div className={`${props.theme}-comment-section post-comment-section`}>
+            <div className='extra-comments-wrapper'>
+                <a className='extra-comments'>View 8 more comments</a>
+            </div>
         {
             comments.map(data =>{
                 return(
@@ -50,6 +58,10 @@ const CommentSection : React.FC<Props>= (props) => {
             })
         }
         
+        <div className='current-user-comment'>
+                <Avatar alt="user" className={classes.currentUser} src={comments[0].url} />
+                <input className={`${props.theme}-comment-input comment-input`} placeholder="Write your comment"/> 
+        </div>
         </div>
     )
 }

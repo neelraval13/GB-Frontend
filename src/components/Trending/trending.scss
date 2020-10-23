@@ -1,0 +1,25 @@
+
+.trending-card{
+    height: 200px;
+    margin-top: 50px;
+    padding: 20px;
+    width: 400px;
+
+    .trending-list{
+        list-style: none;
+        margin-top: 10px;
+
+        .trending-list-item{
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            & div{
+                margin-left: 10px;
+            }
+        }
+
+        .dark-trending-list-item{
+            color: #fff;
+        }
+    }
+}
