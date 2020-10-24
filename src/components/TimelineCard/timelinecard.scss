@@ -10,6 +10,40 @@ $timestamp-color:rgb(67, 186, 255);
     .dark-more-options{
         color: #fff;
     }
+
+    .likes-comments-sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 15px 8px;
+        border-bottom: 1px solid rgb(243, 243, 243);
+
+        .likes-inline{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .likes-count{
+                margin-left: 10px;
+            }
+            
+        }
+
+        .comments-count,.likes-count{
+            font-size: 14px;
+            font-weight: 500;
+            color: #000000;
+        }
+    }
+    .dark-likes-comments-sections {
+        border-bottom: 1px solid rgb(65, 65, 65);
+        color: #fff;
+        .likes-count{
+            color: #fff;
+        }
+        .comments-count{
+            color: #fff;
+        }
+    }
 }
 
 .card-header-content{
@@ -19,6 +53,7 @@ $timestamp-color:rgb(67, 186, 255);
     align-items: flex-start;
     width: 100%;
     margin-bottom: 10px;
+    padding: 20px 15px 0px;
 
     .card-header-content-left{
         display: flex;
@@ -44,12 +79,15 @@ $timestamp-color:rgb(67, 186, 255);
 }
 
 .card-container{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: fit-content;
     & > img{
         width: 100%;
         height: 400px;
         object-fit: cover;
-        border-radius: 10px;
+       
     }
 }
 
@@ -59,14 +97,19 @@ $timestamp-color:rgb(67, 186, 255);
     height: 50px;
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
-    
+     
+    .timeline-btn{
+        font-size: 13px;
+        text-transform: capitalize;
+        margin: 0px 2px;
+    }
 
     .light-timeline-btn{
         background-color: transparent;
         width: 50%;
         border: 0;
         box-shadow: none;
-        font-size: 12px;
+        
     }
     .light-timeline-btn:hover{
         color: rgb(0, 132, 255);
@@ -78,7 +121,6 @@ $timestamp-color:rgb(67, 186, 255);
         width: 50%;
         border: 0;
         box-shadow: none;
-        font-size: 12px;
         color: #fff;
     }
     .dark-timeline-btn:hover{
@@ -93,40 +135,55 @@ $timestamp-color:rgb(67, 186, 255);
     border-bottom: 1px solid #161616;
 }
 .post-description{
-    padding: 10px 0px;
+    padding:15px;
+
+    .hastags h3{
+        margin: 0px !important;
+    }
 }
 
 .light-description{
     color: black;
     & h3{
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
     & h3 span{
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 500;
     }
 }   
 .dark-description{
     color: #fff;
     & h3{
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
     & h3 span{
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 500;
     }
 }
 
 .post-comment-section{
+    padding: 0px 15px;
+
+    .extra-comments-wrapper{
+      
+        margin-bottom: 8px;
+    }
+    .extra-comments{
+        color: #8d8c8c;
+        cursor: pointer;
+       
+    }
     .user-comments{
         display: flex;
         flex-direction: row;
-        margin:10px 0px;
+        margin-bottom: 14px;
     }
     .user-comments-inline{
-        padding: 5px 20px;
+        padding: 10px;
         border-radius:10px;
         position: relative;
         margin-right: 5px;
@@ -162,6 +219,40 @@ $timestamp-color:rgb(67, 186, 255);
     .light-user-comments-inline{
         background-color: #F1F3F4;
         
+    }
+
+    .current-user-comment{
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: row;
+
+        .comment-input{
+            width: 80%;
+            border: 0;
+            outline: none;
+            border-radius: 20px;
+            height: 35px;
+            padding: 0px 20px;
+        }
+        .dark-comment-input{
+            width: 80%;
+            border: 0;
+            outline: none;
+            background-color: #1616169d;
+            border-radius: 20px;
+            height: 35px;
+            padding: 0px 20px;
+            color: #fff;
+        }
+        .light-comment-input{
+            width: 80%;
+            border: 0;
+            outline: none;
+            background-color: #F1F3F4;
+            border-radius: 20px;
+            height: 35px;
+            padding: 0px 20px;
+        }
     }
 }
 

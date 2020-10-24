@@ -3,14 +3,13 @@ import { connect } from 'react-redux'
 import StoriesCard from './components/StoriesCard'
 import './stories.scss'
 import profiles from './samdata.json'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Stories = (props:any) => {
     const testUrl = "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" 
     return (
-        <div className={`stories-section ${props.theme}-section-bg`}>
+        <div className={`stories-section ${props.theme}-section-bg main-container-card`}>
      
                 <h5 className={`${props.theme}-text-bg`} >Stories</h5>
                 
