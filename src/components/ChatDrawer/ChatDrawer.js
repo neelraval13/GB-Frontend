@@ -59,6 +59,11 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     zIndex: 0,
+    overflowX: 'hidden',
+    '&::-webkit-scrollbar': {
+      display: 'none',
+    },
+    paddingBottom: '70px'
   },
   drawerDark: {
     backgroundColor: "#292b2f",
@@ -72,11 +77,15 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     zIndex: 0,
-    overflowX: 'hidden',
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(9) + 1,
     },
+    overflowX: 'hidden',
+    '&::-webkit-scrollbar': {
+      display: 'none',
+    },
+    paddingBottom: '70px'
   },
   toolbar: {
     display: 'flex',
@@ -96,13 +105,15 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "end",
     paddingBottom: 10,
     width: 240,
+    zIndex: 1
   },
   bottomPushOuter: {
     position: "fixed",
     bottom: 0,
     textAlign: "center",
     paddingBottom: 10,
-    width: '75px'
+    width: '75px',
+    zIndex: 1
   },
   textLight: {
     color: "white",
@@ -184,7 +195,53 @@ const chatItems = [
         imageUrl : "tempNothing"
       },
     ]
-  }
+  },
+  {
+    category: "Clash",
+    people: [
+      {
+        id: "userUid41",
+        name: "Person 1",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+      {
+        id: "userUid42",
+        name: "Person 2",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+      {
+        id: "userUid43",
+        name: "Person 3",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+    ]
+  },
+  {
+    category: "Royale",
+    people: [
+      {
+        id: "userUid41",
+        name: "Person 1",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+      {
+        id: "userUid42",
+        name: "Person 2",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+      {
+        id: "userUid43",
+        name: "Person 3",
+        online: true,
+        imageUrl : "tempNothing"
+      },
+    ]
+  },
 ];
 
 const ChatDrawer = props => {
@@ -243,7 +300,7 @@ const ChatDrawer = props => {
                         >
                           {category.category}
                         </div> 
-                        <hr 
+                        <hr  
                           style={dark ? {borderTop: '0.1px solid #636363', borderBottom: 'none',height: '0.1px'} : {borderTop: '0.1px solid #e8e8e8', borderBottom: 'none',height: '0.1px'}}
                         />
                       </div> : <div></div> }
@@ -260,7 +317,10 @@ const ChatDrawer = props => {
               })
             }
           </List>
-          { !open ? <div className={classes.bottomPushOuter}>
+          { !open ? <div 
+              className={classes.bottomPushOuter}
+              style={dark ? {borderTop: '1px solid #636363',backgroundColor: '#292b2f'} : {borderTop: '1px solid #e8e8e8',backgroundColor: '#fff'}}
+            >
             <IconButton 
               onClick={handleDrawerOpen}
             >
@@ -274,7 +334,7 @@ const ChatDrawer = props => {
           </div> :
           <div 
             className={classes.bottomPush}
-            style={dark ? {borderTop: '1px solid #636363'} : {borderTop: '1px solid #e8e8e8'}}
+            style={dark ? {borderTop: '1px solid #636363',backgroundColor: '#292b2f'} : {borderTop: '1px solid #e8e8e8',backgroundColor: '#fff'}}
           >
             <IconButton onClick={handleDrawerClose}>
               <Close 
