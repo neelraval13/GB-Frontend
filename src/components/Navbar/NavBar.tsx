@@ -21,7 +21,8 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import PeopleTwoToneIcon from "@material-ui/icons/PeopleTwoTone";
 import Button from "@material-ui/core/Button";
-
+import Avatar from '@material-ui/core/Avatar';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./nav.css";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { connect } from "react-redux";
@@ -31,6 +32,8 @@ import {
 	handleDrawerClose,
 } from "../../appRedux/actions/Settings";
 import { Dispatch } from "redux";
+import Popover from '@material-ui/core/Popover';
+
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -119,6 +122,27 @@ const useStyles = makeStyles((theme: Theme) =>
 				display: "none",
 			},
 		},
+		menuItem:{
+			marginRight:5
+		},
+		navBtn:{
+			textTransform:"capitalize",
+			
+		},
+		avatar:{
+			marginRight:10,
+			
+
+		},
+		btnDiv:{
+			display:'flex',
+			flexDirection:'column',
+			marginRight:10
+		},
+		btnInlineText:{
+			fontSize:10,
+			color:'grey'
+		}
 	})
 );
 
@@ -162,19 +186,32 @@ const NavBar: React.FC<Props> = props => {
 
 	const menuId = "primary-search-account-menu";
 	const renderMenu = (
-		<Menu
-			anchorEl={anchorEl}
-			anchorOrigin={{ vertical: "top", horizontal: "right" }}
-			id={menuId}
-			keepMounted
-			transformOrigin={{ vertical: "top", horizontal: "right" }}
-			open={isMenuOpen}
-			onClose={handleMenuClose}>
-			<MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-			<MenuItem onClick={handleMenuClose}>
+
+		 <Popover
+		
+		 open={isMenuOpen}
+		 id={menuId}
+		 anchorEl={anchorEl}
+		 onClose={handleMenuClose}
+		 anchorOrigin={{
+		   vertical: 'bottom',
+		   horizontal: 'center',
+		 }}
+		 transformOrigin={{
+		   vertical: 'top',
+		   horizontal: 'center',
+		 }}
+	   >
+		   	<MenuItem >
+				Profile
+			</MenuItem>
+			<MenuItem >
+				Logout
+			</MenuItem>
+			<MenuItem >
 				<ToggleSwitch />
 			</MenuItem>
-		</Menu>
+	   </Popover>
 	);
 
 	const mobileMenuId = "primary-search-account-menu-mobile";
@@ -186,29 +223,35 @@ const NavBar: React.FC<Props> = props => {
 			keepMounted
 			transformOrigin={{ vertical: "top", horizontal: "right" }}
 			open={isMobileMenuOpen}
-			onClose={handleMobileMenuClose}>
-			<MenuItem>
-				<IconButton aria-label="show 4 new mails" color="inherit">
+			onClose={handleMobileMenuClose}
+			
+			>
+			
+			<MenuItem >
+				<IconButton aria-label="show 4 new mails" color="inherit" >
 					<Badge badgeContent={4} color="secondary">
 						<MailIcon />
 					</Badge>
 				</IconButton>
 				<p>Messages</p>
 			</MenuItem>
-			<MenuItem>
-				<IconButton aria-label="show 11 new notifications" color="inherit">
+			<MenuItem >
+				<IconButton aria-label="show 11 new notifications" color="inherit" >
 					<Badge badgeContent={11} color="secondary">
 						<NotificationsIcon />
 					</Badge>
 				</IconButton>
 				<p>Notifications</p>
 			</MenuItem>
-			<MenuItem onClick={handleProfileMenuOpen}>
+			<MenuItem onClick={handleProfileMenuOpen} >
 				<IconButton
 					aria-label="account of current user"
 					aria-controls="primary-search-account-menu"
 					aria-haspopup="true"
-					color="inherit">
+					color="inherit"
+					
+					>
+
 					<AccountCircle />
 				</IconButton>
 				<p>Profile</p>
@@ -219,8 +262,9 @@ const NavBar: React.FC<Props> = props => {
 	return (
 		<div className={classes.grow}>
 			<AppBar
+				className={`${props.theme}-nav-bar nav-bar`}
 				position="fixed"
-				style={{ backgroundColor: props.navColor, color: props.textColor }}>
+				style={{ backgroundColor: props.navColor, color: props.textColor,height:70 }}>
 				<Toolbar>
 					<IconButton
 						edge="start"
@@ -247,37 +291,43 @@ const NavBar: React.FC<Props> = props => {
 							inputProps={{ "aria-label": "search" }}
 						/>
 					</div>
-					<a>Find Friends</a>
+					<Button color="inherit" className={classes.navBtn}>Find Friends</Button>
 					<div className={classes.grow} />
 					<div className={classes.sectionDesktop}>
-						<Button color="inherit">Touch Base</Button>
-						<Button color="inherit">Stream</Button>
+						<Button color="inherit" className={classes.navBtn}>Touch Base</Button>
+						<Button color="inherit" className={classes.navBtn}>Stream</Button>
 
-						<IconButton aria-label="show 4 new mails" color="inherit">
+						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
 							<HomeIcon />
 						</IconButton>
-						<IconButton aria-label="show 4 new mails" color="inherit">
+						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
 							<PeopleTwoToneIcon />
 						</IconButton>
-						<IconButton aria-label="show 4 new mails" color="inherit">
+						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
 							<Badge badgeContent={4} color="secondary">
 								<MailIcon />
 							</Badge>
 						</IconButton>
-						<IconButton aria-label="show 17 new notifications" color="inherit">
+						<IconButton aria-label="show 17 new notifications" color="inherit" className={classes.menuItem}>
 							<Badge badgeContent={17} color="secondary">
 								<NotificationsIcon />
 							</Badge>
 						</IconButton>
-						<IconButton
-							edge="end"
-							aria-label="account of current user"
-							aria-controls={menuId}
-							aria-haspopup="true"
-							onClick={handleProfileMenuOpen}
-							color="inherit">
-							<AccountCircle />
-						</IconButton>
+
+						<Button
+		
+						aria-controls={menuId}
+						onMouseEnter={handleProfileMenuOpen}
+						color="inherit"
+						className={classes.navBtn}
+						>
+							 <Avatar alt="User Profile" src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" className={classes.avatar}/>
+							<div className={classes.btnDiv}>
+								James Spigel	
+							 	<span className={classes.btnInlineText}>Space COWBOY</span>
+							</div>
+							<ExpandMoreIcon />
+						</Button>
 					</div>
 					<div className={classes.sectionMobile}>
 						<IconButton

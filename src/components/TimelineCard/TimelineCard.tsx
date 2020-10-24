@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CommentSection from './CommentSection';
 import CardButtons from './CardButtons';
 import ThumbUpAlt from '@material-ui/icons/ThumbUpAlt';
+import LikeButtons from './LikeButtons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,7 +38,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const TimelineCard = (props:any) => {
     const classes = useStyles();
-    
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);  
+    const isMenuOpen = Boolean(anchorEl);
+    const menuId = "primary-search-account-menu";
+    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+       setAnchorEl(event.currentTarget);
+    };
+  
+    const handleMenuClose = () => {
+      setAnchorEl(null);
+     
+    };
     
 
 
@@ -74,12 +85,12 @@ const TimelineCard = (props:any) => {
                    16 comments
                   </div>
             </div>
-            <CardButtons theme={props.theme} />
+            <CardButtons theme={props.theme} handleMenuOpen={handleMenuOpen}/>
 
 
             <div className={`${props.theme}-description post-description`}>
                     <div className={`${props.theme}-caption`}>
-                            <h3>Caption : <span>2021 is definitely gonna be the year where walking dead comes to life. 2020 is just
+                            <h3><span>2021 is definitely gonna be the year where walking dead comes to life. 2020 is just
                             our training phase.
                             </span></h3>
                     </div>
@@ -90,6 +101,7 @@ const TimelineCard = (props:any) => {
 
 
             <CommentSection theme={props.theme}/>
+            <LikeButtons anchorEl={anchorEl} handleMenuClose={handleMenuClose} isMenuOpen={isMenuOpen}/>
         </div>
     )
 }

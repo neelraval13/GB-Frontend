@@ -12,16 +12,29 @@ const TrendingCard = (props) => {
         {
             item:'#Pubg',
             hits:'39k hits'
-        }
+        },
+        {
+            item:'#Gamersback',
+            hits:'29k hits'
+        },
+        {
+            item:'#Pubg',
+            hits:'39k hits'
+        },
+        {
+            item:'#Pubg',
+            hits:'39k hits'
+        },
     ]
     return (
        <div className={`trending-card ${props.theme}-section-bg`}>
-            <h3 className={`${props.theme}-text-bg`}>Trending !</h3>
+            <div className={`${props.theme}-title-wrapper tc-title-wrapper`}>
+            <h3 className={`${props.theme}-text-bg tc-title`}>Top 5 Trending</h3>
+            </div>
             <ul className={`${props.theme}-trending-list trending-list`}>
                     {
                         data.map((trend,index) =>{
                         return <li className={`${props.theme}-trending-list-item trending-list-item`}>
-                            <h4>{index+1} {")"}</h4>
                             <div>
                             <h4>{trend.item}</h4>
                             <p>{trend.hits}</p>

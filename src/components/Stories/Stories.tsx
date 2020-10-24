@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import StoriesCard from './components/StoriesCard'
 import './stories.scss'
 import profiles from './samdata.json'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore,{Navigation} from 'swiper'
+
+SwiperCore.use([Navigation])
 
 const Stories = (props:any) => {
+    const [swiper,setSwiper] = useState(null)
     const testUrl = "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" 
     return (
         <div className={`stories-section ${props.theme}-section-bg main-container-card`}>
      
-                <h5 className={`${props.theme}-text-bg`} >Stories</h5>
+                <h4 className={`${props.theme}-text-bg`} >Stories</h4>
                 
                 <div className='stories-container'>
                 <Swiper
                 spaceBetween={0}
                 slidesPerView={5}
                 pagination={{ clickable: false }}
-               
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={(swiper) => console.log(swiper)}
-                
+                navigation
+                style={{paddingLeft:15,marginTop:15}}
                 >
                     
                     <SwiperSlide>
