@@ -1,0 +1,30 @@
+.trending-card {
+  height: 200px;
+  margin-top: 50px;
+  padding: 20px;
+  width: 400px;
+}
+
+.trending-card .trending-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.trending-card .trending-list .trending-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.trending-card .trending-list .trending-list-item div {
+  margin-left: 10px;
+}
+
+.trending-card .trending-list .dark-trending-list-item {
+  color: #fff;
+}
+/*# sourceMappingURL=trending.css.map */
