@@ -13,7 +13,7 @@ const AddPost = (props) => {
         setDefaultTab(event.target.name)
   }
   return (   
-    <div className={`addpost-card ${props.theme}-card main-container-card`} style={{backgroundColor:props.cardColor}}>
+    <div className={`addpost-card ${props.theme}-section-bg main-container-card`} style={{backgroundColor:props.cardColor}}>
         <div className={`tabbed ${props.theme}-tabbed`}>
           <input type="radio" id="tab1" name="tab-1" onChange={onChangeInput} checked={defaultTab === 'tab-1'}/>
           <input type="radio" id="tab2" name="tab-2" onChange={onChangeInput} checked={defaultTab === 'tab-2'}/>

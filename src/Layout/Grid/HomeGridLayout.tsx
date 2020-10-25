@@ -5,6 +5,7 @@ import SideDrawer from "../../components/SideDrawer/SideDrawer";
 import ChatDrawer from "../../components/ChatDrawer/ChatDrawer";
 import TrendingCard from "../../components/Trending";
 import "./homegrid.css";
+import RecentlyUploaded from "../../components/RecentlyUploaded";
 
 const HomeGridLayout = (props: any) => {
 	return (
@@ -21,7 +22,7 @@ const HomeGridLayout = (props: any) => {
 				
 				<div className="container-right">
 					<TrendingCard />
-					<LiveStreamsCard />
+					<RecentlyUploaded />
 				</div>
 			</div>
 

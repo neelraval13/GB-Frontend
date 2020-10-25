@@ -1,19 +1,8 @@
-.nav-bar{
-    background-color:#292b2f;
-    /* box-shadow: 0px 5px 10px  #292b2f; */
-   
-    
+.dark-nav-bar{
+    box-shadow: 1px 2px 10px 1px #202225 !important;   
 }
-
-a.nav-link{
-    
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.light-nav-bar{
+    box-shadow: 1px 2px 10px 1px #d1d6ee !important; 
 }
 
 
@@ -24,18 +13,4 @@ a.nav-link{
 }
 
 
-
-.profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 150px;
-}
-
-.avatar{
-    width: 50px;
-    height: 30px;
-    object-fit: contain;
-   
-}
 

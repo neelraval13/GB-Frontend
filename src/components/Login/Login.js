@@ -10,9 +10,10 @@ import LoginForm from "./LoginForm";
 
 const useStyles = theme => ({
 	button: {
-		height: "56px",
-		marginTop: theme.spacing(3),
-		marginBottom: theme.spacing(2),
+		height: "40px",
+		fontSize: "12px",
+		marginTop: theme.spacing(1.5),
+		marginBottom: theme.spacing(1.5),
 	},
 	gButton: {
 		color: "white",
@@ -46,7 +47,8 @@ class Login extends Component {
 						className={clsx(classes.button, classes.gButton)}
 						variant="contained"
 						color="secondary"
-						startIcon={<SiGoogle />}>
+						size="small"
+						startIcon={<SiGoogle fontSize="small" />}>
 						Login with Google
 					</Button>
 					<Button
@@ -54,7 +56,7 @@ class Login extends Component {
 						color="primary"
 						className={clsx(classes.button, classes.fbButton)}
 						variant="contained"
-						startIcon={<FaFacebookF />}>
+						startIcon={<FaFacebookF fontSize="small" />}>
 						Login with FaceBook
 					</Button>
 					<div className="register-link">

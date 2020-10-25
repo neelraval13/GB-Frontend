@@ -12,6 +12,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
+
 const store = configureStore()
 
 const ReduxStoreProvider = () => <Provider store={store}>

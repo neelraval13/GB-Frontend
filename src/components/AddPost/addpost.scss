@@ -1,17 +1,12 @@
 
 .addpost-card{
 
-	margin-top: 20px;
+	margin-top: 15px;
 	min-height: 200px;
 	background-color: #fff;
 	
 }
-.dark-card{
-	box-shadow: 1px 2px 12px 2px rgba(22, 22, 22, 0.856);
-}
-.light-card{
-	box-shadow: 1px 2px 12px -1px rgba(226, 226, 226, 0.75);
-}
+
 .icon{
 	font-size: 16px;
 }
@@ -19,7 +14,7 @@
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
 	margin: 0;
-	padding-bottom: 16px;
+	padding-bottom: 40px;
 	
 }
 

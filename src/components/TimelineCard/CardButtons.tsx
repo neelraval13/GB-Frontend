@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {
     theme:string;
-
+    handleMenuOpen:any;
 
 }
 
@@ -47,7 +47,7 @@ const CardButtons :React.FC<Props>= (props) => {
         color="inherit"
         className={`${props.theme}-timeline-btn timeline-btn`}
         startIcon={<ThumbUpAltOutlinedIcon />}
-        
+        onMouseEnter={props.handleMenuOpen}
     >
        Like
     </Button>

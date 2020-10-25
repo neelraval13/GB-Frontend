@@ -5,6 +5,8 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Checkbox from "@material-ui/core/Checkbox";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
@@ -17,13 +19,14 @@ import { Field, reduxForm } from "redux-form";
 
 const useStyles = makeStyles(theme => ({
 	textField: {
-		marginTop: theme.spacing(2),
-		marginBottom: theme.spacing(2),
+		marginTop: theme.spacing(1.5),
+		marginBottom: theme.spacing(1.5),
 		width: "100%",
 	},
 	button: {
-		height: "56px",
-		backgroundColor: "#0d1427",
+		height: "40px",
+		fontSize: "12px",
+		backgroundColor: "#ff713a",
 	},
 }));
 
@@ -48,6 +51,7 @@ const RegisterForm = props => {
 					label={formProps.label}
 					className={classes.textField}
 					variant="outlined"
+					size="small"
 				/>
 			</div>
 		);
@@ -77,7 +81,10 @@ const RegisterForm = props => {
 
 	const renderPassword = formProps => {
 		return (
-			<FormControl className={classes.textField} variant="outlined">
+			<FormControl
+				className={classes.textField}
+				variant="outlined"
+				size="small">
 				<InputLabel htmlFor="outlined-adornment-password">
 					Your Password
 				</InputLabel>
@@ -98,12 +105,13 @@ const RegisterForm = props => {
 				InputLabelProps={{
 					shrink: true,
 				}}
+				size="small"
 			/>
 		);
 	};
 
 	const renderSelectField = ({ input, label, _, children }) => (
-		<FormControl variant="outlined" className={classes.textField}>
+		<FormControl variant="outlined" className={classes.textField} size="small">
 			<InputLabel htmlFor="gender">Gender</InputLabel>
 			<Select
 				labelWidth={70}
@@ -121,11 +129,14 @@ const RegisterForm = props => {
 	const renderCheckbox = ({ input, label }) => (
 		<div>
 			<FormControlLabel
+				size="small"
 				className={classes.textField}
 				control={
 					<Checkbox
 						checked={input.value ? true : false}
 						onChange={input.onChange}
+						icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+						checkedIcon={<CheckBoxIcon fontSize="small" />}
 						color="primary"
 					/>
 				}
@@ -137,10 +148,10 @@ const RegisterForm = props => {
 	return (
 		<form className="login-form-main-input" onSubmit={props.handleSubmit}>
 			<div className="reg-name">
-				<div>
+				<div className="reg-form-name-flex-item">
 					<Field component={renderInput} label="First Name" name="First Name" />
 				</div>
-				<div>
+				<div className="reg-form-name-flex-item">
 					<Field component={renderInput} label="Last Name" name="Last Name" />
 				</div>
 			</div>
