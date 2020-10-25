@@ -21,7 +21,7 @@ const HomePage = (props) => {
 
     return (
         <div>
-       <NavBar/>
+        <NavBar/>
             <HomeGridLayout>
                 <Stories />
                 <AddPost/>

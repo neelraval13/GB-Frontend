@@ -1,11 +1,13 @@
 import React from 'react'
 import './livestreams.scss'
 import { connect } from 'react-redux'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore,{Navigation} from 'swiper'
 import StreamCard from './components/StreamCard';
 
 SwiperCore.use([Navigation])
+
 
 
 const LiveStreamsCard = (props) => {
@@ -14,8 +16,10 @@ const LiveStreamsCard = (props) => {
     return (
         <div className={`livestreams-card ${props.theme}-section-bg`}>
                <div className='livestream-heading'>
+
                     <h3 className={` ${props.theme}-text-bg`}>Live Streams</h3>
                     <a className={` ${props.theme}-text-bg`}>View All</a>
+
                </div>
                  
                <Swiper
