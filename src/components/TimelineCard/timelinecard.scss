@@ -4,7 +4,7 @@ $timestamp-size :13px;
 $timestamp-color:rgb(67, 186, 255);
 .timeline-card{
     min-height: 550px;
-    margin: 20px 0px;
+    margin: 15px 0px;
     padding: 10px;
 
     .dark-more-options{
@@ -53,7 +53,7 @@ $timestamp-color:rgb(67, 186, 255);
     align-items: flex-start;
     width: 100%;
     margin-bottom: 10px;
-    padding: 20px 15px 0px;
+    padding: 10px 10px 0px;
 
     .card-header-content-left{
         display: flex;

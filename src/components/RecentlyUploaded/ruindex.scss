@@ -1,0 +1,77 @@
+
+.recently-uploaded{
+    width: 300px;
+    margin-top:15px;
+    border-radius: 5px;
+    .ru-title-wrapper{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 15px 10px 15px;
+        border-bottom: .5px solid rgb(231, 231, 231);
+        margin-bottom: 15px;
+    }
+    .dark-ru-title-wrapper{
+        border-bottom: 1px solid rgb(54, 56, 65);
+    }
+    .ru-title{
+        
+        font-size: 16.8px;
+        font-weight: 700;
+    }
+    .ru-view-all{
+        font-size: 14.8px;
+        font-weight: 500;
+    }
+    .slide-img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .swiper-button-next {
+    
+        background-image: url(../../arrow.svg);
+        background-color: rgb(255, 255, 255);
+        padding: 10px !important;
+        border-radius: 50px;
+        width: 40px !important;
+        height: 40px !important;
+        right: 0px !important;
+        top: 120px !important;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+        z-index: 10 !important;
+        border: 1px solid rgb(238, 237, 237);
+        box-shadow: 0px 2px 5px -3px rgb(87, 85, 85);
+      }
+      .swiper-button-prev {
+        background-image: url(../../arrow.svg);
+        background-color: rgb(255, 255, 255);
+        padding: 10px !important;
+        border-radius: 50px;
+        width: 40px !important;
+        height: 40px !important;
+        left: 0px !important;
+        top: 120px !important;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+        transform: rotate(180deg);
+        z-index: 10 !important;
+        border: 1px solid rgb(238, 237, 237);
+        box-shadow: 0px 2px 5px -3px rgb(87, 85, 85);
+    
+        
+      }
+      
+      .swiper-button-next::after {
+        display: none;
+      }
+      .swiper-button-prev::after {
+        display: none;
+      }
+      .swiper-button-disabled{
+          display: none !important;
+      }
+}

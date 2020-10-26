@@ -16,18 +16,27 @@ import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import { Field, reduxForm } from "redux-form";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(theme => ({
 	textField: {
 		marginTop: theme.spacing(1.5),
-		marginBottom: theme.spacing(1.5),
+		marginBottom: theme.spacing(2.3),
 		width: "100%",
 	},
 	button: {
 		height: "40px",
-		fontSize: "12px",
+		fontSize: "11px",
 		backgroundColor: "#ff713a",
 	},
+	inputStyles: {
+		color: "white",
+		fontFamily: ["Monsterrat", "Sans-Serif"].join(","),
+		fontSize:14
+	},
+	labelStyles:{
+		color: "white",
+	}
 }));
 
 const RegisterForm = props => {
@@ -52,6 +61,12 @@ const RegisterForm = props => {
 					className={classes.textField}
 					variant="outlined"
 					size="small"
+					InputProps={{
+						className: classes.inputStyles,
+					}}
+					InputLabelProps={{
+						className:classes.labelStyles
+					}}
 				/>
 			</div>
 		);
@@ -64,6 +79,7 @@ const RegisterForm = props => {
 				labelWidth={120}
 				id="outlined-adornment-password"
 				type={showPass ? "text" : "password"}
+				style={{color:'white'}}
 				endAdornment={
 					<InputAdornment position="end">
 						<IconButton
@@ -71,7 +87,7 @@ const RegisterForm = props => {
 							onClick={handleClickShowPassword}
 							onMouseDown={handleMouseDownPassword}
 							edge="end">
-							{showPass ? <Visibility /> : <VisibilityOff />}
+							{showPass ? <Visibility style={{color:'white'}}/> : <VisibilityOff style={{color:'white'}}/>}
 						</IconButton>
 					</InputAdornment>
 				}
@@ -85,7 +101,7 @@ const RegisterForm = props => {
 				className={classes.textField}
 				variant="outlined"
 				size="small">
-				<InputLabel htmlFor="outlined-adornment-password">
+				<InputLabel htmlFor="outlined-adornment-password" style={{color:'white'}}>
 					Your Password
 				</InputLabel>
 				<Field name="Password" component={renderPass} />
@@ -104,15 +120,20 @@ const RegisterForm = props => {
 				variant="outlined"
 				InputLabelProps={{
 					shrink: true,
+					className:classes.labelStyles
+				}}
+				inputProps={{
+					className:classes.inputStyles
 				}}
 				size="small"
+				
 			/>
 		);
 	};
 
 	const renderSelectField = ({ input, label, _, children }) => (
-		<FormControl variant="outlined" className={classes.textField} size="small">
-			<InputLabel htmlFor="gender">Gender</InputLabel>
+		<FormControl variant="outlined" className={classes.textField} size="small" style={{color:'white'}}>
+			<InputLabel htmlFor="gender" style={{color:'white'}}>Gender</InputLabel>
 			<Select
 				labelWidth={70}
 				native
@@ -120,7 +141,10 @@ const RegisterForm = props => {
 				inputProps={{
 					name: "gender",
 					id: "gender",
-				}}>
+					style:{color:'white'}
+				}}
+				
+				>
 				{children}
 			</Select>
 		</FormControl>
@@ -137,10 +161,13 @@ const RegisterForm = props => {
 						onChange={input.onChange}
 						icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
 						checkedIcon={<CheckBoxIcon fontSize="small" />}
-						color="primary"
+						
+						style={{color:'white'}}
 					/>
 				}
-				label={label}
+				label={<Box component="div" fontSize={11} style={{textTransform:'capitalize'}}>
+				{label}
+		  		</Box>}
 			/>
 		</div>
 	);
@@ -160,9 +187,9 @@ const RegisterForm = props => {
 			<Field name="DOB" component={renderDate} label="Birthday" />
 			<Field name="Gender" component={renderSelectField} label="Gender">
 				<option value="" />
-				<option value={"Male"}>Male</option>
-				<option value={"Female"}>Female</option>
-				<option value={"Others"}>Others</option>
+				<option value={"Male"} style={{color:'black'}}>Male</option>
+				<option value={"Female"} style={{color:'black'}}>Female</option>
+				<option value={"Others"} style={{color:'black'}}>Others</option>
 			</Field>
 			<Field
 				name="acceptedTerms"

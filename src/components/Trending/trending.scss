@@ -1,25 +1,56 @@
 
 .trending-card{
-    height: 200px;
-    margin-top: 50px;
-    padding: 20px;
-    width: 400px;
+    height: 360px;
+    margin-top: 30px;
+    padding: 15px 20px;
+    width: 300px;
+    border-radius: 5px;
 
+    .tc-title{
+        font-size: 16.8px;
+        font-weight: 700;
+    }
+    .tc-title-wrapper{
+        margin-bottom: 20px;
+    }
+    .dark-title-wrapper{
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(80, 78, 78);
+    }
+    .light-title-wrapper{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dbdbdb;
+    }
     .trending-list{
         list-style: none;
         margin-top: 10px;
+       
 
         .trending-list-item{
             display: flex;
             align-items: flex-start;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
+            padding-bottom:5px;
             & div{
                 margin-left: 10px;
+            }
+
+            & h4{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            & p{
+                margin-top: 2px;
+                font-size: 12px;
+                color: #888DA8;
+                font-weight: 500;
             }
         }
 
         .dark-trending-list-item{
             color: #fff;
+          
         }
+  
     }
 }
