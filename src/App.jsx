@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomePage from "./components/Home";
+import { setDarkTheme, setLightTheme } from '../src/appRedux/actions/Settings'
 import Landing from "./components/Login";
 import Profile from "./components/Profile/Profile";
-import "./styles/global/global.scss";
+
+import { connect } from 'react-redux'
+import "./styles/global/global.css";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
+	useEffect(() =>{
+        let theme = localStorage.getItem('theme')
+        if(theme){
+            if(theme === 'light') props.lightTheme()
+            else props.darkTheme()
+        }
+	},[])
+	
 	return (
 		<Router>
 			<Switch>
@@ -18,4 +30,11 @@ const App = () => {
 	);
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        darkTheme:() => dispatch(setDarkTheme()),
+        lightTheme:() => dispatch(setLightTheme())
+    }
+}
+
+export default connect(null,mapDispatchToProps)(App)
