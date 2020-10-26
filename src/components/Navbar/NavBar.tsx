@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		menuButton: {
 			marginRight: theme.spacing(2),
+			
 		},
 		title: {
 			display: "none",
@@ -201,6 +202,8 @@ const NavBar: React.FC<Props> = props => {
 		   vertical: 'top',
 		   horizontal: 'center',
 		 }}
+		 style={{color:'red'}}
+		 PaperProps={{className:'popover-paper'}}
 	   >
 		   	<MenuItem >
 				Profile
@@ -269,10 +272,10 @@ const NavBar: React.FC<Props> = props => {
 					<IconButton
 						edge="start"
 						className={classes.menuButton}
-						color="inherit"
+						color='default'
 						aria-label="open drawer"
 						onClick={props.isDrawerOpen ? props.closeDrawer : props.openDrawer}>
-						{props.isDrawerOpen ? <CgMenuRight /> : <CgMenuLeft />}
+						{props.isDrawerOpen ? <CgMenuRight style={{color:props.textColor}} /> : <CgMenuLeft style={{color:props.textColor}}/>}
 					</IconButton>
 					<img src={props.navLogo} alt="nav-logo" className="nav-logo" />
 					<div
@@ -297,20 +300,20 @@ const NavBar: React.FC<Props> = props => {
 						<Button color="inherit" className={classes.navBtn}>Touch Base</Button>
 						<Button color="inherit" className={classes.navBtn}>Stream</Button>
 
-						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
-							<HomeIcon />
+						<IconButton aria-label="show 4 new mails" className={classes.menuItem}>
+							<HomeIcon style={{color:props.textColor}}/>
 						</IconButton>
-						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
-							<PeopleTwoToneIcon />
+						<IconButton aria-label="show 4 new mails"  className={classes.menuItem}>
+							<PeopleTwoToneIcon style={{color:props.textColor}}/>
 						</IconButton>
-						<IconButton aria-label="show 4 new mails" color="inherit" className={classes.menuItem}>
+						<IconButton aria-label="show 4 new mails"  className={classes.menuItem}>
 							<Badge badgeContent={4} color="secondary">
-								<MailIcon />
+								<MailIcon style={{color:props.textColor}}/>
 							</Badge>
 						</IconButton>
 						<IconButton aria-label="show 17 new notifications" color="inherit" className={classes.menuItem}>
 							<Badge badgeContent={17} color="secondary">
-								<NotificationsIcon />
+								<NotificationsIcon style={{color:props.textColor}}/>
 							</Badge>
 						</IconButton>
 
