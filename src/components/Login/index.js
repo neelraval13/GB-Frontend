@@ -8,7 +8,7 @@ import {
 import { FaUserPlus } from "react-icons/fa";
 import { RiLoginBoxFill } from "react-icons/ri";
 import logoImage from "../../assets/company/gb.png";
-import "./Login.css";
+import "./Login.scss";
 import Login from "./Login";
 import Register from "./Register";
 
