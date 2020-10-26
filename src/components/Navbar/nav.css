@@ -12,5 +12,8 @@
     object-fit: contain;
 }
 
+.popover-paper{
+    background-color: red;
+}
 
 

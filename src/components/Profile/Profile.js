@@ -4,6 +4,7 @@ import HomeGridLayout from '../../Layout/Grid/HomeGridLayout'
 import { connect } from "react-redux";
 
 const Profile = props => {
+    alert(props.Theme)
     return(
         <div>
             <NavBar />

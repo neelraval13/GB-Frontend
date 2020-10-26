@@ -2,7 +2,7 @@ import React from "react";
 import HomePage from "./components/Home";
 import Landing from "./components/Login";
 import Profile from "./components/Profile/Profile";
-import "./styles/global/global.css";
+import "./styles/global/global.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {

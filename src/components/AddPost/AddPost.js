@@ -5,6 +5,7 @@ import { IoLogoGameControllerB } from "react-icons/io";
 import './addpost.scss'
 import BottomBar from './components/BottomBar';
 import { connect } from 'react-redux'
+import InputForm from './components/InputForm';
 
 const AddPost = (props) => {
   const [defaultTab,setDefaultTab] = useState('tab-1')
@@ -26,16 +27,16 @@ const AddPost = (props) => {
           </ul> 
       
           <div class="tab-content">
-          
+              <InputForm theme={props.theme}/>
           </div>
       
           <div class="tab-content">
-          
+          <InputForm theme={props.theme}/>
           </div>
       
           <div class="tab-content">
-        
-          </div>
+          <InputForm theme={props.theme}/>
+          </div>  
         </div>
         <BottomBar textColor={props.textColor} bgColor={props.cardColor}/>
     </div>

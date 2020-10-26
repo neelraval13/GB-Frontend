@@ -18,6 +18,7 @@ const HomeGridLayout = (props: any) => {
 			<div
 				className="center-container"
 				style={{ backgroundColor: props.backgroundColor }}>
+					
 				<div className="container-content">{props.children}</div>
 				
 				<div className="container-right">

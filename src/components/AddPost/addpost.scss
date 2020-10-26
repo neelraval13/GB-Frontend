@@ -14,7 +14,7 @@
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
 	margin: 0;
-	padding-bottom: 40px;
+	height: 220px;
 	
 }
 
@@ -86,6 +86,7 @@
 	display: none;
 	color: #777;
 	min-height: 100px;
+	padding: 10px 15px;
 }
 
 
