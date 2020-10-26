@@ -307,7 +307,7 @@ const ChatDrawer = props => {
                       return (
                         <ChatListItem
                           {...item}
-                          open={open}
+                          open={open} 
                         />
                       );
                     }) }

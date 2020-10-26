@@ -8,6 +8,7 @@ import "./homegrid.css";
 import RecentlyUploaded from "../../components/RecentlyUploaded";
 
 const HomeGridLayout = (props: any) => {
+	const url = window.location.pathname.split("/")[1];
 	return (
 		<div className="home-grid">
 			<div
@@ -15,7 +16,7 @@ const HomeGridLayout = (props: any) => {
 				style={{ backgroundColor: props.backgroundColor }}>
 				<SideDrawer />
 			</div>
-			<div
+			{ url === "home" ?  <div
 				className="center-container"
 				style={{ backgroundColor: props.backgroundColor }}>
 				<div className="container-content">{props.children}</div>
@@ -24,7 +25,12 @@ const HomeGridLayout = (props: any) => {
 					<TrendingCard />
 					<RecentlyUploaded />
 				</div>
-			</div>
+			</div> : url === "profile" ? <div
+				className="profile-container"
+				style={{ backgroundColor: props.backgroundColor }}>
+					profile
+			</div> : <div></div> }
+
 
 			<div className="right-drawer"
 				style={{ backgroundColor: props.backgroundColor }}

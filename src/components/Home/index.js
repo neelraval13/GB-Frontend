@@ -8,17 +8,7 @@ import Stories from '../Stories/Stories'
 import TimelineCard from '../TimelineCard/TimelineCard'
 
 
-const HomePage = (props) => {
-
-    useEffect(() =>{
-        let theme = localStorage.getItem('theme')
-        if(theme){
-            if(theme === 'light') props.lightTheme()
-            else props.darkTheme()
-        }
-    },[])
-
-
+const HomePage = () => {
     return (
         <div>
         <NavBar/>
@@ -33,11 +23,6 @@ const HomePage = (props) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) =>{
-    return{
-        darkTheme:() => dispatch(setDarkTheme()),
-        lightTheme:() => dispatch(setLightTheme())
-    }
-}
 
-export default connect(null,mapDispatchToProps)(HomePage)
+
+export default HomePage;
