@@ -19,7 +19,6 @@ const HomeGridLayout = (props: any) => {
 			{ url === "home" ?  <div
 				className="center-container"
 				style={{ backgroundColor: props.backgroundColor }}>
-					
 				<div className="container-content">{props.children}</div>
 				
 				<div className="container-right">
@@ -29,7 +28,9 @@ const HomeGridLayout = (props: any) => {
 			</div> : url === "profile" ? <div
 				className="profile-container"
 				style={{ backgroundColor: props.backgroundColor }}>
-					profile
+					<div className="profile-content">
+						{props.children}
+					</div>
 			</div> : <div></div> }
 
 
