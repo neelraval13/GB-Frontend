@@ -9,6 +9,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
+import { Link } from 'react-router-dom'
 import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -128,7 +129,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		navBtn:{
 			textTransform:"capitalize",
-			
 		},
 		avatar:{
 			marginRight:10,
@@ -205,8 +205,8 @@ const NavBar: React.FC<Props> = props => {
 		 style={{color:'red'}}
 		 PaperProps={{className:'popover-paper'}}
 	   >
-		   	<MenuItem >
-				Profile
+		   	<MenuItem>
+			   <Link to="/profile/uid">Profile</Link>
 			</MenuItem>
 			<MenuItem >
 				Logout
