@@ -39,6 +39,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	labelStyles:{
 		color: "white",
+		fontSize:'11px'
 	}
 }));
 
@@ -136,7 +137,7 @@ const LoginForm = props => {
 				className={classes.textField}
 				variant="outlined"
 				size="small">
-				<InputLabel htmlFor="outlined-adornment-password" style={{color:'white'}}>
+				<InputLabel htmlFor="outlined-adornment-password" className={classes.labelStyles}>
 					Your Password
 				</InputLabel>
 				<Field name="Password" component={renderPass} />
