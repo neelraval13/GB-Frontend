@@ -9,7 +9,7 @@ import CommentSection from './CommentSection';
 import CardButtons from './CardButtons';
 import ThumbUpAlt from '@material-ui/icons/ThumbUpAlt';
 import LikeButtons from './LikeButtons';
-import { heartIcon, likeIcon } from '../../constants/app.icons';
+import { heartIcon, inLoveEmoji, likeIcon } from '../../constants/app.icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -80,7 +80,7 @@ const TimelineCard = (props:any) => {
             
             <div className={`${props.theme}-likes-comments-sections likes-comments-sections`}>
                   <div className='likes-inline'>
-                     <img src={`${likeIcon}`} className='reaction-icons'/>  <img src={`${heartIcon}`} className='reaction-icons'/> <span className='likes-count'>126</span>
+                     <img src={`${likeIcon}`} className='reaction-icons'/>  <img src={inLoveEmoji} className='reaction-icons'/> <span className='likes-count'>126</span>
                   </div>
                   <div className='dot'>
                     
