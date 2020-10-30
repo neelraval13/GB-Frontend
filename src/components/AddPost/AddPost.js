@@ -9,10 +9,11 @@ import InputForm from './components/InputForm';
 
 const AddPost = (props) => {
   const [defaultTab,setDefaultTab] = useState('tab-1')
-
+  const [openModal,setOpenModal] = useState(false)
   const onChangeInput = (event) =>{
         setDefaultTab(event.target.name)
   }
+  
   return (   
     <div className={`addpost-card ${props.theme}-section-bg main-container-card`} style={{backgroundColor:props.cardColor}}>
         <div className={`tabbed ${props.theme}-tabbed`}>

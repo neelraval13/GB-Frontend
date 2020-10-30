@@ -41,10 +41,10 @@ const InputForm = (props:any) => {
                rowsMax={5}
                InputProps={{ 
                  disableUnderline: true,
-                 
+                 className:props.theme === 'dark' ?classes.darkText:classes.lightText
               }}
               InputLabelProps={{
-                 
+                className:props.theme === 'dark' ?classes.darkText:classes.lightText
               }}
                />
         </div>

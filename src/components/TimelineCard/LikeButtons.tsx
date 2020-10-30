@@ -1,5 +1,7 @@
 import React from 'react'
 import Popover from '@material-ui/core/Popover';
+import { coolEmoji, inLoveEmoji, likeIcon, wowEmoji } from '../../constants/app.icons';
+import Tooltip from '@material-ui/core/Tooltip';
 
 interface Props{
     isMenuOpen:boolean;
@@ -24,15 +26,29 @@ const LikeButtons : React.FC<Props> = ({isMenuOpen,anchorEl,handleMenuClose}) =>
           vertical: 'bottom',
           horizontal: 'center',
         }}
-        
+        PaperProps={{
+          style:{borderRadius:30}
+        }}
     
       >
-        <div>
-        <span style={{fontSize:30}}>&#128077;</span>
-          <span style={{fontSize:30}}>&#x1F60D;</span>
-          <span style={{fontSize:30}}>&#128518;</span>
-          <span style={{fontSize:30}}>&#128545;</span>
-          <span style={{fontSize:30}}>&#129395;</span>
+        <div className='reaction-container'>
+        <Tooltip title="Like" placement="top">
+            <img src={`${likeIcon}`} className='reactions-img'/>
+        </Tooltip>
+        <Tooltip title="Love" placement="top">
+        <img src={inLoveEmoji} className='reactions-img'/>
+        </Tooltip>
+        <Tooltip title="Wow" placement="top">
+        <img src={wowEmoji} className='reactions-img'/>
+        </Tooltip>
+        <Tooltip title="Cool" placement="top">
+        <img src={coolEmoji} className='reactions-img'/>
+        </Tooltip>
+       
+        
+       
+         
+         
         </div>
           
       </Popover>

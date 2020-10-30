@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	labelStyles:{
 		color: "white",
+		fontSize:'11px'
 	}
 }));
 
@@ -101,7 +102,7 @@ const RegisterForm = props => {
 				className={classes.textField}
 				variant="outlined"
 				size="small">
-				<InputLabel htmlFor="outlined-adornment-password" style={{color:'white'}}>
+				<InputLabel htmlFor="outlined-adornment-password" className={classes.labelStyles}>
 					Your Password
 				</InputLabel>
 				<Field name="Password" component={renderPass} />
@@ -133,7 +134,7 @@ const RegisterForm = props => {
 
 	const renderSelectField = ({ input, label, _, children }) => (
 		<FormControl variant="outlined" className={classes.textField} size="small" style={{color:'white'}}>
-			<InputLabel htmlFor="gender" style={{color:'white'}}>Gender</InputLabel>
+			<InputLabel htmlFor="gender" className={classes.labelStyles}>Gender</InputLabel>
 			<Select
 				labelWidth={70}
 				native
