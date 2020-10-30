@@ -7,6 +7,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import Box from "@material-ui/core/Box";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
@@ -19,7 +20,7 @@ import { Field, reduxForm } from "redux-form";
 const useStyles = makeStyles(theme => ({
 	textField: {
 		marginTop: theme.spacing(1.5),
-		marginBottom: theme.spacing(1.5),
+		marginBottom: theme.spacing(2.3),
 		width: "100%",
 		color: "white",
 	},
@@ -31,7 +32,15 @@ const useStyles = makeStyles(theme => ({
 	inputStyles: {
 		color: "white",
 		fontFamily: ["Monsterrat", "Sans-Serif"].join(","),
+		fontSize:14
 	},
+	smaller:{
+		fontSize:11
+	},
+	labelStyles:{
+		color: "white",
+		fontSize:'11px'
+	}
 }));
 
 const LoginForm = props => {
@@ -59,6 +68,10 @@ const LoginForm = props => {
 					InputProps={{
 						className: classes.inputStyles,
 					}}
+					InputLabelProps={{
+						className:classes.labelStyles
+					}}
+					
 				/>
 			</div>
 		);
@@ -75,6 +88,7 @@ const LoginForm = props => {
 				}}
 				id="outlined-adornment-password"
 				type={showPass ? "text" : "password"}
+				style={{color:'white'}}
 				endAdornment={
 					<InputAdornment position="end">
 						<IconButton
@@ -82,10 +96,11 @@ const LoginForm = props => {
 							onClick={handleClickShowPassword}
 							onMouseDown={handleMouseDownPassword}
 							edge="end">
-							{showPass ? <Visibility /> : <VisibilityOff />}
+							{showPass ? <Visibility style={{color:'white'}}/> : <VisibilityOff style={{color:'white'}}/>}
 						</IconButton>
 					</InputAdornment>
 				}
+				
 			/>
 		);
 	};
@@ -99,10 +114,14 @@ const LoginForm = props => {
 						onChange={input.onChange}
 						icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
 						checkedIcon={<CheckBoxIcon fontSize="small" />}
-						color="primary"
+						style={{color:'white'}}
 					/>
 				}
-				label={label}
+				label={
+					<Box component="div" fontSize={11} style={{textTransform:'capitalize'}}>
+					  {label}
+					 </Box>
+			   }
 				className={classes.smaller}
 			/>
 		</div>
@@ -114,10 +133,11 @@ const LoginForm = props => {
 				InputProps={{
 					classes: classes.inputStyles,
 				}}
+				
 				className={classes.textField}
 				variant="outlined"
 				size="small">
-				<InputLabel htmlFor="outlined-adornment-password">
+				<InputLabel htmlFor="outlined-adornment-password" className={classes.labelStyles}>
 					Your Password
 				</InputLabel>
 				<Field name="Password" component={renderPass} />
@@ -134,9 +154,10 @@ const LoginForm = props => {
 					name="Remember"
 					component={renderCheckbox}
 					label="Remember Me?"
+					
 				/>
 				<div className="f-p">
-					<Button size="small" color="secondary">
+					<Button size="small" color="secondary" style={{fontSize:11,textTransform:'capitalize'}}>
 						Forgot Password?
 					</Button>
 				</div>
@@ -146,7 +167,9 @@ const LoginForm = props => {
 				className={clsx(classes.textField, classes.button)}
 				color="primary"
 				variant="contained"
-				type="submit">
+				type="submit"
+				style={{fontSize:11}}
+				>
 				Login
 			</Button>
 		</form>

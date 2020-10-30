@@ -40,11 +40,16 @@
 	}
 
 	&-card {
-		width: 35%;
-		height: 82%;
+		overflow: hidden;
+		::-webkit-scrollbar { 
+			display: none; 
+		}
+		width: 32%;
+		height: 95%;
 		align-self: start;
 		background-color: #202225;
 		display: flex;
+
 
 		.tabs {
 			display: flex;
@@ -79,17 +84,22 @@
 	}
 
 	&-form {
+		overflow: hidden;
+		::-webkit-scrollbar { 
+			display: none; 
+		}
 		&-wrapper {
+			
 			width: 100%;
 			overflow: auto;
 			.form-header {
 				border-bottom: 1px solid #2d3136;
 				width: 100%;
 				p {
-					padding: 17px;
-					font-size: 15px;
-					font-weight: 600;
-					color: #fff;
+					padding: 17px 26px;
+					font-size: 14.2px;
+					font-weight: 500;
+					color: rgba(255, 255, 255, 0.87);
 				}
 			}
 		}
@@ -97,6 +107,9 @@
 			width: 92%;
 			margin: 0 4%;
 			text-align: center;
+			padding-top: 20px;
+			padding-left: 15px;
+			padding-right: 15px;
 			form {
 				.bottom-opt {
 					display: flex;
@@ -112,12 +125,14 @@
 				}
 			}
 			.or {
-				font-size: 11px;
+				font-size: 12px;
+				font-weight: 500;
 				color: #8b8b8b;
-				text-transform: uppercase;
+				text-transform: capitalize;
 				display: flex;
 				align-items: center;
 				justify-content: space-evenly;
+				letter-spacing: 2px;
 				.line {
 					background-color: #e6ecf5;
 					width: 43%;
@@ -127,7 +142,8 @@
 			.register-link {
 				font-size: 13px;
 				color: #8b8b8b;
-				margin-top: 3%;
+				margin-top: 8%;
+				line-height: 1.8em;
 				a {
 					text-decoration: none;
 					color: #ff713a;
@@ -137,17 +153,41 @@
 	}
 }
 
+.social-btn-container{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.social-btn{
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	border-radius: 50px;
+	margin: 0px 10px;
+}
+.google{
+	background-color: rgb(243, 26, 73);
+}
+.facebook{
+	background-color: #4064AC;
+}
+.or-container{
+	
+	margin-top: 10px;
+}
+
 .MuiFormLabel-root {
-	color: #fff !important;
 	font-family: "Montserrat", sans-serif !important;
 }
 
-.MuiIconButton-root {
-	color: #fff !important;
-}
+
 
 .MuiInputBase-root {
-	color: #fff !important;
 	font-family: "Montserrat", sans-serif !important;
 }
 

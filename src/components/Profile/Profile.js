@@ -2,14 +2,14 @@ import React from "react";
 import NavBar from '../Navbar/NavBar';
 import HomeGridLayout from '../../Layout/Grid/HomeGridLayout'
 import { connect } from "react-redux";
+import ProfileCard from "./ProfileCard";
 
 const Profile = props => {
-    alert(props.Theme)
     return(
         <div>
             <NavBar />
             <HomeGridLayout>
-                
+                <ProfileCard />
             </HomeGridLayout>
         </div>
     );
