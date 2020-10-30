@@ -8,13 +8,19 @@
     
 }
 
-
 body{
-  overflow: hidden !important;
-  .home-grid{
-    overflow-y: scroll;
+  ::-webkit-scrollbar{
+    display: none;
   }
 }
+
+
+// body{
+//   overflow: hidden !important;
+//   .home-grid{
+//     overflow-y: scroll;
+//   }
+// }
 
 
 .dark-section-bg{

@@ -35,7 +35,7 @@ const ChatListItem = ({...props}) => {
                     variant="dot"
                 >
                     <Avatar
-                        style={{height: '35px', width: '35px'}}
+                        style={{height: '33px', width: '33px'}}
                     />
                 </StyledBadge>
             </ListItemAvatar>
@@ -44,14 +44,14 @@ const ChatListItem = ({...props}) => {
                 secondary={props.online ? 'Online' : 'Offline'} 
                 primaryTypographyProps={{
                     style:{
-                        fontSize: '14px',
+                        fontSize: '12px',
                         fontWeight: 'bold',
                         color: dark ? 'white' : '#888DA8'
                     },
                 }}
                 secondaryTypographyProps={{
                     style:{
-                        fontSize: '12px',
+                        fontSize: '10px',
                         fontWeight: 'light',
                         color: dark ? '#c1c1c1' : '#888DA8'
                     }
