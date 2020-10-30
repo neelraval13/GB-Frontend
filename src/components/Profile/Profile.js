@@ -3,6 +3,7 @@ import NavBar from '../Navbar/NavBar';
 import HomeGridLayout from '../../Layout/Grid/HomeGridLayout'
 import { connect } from "react-redux";
 import ProfileCard from "./ProfileCard";
+import ProfileTabs from "./ProfileTabs";
 
 const Profile = props => {
     return(
@@ -10,6 +11,7 @@ const Profile = props => {
             <NavBar />
             <HomeGridLayout>
                 <ProfileCard />
+                <ProfileTabs />
             </HomeGridLayout>
         </div>
     );
