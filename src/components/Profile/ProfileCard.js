@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { Card, CardMedia, Avatar, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { SocialIcon } from 'react-social-icons'
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
 import { Instagram, Facebook, Twitter, LinkedIn, YouTube } from "@material-ui/icons"
 
 const useStyles = makeStyles((theme) => ({
@@ -82,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
     },
     bioWrapper: {
         display: "flex",
+        paddingBottom: "10px",
         justifyContent: "space-between",
         alignItems: "center"
     },
@@ -157,21 +160,6 @@ const ProfileCard = props => {
                         className={classes.iconWrapper}
                         style={dark ? {color: "white"} : {}}
                     >
-                        {/* <Instagram 
-                            className={classes.icons}
-                        />
-                        <Facebook 
-                            className={classes.icons}
-                        />
-                        <Twitter 
-                            className={classes.icons}
-                        />
-                        <YouTube 
-                            className={classes.icons}
-                        />
-                        <LinkedIn 
-                            className={classes.icons}
-                        /> */}
                         <SocialIcon network="instagram" className={classes.icons} />
                         <SocialIcon network="twitter" className={classes.icons} />
                         <SocialIcon network="facebook" className={classes.icons} />
@@ -273,15 +261,11 @@ const ProfileCard = props => {
                         >
                             Bio
                         </div>
-                        <Button 
-                            style={{textTransform: "none"}}
-                            className={clsx(classes.btn, {
-                                [classes.btnLight]: dark,
-                                [classes.btnDark]: !dark,
-                            })}
-                        >
-                            Edit Profile
-                        </Button>
+                        <IconButton>
+                            <EditIcon 
+                                style={ dark ? {color: '#c1c1c1'} : {color: '#454545'}}
+                            />
+                        </IconButton>
                     </div>
                     <div
                         className={clsx(classes.descriptionWrapper, {
