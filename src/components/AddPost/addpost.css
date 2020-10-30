@@ -1,17 +1,7 @@
 .addpost-card {
-  margin-top: 20px;
+  margin-top: 15px;
   min-height: 200px;
   background-color: #fff;
-}
-
-.dark-card {
-  -webkit-box-shadow: 1px 2px 12px 2px rgba(22, 22, 22, 0.856);
-          box-shadow: 1px 2px 12px 2px rgba(22, 22, 22, 0.856);
-}
-
-.light-card {
-  -webkit-box-shadow: 1px 2px 12px -1px rgba(226, 226, 226, 0.75);
-          box-shadow: 1px 2px 12px -1px rgba(226, 226, 226, 0.75);
 }
 
 .icon {
@@ -22,7 +12,7 @@
   overflow-x: hidden;
   /* so we could easily hide the radio inputs */
   margin: 0;
-  padding-bottom: 16px;
+  height: 220px;
 }
 
 .tabbed [type="radio"] {
@@ -95,6 +85,7 @@
   display: none;
   color: #777;
   min-height: 100px;
+  padding: 10px 15px;
 }
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .light-tab:nth-of-type(1) label,

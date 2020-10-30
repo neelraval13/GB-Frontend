@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden !important;
+}
+
+body .home-grid {
+  overflow-y: scroll;
+}
+
+.dark-section-bg {
+  background-color: #202225;
+  -webkit-box-shadow: 1px 2px 10px 1px #202225;
+          box-shadow: 1px 2px 10px 1px #202225;
+}
+
+.light-section-bg {
+  background-color: #fff;
+  -webkit-box-shadow: 1px 2px 10px 1px #d1d6ee;
+          box-shadow: 1px 2px 10px 1px #d1d6ee;
+}
+
+.dark-text-bg {
+  color: rgba(255, 255, 255, 0.856);
+}
+
+.light-section-bg {
+  color: #2e3036;
+}
+
+* > a {
+  text-decoration: none;
+}
+
+.main-container-card {
+  width: 600px;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.popover_class {
+  margin-top: 10px;
+  border: 1px solid black;
+  background-color: red !important;
+}
+
+.popover_class::before {
+  content: '';
+  position: absolute !important;
+  top: -20px;
+  right: 5px;
+  border-bottom: 10px solid black;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+  z-index: 10;
+}
+
+.swiper-button-next {
+  background-image: url(../../arrow.svg);
+  background-color: white;
+  padding: 10px !important;
+  border-radius: 50px;
+  width: 40px !important;
+  height: 40px !important;
+  right: 0px !important;
+  top: 75px !important;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  z-index: 10 !important;
+  border: 1px solid #eeeded;
+  -webkit-box-shadow: 0px 2px 5px -3px #575555;
+          box-shadow: 0px 2px 5px -3px #575555;
+}
+
+.swiper-button-prev {
+  background-image: url(../../arrow.svg);
+  background-color: white;
+  padding: 10px !important;
+  border-radius: 50px;
+  width: 40px !important;
+  height: 40px !important;
+  left: 0px !important;
+  top: 75px !important;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  z-index: 10 !important;
+  border: 1px solid #eeeded;
+  -webkit-box-shadow: 0px 2px 5px -3px #575555;
+          box-shadow: 0px 2px 5px -3px #575555;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+/*# sourceMappingURL=global.css.map */
