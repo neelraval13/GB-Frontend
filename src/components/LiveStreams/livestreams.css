@@ -18,9 +18,40 @@
           justify-content: space-between;
 }
 
-.livestreams-card .video-stream {
-  height: 200px;
-  width: 100px;
-  background-color: red;
+.stream-card {
+  width: 190px;
+  height: 180px;
+  background-color: rgba(238, 237, 237, 0.897);
+}
+
+.stream-card .streaming-img {
+  margin: 5px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.stream-card .streamer-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.stream-card .streamer-view .streamer-name {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.stream-card .streamer-view .streamer-context {
+  font-size: 8px;
+}
+
+.dark-stream-card {
+  background-color: #2d3136;
 }
 /*# sourceMappingURL=livestreams.css.map */

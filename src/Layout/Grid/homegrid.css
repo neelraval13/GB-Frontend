@@ -1,7 +1,7 @@
 .home-grid {
 	display: grid;
 	height: 100vh;
-	grid-template-columns: 0.3fr 6fr 0.3fr;
+	grid-template-columns: 0fr 6fr 0fr;
 	padding-top: 50px;
 }
 
@@ -21,7 +21,7 @@
 	flex-direction: row;
 }
 
-.profile-container{
+.profile-container {
 	height: 100%;
 	background-color: #18191c;
 	display: flex;
@@ -29,9 +29,8 @@
 	justify-content: center;
 }
 
-.profile-content{
-	width: 95%;
-	max-width: 1268px;
+.profile-content {
+	width: 100%;
 }
 
 .container-content {
