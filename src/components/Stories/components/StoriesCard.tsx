@@ -1,4 +1,4 @@
-import { url } from 'inspector'
+
 import React from 'react'
 import {AiFillPlusCircle} from 'react-icons/ai'
 import profiles from '../samdata.json'
@@ -19,7 +19,7 @@ const StoriesCard : React.FC<Props>= (props) => {
                props.isCurrentUser &&  <AiFillPlusCircle  className='add-icon' />
            }
            {
-                 props.isUsers &&  <img src={profiles[0].url} className='avatar-img' />
+                 props.isUsers &&  <img src={profiles[0].url} className='avatar-img' alt='avatar-img' />
            }
            <h4>{props.name}</h4>
         </div>

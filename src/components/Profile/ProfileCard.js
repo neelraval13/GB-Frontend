@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { SocialIcon } from 'react-social-icons'
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import { Instagram, Facebook, Twitter, LinkedIn, YouTube } from "@material-ui/icons"
+
 
 const useStyles = makeStyles((theme) => ({
     root: {

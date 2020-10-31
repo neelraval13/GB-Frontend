@@ -22,11 +22,11 @@ const App = props => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/" component={Landing} />
-				<Route path="/register" component={Landing} />
-				<Route path="/home" component={HomePage} />
-				<Route path="/profile/uid" component={Profile} />
-				<Route path="/profile/settings" component={AccountSettings} />
+				<Route exact path="" component={Landing} />
+				<Route exact path="/register" component={Landing} />
+				<Route exact path="/home" component={HomePage} />
+				<Route exact path="/profile/uid" component={Profile} />
+				<Route exact path="/profile/settings" component={AccountSettings} />
 			</Switch>
 		</Router>
 	);

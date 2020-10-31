@@ -10,7 +10,7 @@ import SwiperCore,{Navigation} from 'swiper'
 SwiperCore.use([Navigation])
 
 const Stories = (props:any) => {
-    const [swiper,setSwiper] = useState(null)
+ 
     const testUrl = "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" 
     return (
         <div className={`stories-section ${props.theme}-section-bg main-container-card`}>
