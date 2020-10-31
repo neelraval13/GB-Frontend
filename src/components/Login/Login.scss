@@ -41,15 +41,14 @@
 
 	&-card {
 		overflow: hidden;
-		::-webkit-scrollbar { 
-			display: none; 
+		::-webkit-scrollbar {
+			display: none;
 		}
 		width: 32%;
 		height: 95%;
 		align-self: start;
 		background-color: #202225;
 		display: flex;
-
 
 		.tabs {
 			display: flex;
@@ -85,11 +84,10 @@
 
 	&-form {
 		overflow: hidden;
-		::-webkit-scrollbar { 
-			display: none; 
+		::-webkit-scrollbar {
+			display: none;
 		}
 		&-wrapper {
-			
 			width: 100%;
 			overflow: auto;
 			.form-header {
@@ -153,14 +151,14 @@
 	}
 }
 
-.social-btn-container{
+.social-btn-container {
 	margin-top: 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
-.social-btn{
+.social-btn {
 	height: 40px;
 	width: 40px;
 	display: flex;
@@ -170,22 +168,19 @@
 	border-radius: 50px;
 	margin: 0px 10px;
 }
-.google{
+.google {
 	background-color: rgb(243, 26, 73);
 }
-.facebook{
-	background-color: #4064AC;
+.facebook {
+	background-color: #4064ac;
 }
-.or-container{
-	
+.or-container {
 	margin-top: 10px;
 }
 
 .MuiFormLabel-root {
 	font-family: "Montserrat", sans-serif !important;
 }
-
-
 
 .MuiInputBase-root {
 	font-family: "Montserrat", sans-serif !important;

@@ -16,29 +16,31 @@ const HomeGridLayout = (props: any) => {
 				style={{ backgroundColor: props.backgroundColor }}>
 				<SideDrawer />
 			</div>
-			{ url === "home" ?  <div
-				className="center-container"
-				style={{ backgroundColor: props.backgroundColor }}>
-				<div className="container-content">{props.children}</div>
-				
-				<div className="container-right">
-					<TrendingCard />
-					<RecentlyUploaded />
-				</div>
-			</div> : url === "profile" ? <div
-				className="profile-container"
-				style={{ backgroundColor: props.backgroundColor }}>
-					<div className="profile-content">
-						{props.children}
+			{url === "home" ? (
+				<div
+					className="center-container"
+					style={{ backgroundColor: props.backgroundColor }}>
+					<div className="container-content">{props.children}</div>
+
+					<div className="container-right">
+						<TrendingCard />
+						<RecentlyUploaded />
 					</div>
-			</div> : <div></div> }
+				</div>
+			) : url === "profile" ? (
+				<div
+					className="profile-container"
+					style={{ backgroundColor: props.backgroundColor }}>
+					<div className="profile-content">{props.children}</div>
+				</div>
+			) : (
+				<div></div>
+			)}
 
-
-			<div className="right-drawer"
-				style={{ backgroundColor: props.backgroundColor }}
-			>
+			<div
+				className="right-drawer"
+				style={{ backgroundColor: props.backgroundColor }}>
 				<ChatDrawer />
-
 			</div>
 		</div>
 	);
