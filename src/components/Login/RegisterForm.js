@@ -177,16 +177,16 @@ const RegisterForm = props => {
 		<form className="login-form-main-input" onSubmit={props.handleSubmit}>
 			<div className="reg-name">
 				<div className="reg-form-name-flex-item">
-					<Field component={renderInput} label="First Name" name="First Name" />
+					<Field component={renderInput} label="First Name" name="first_name" />
 				</div>
 				<div className="reg-form-name-flex-item">
-					<Field component={renderInput} label="Last Name" name="Last Name" />
+					<Field component={renderInput} label="Last Name" name="last_name" />
 				</div>
 			</div>
-			<Field name="Email" component={renderInput} label="Your Email" />
+			<Field name="email" component={renderInput} label="Your Email" />
 			{renderPassword()}
-			<Field name="DOB" component={renderDate} label="Birthday" />
-			<Field name="Gender" component={renderSelectField} label="Gender">
+			<Field name="birthday" component={renderDate} label="Birthday" />
+			<Field name="gender" component={renderSelectField} label="Gender">
 				<option value="" />
 				<option value={"Male"} style={{color:'black'}}>Male</option>
 				<option value={"Female"} style={{color:'black'}}>Female</option>
@@ -202,7 +202,7 @@ const RegisterForm = props => {
 				color="primary"
 				variant="contained"
 				type="submit">
-				Compelete Registeration!
+				Register
 			</Button>
 		</form>
 	);

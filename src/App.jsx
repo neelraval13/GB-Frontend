@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import "./styles/global/global.scss";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 const App = props => {
 	useEffect(() => {
@@ -20,17 +21,23 @@ const App = props => {
 	}, []);
 
 	return (
-		<Router>
+		<Router forceRefresh={true}>
 			<Switch>
-				<Route exact path="" component={Landing} />
-				<Route exact path="/register" component={Landing} />
-				<Route exact path="/home" component={HomePage} />
-				<Route exact path="/profile/uid" component={Profile} />
-				<Route exact path="/profile/settings" component={AccountSettings} />
+				<ProtectedRoute  exact path="/" component={HomePage} authUser={props.user} />
+				<Route  path="/home" component={HomePage} />
+				<Route  path="/register" component={Landing} />
+				<Route  path="/profile/uid" component={Profile} />
+				<Route  path="/profile/settings" component={AccountSettings} />
 			</Switch>
 		</Router>
 	);
 };
+
+const mapStateToProps = (state) =>{
+    return{
+        user:state.authState.isAuthenticated
+    }
+}
 
 const mapDispatchToProps = dispatch => {
 	return {
@@ -39,4 +46,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

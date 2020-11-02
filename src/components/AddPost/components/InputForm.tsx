@@ -45,6 +45,7 @@ const InputForm = (props:any) => {
               InputLabelProps={{
                 className:props.theme === 'dark' ?classes.darkText:classes.lightText
               }}
+              onClick={() => props.openModal()}
                />
         </div>
 

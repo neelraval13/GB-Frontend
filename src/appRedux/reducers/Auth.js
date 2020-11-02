@@ -3,7 +3,10 @@ import {
  } from "../../constants/actionTypes"
 
 const INIT_STATE ={
-    authUser:''
+    isAuthenticated:localStorage.getItem('token') ? true:false,
+    authUser:'',
+    error:'',
+    token:localStorage.getItem('token'),
 }
 
 const authReducer =  (state=INIT_STATE,action) =>{
@@ -11,7 +14,9 @@ const authReducer =  (state=INIT_STATE,action) =>{
         case LOGIN_USER:
             return {
                 ...state,
-                authUser:action.payload
+                authUser:action.payload,
+                token:action.payload,
+                isAuthenticated:true,
             }
         
         case REGISTER_USER:

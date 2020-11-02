@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { createStyles, Theme, withStyles, WithStyles,makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -32,7 +32,13 @@ const styles = (theme: Theme) =>
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
-      color: theme.palette.grey[500],
+      color: "#fff",
+      backgroundColor:'#ed204b',
+      paddingLeft:8,
+      paddingRight:8,
+      paddingTop:5,
+      paddingBottom:5,
+      borderRadius:3
     },
   
   });
@@ -47,8 +53,16 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-  
+      <Typography variant="h6" style={{fontSize:16}}>{children}</Typography>
+      {onClose ? (
+        <IconButton 
+        aria-label="close" 
+        className={classes.closeButton} 
+        onClick={onClose} 
+      >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
     </MuiDialogTitle>
   );
 });
@@ -93,12 +107,35 @@ const useStyles = makeStyles({
     display:'flex',
     flexDirection:'column',
     alignItems:'center'
+  },
+  preview:{
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    width:'650px',
+  },
+  previewImageContainer:{
+    marginTop:15,
+    marginLeft:25,
+    marginRight:25,
+    height:"450px"
+  },
+  previewImageMain:{
+    height:'60%',
+    width:'100%',
+
+  },
+  previewImageInline:{
+    height:'40%',
+    display:'flex',
+    flexDirection:"row"
   }
 });
 
 const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
   const classes = useStyles()
   const fileRef = useRef<HTMLInputElement>(null);
+  const [imagesUrl,setImagesUrl] = useState('')
 
   const handleFileClick = () =>{
      if(fileRef && fileRef.current){
@@ -109,7 +146,8 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
   const handleSubmit = (event:any) => {
     event.preventDefault();
     if(fileRef && fileRef.current){
-      console.log(fileRef.current.files)
+      console.log(URL.createObjectURL(event.target.files[0]))
+       setImagesUrl(URL.createObjectURL(event.target.files[0]))
     }
    
   }
@@ -128,10 +166,12 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
       maxWidth="xl"
       >
         <DialogTitle id="select-medeia-modal" onClose={handleModalClose}>
-          Select Media to Upload
+          Create Post
         </DialogTitle>
         <DialogContent dividers>
-         <div className={classes.flex}>
+         {
+           imagesUrl === '' ?
+           <div className={classes.flex}>
               <div className={classes.row1} onClick={handleFileClick} style={{cursor:"pointer"}}>
                   
                     <div className={classes.inlineFlex}>
@@ -142,7 +182,7 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
                         <p>Browse from your computer</p>
                     </div>
               </div>
-              <div className={classes.row2}>
+              <div className={classes.row2} style={{cursor:"pointer"}}>
                     <div className={classes.inlineFlex}>
                     <FcGallery style={{fontSize:25,marginBottom:10}}/>
                     <h3>Choose from my photos</h3>
@@ -150,6 +190,18 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
                     </div>
               </div>
          </div>
+         :
+         <div className={classes.preview}>
+              <div className={classes.previewImageContainer}>
+              <img src={imagesUrl}  className={classes.previewImageMain}/>
+              <div className={classes.previewImageInline}>
+                  
+              </div>
+              </div>
+
+              <input />
+         </div>
+         }
          
         </DialogContent>
     
