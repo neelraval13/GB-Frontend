@@ -34,12 +34,11 @@ const HomeGridLayout = (props: any) => {
 			</div> : <div></div> }
 
 
-			<div className="right-drawer"
+			{/* <div className="right-drawer"
 				style={{ backgroundColor: props.backgroundColor }}
 			>
 				<ChatDrawer />
-
-			</div>
+			</div> */}
 		</div>
 	);
 };

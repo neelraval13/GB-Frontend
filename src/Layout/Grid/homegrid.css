@@ -1,7 +1,7 @@
 .home-grid {
 	display: grid;
 	height: 100vh;
-	grid-template-columns: 0.3fr 6fr 0.3fr;
+	grid-template-columns: 0.3fr 6fr;
 	padding-top: 50px;
 }
 

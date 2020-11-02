@@ -11,6 +11,7 @@ import { Instagram, Facebook, Twitter, LinkedIn, YouTube } from "@material-ui/ic
 const useStyles = makeStyles((theme) => ({
     root: {
       minWidth: 275,
+      borderRadius: "10px",
       marginTop: theme.spacing(8)
     },
     media: {
@@ -23,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
     profileImageWrapper: {
         position: "absolute",
         bottom: "-30px",
-        padding: "7px",
+        padding: "6px",
         borderRadius: "50%",
         backgroundColor: "white"
     },
     profileImage: {
-        width: theme.spacing(18),
-        height: theme.spacing(18),
+        width: "124px",
+        height: "124px",
     },
     nameWrapper: {
         display: "flex",
@@ -111,7 +112,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
         alignItems: "center",
         fontWeight: "600",
-        fontSize: "15px"
+        fontSize: "14px"
+    },
+    statusTitle: {
+        fontWeight: "700",
+        fontSize: "16px"
     },
     descriptionWrapper: {
         fontWeight: "500",
@@ -146,7 +151,6 @@ const ProfileCard = props => {
                     >
                         <Avatar 
                             className={classes.profileImage}
-                            style={dark ? {border: "1px solid #a0a0a0"} : {border: "1px solid #3e3e3e"}}
                             src="https://bestprofilepix.com/wp-content/uploads/2014/02/stylish-little-boy-profile-pic.jpg"
                             alt="boy"
                         />
@@ -171,18 +175,14 @@ const ProfileCard = props => {
                         className={classes.totalName}
                     >
                         <div
-                            className={clsx(classes.name, {
-                                [classes.textLight]: dark,
-                                [classes.textDark]: !dark,
-                            })}
+                            className={classes.name}
+                            style={dark ? {color: "white"} : {color: "#515365"}}
                         >
                             Aravind Kumar
                         </div>
                         <div
-                            className={clsx(classes.subName, {
-                                [classes.textLight]: dark,
-                                [classes.textDark]: !dark,
-                            })}
+                            className={classes.subName}
+                            style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
                         >
                             AKG Kurup
                         </div>
@@ -191,55 +191,63 @@ const ProfileCard = props => {
                         className={classes.statsWrapper}
                     >
                         <div
-                            className={clsx(classes.statsColumn, {
-                                [classes.btnLight]: dark,
-                                [classes.btnDark]: !dark,
-                            })}
+                            className={classes.statsColumn}
                         >
-                            <div>
-                                Posts
-                            </div>
-                            <div>
+                            <div 
+                                className={classes.statusTitle}
+                                style={dark ? {color: "white"} : {color: "#515365"}}
+                            >
                                 1000
                             </div>
+                            <div
+                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                            >
+                                Posts
+                            </div>
                         </div>
                         <div
-                            className={clsx(classes.statsColumn, {
-                                [classes.btnLight]: dark,
-                                [classes.btnDark]: !dark,
-                            })}
+                            className={classes.statsColumn}
                         >
-                            <div>
-                                Friends
-                            </div>
-                            <div>
+                            <div 
+                                className={classes.statusTitle}
+                                style={dark ? {color: "white"} : {color: "#515365"}}
+                            >
                                 200
                             </div>
+                            <div
+                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                            >
+                                Friends
+                            </div>
                         </div>
                         <div
-                            className={clsx(classes.statsColumn, {
-                                [classes.btnLight]: dark,
-                                [classes.btnDark]: !dark,
-                            })}
+                            className={classes.statsColumn}
                         >
-                            <div>
-                                Followers
-                            </div>
-                            <div>
+                            <div 
+                                className={classes.statusTitle}
+                                style={dark ? {color: "white"} : {color: "#515365"}}
+                            >
                                 10k
                             </div>
+                            <div
+                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                            >
+                                Followers
+                            </div>
                         </div>
                         <div
-                            className={clsx(classes.statsColumn, {
-                                [classes.btnLight]: dark,
-                                [classes.btnDark]: !dark,
-                            })}
+                            className={classes.statsColumn}
                         >
-                            <div>
-                                Following
-                            </div>
-                            <div>
+                            <div 
+                                className={classes.statusTitle}
+                                style={dark ? {color: "white"} : {color: "#515365"}}
+                            >
                                 10
+                            </div>
+                            <div
+                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                            >
+                                Following
                             </div>
                         </div>
                     </div>
@@ -254,24 +262,20 @@ const ProfileCard = props => {
                         className={classes.bioWrapper}
                     >
                         <div
-                            className={clsx(classes.bio, {
-                                [classes.textLight]: dark,
-                                [classes.textDark]: !dark,
-                            })}
+                            className={classes.bio}
+                            style={dark ? {color: "white"} : {color: "#515365"}}
                         >
                             Bio
                         </div>
                         <IconButton>
                             <EditIcon 
-                                style={ dark ? {color: '#c1c1c1'} : {color: '#454545'}}
+                                style={dark ? {color: "#f3f3f3"} : {color: "#515365"}}
                             />
                         </IconButton>
                     </div>
                     <div
-                        className={clsx(classes.descriptionWrapper, {
-                            [classes.textLight]: dark,
-                            [classes.textDark]: !dark,
-                        })}
+                        className={classes.descriptionWrapper}
+                        style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
                     >
                         fsdfsdf sdfsdfsdf sfsdfsd sdf sff. in the Universe|Only Actor to
                         win max dfs f dfs dfsd fsd fds fsd fs sdf sd f sdf sd fs df fsdtitles
