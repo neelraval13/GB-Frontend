@@ -5,6 +5,12 @@ import PropTypes from 'prop-types'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/core/styles';
+import Timeline from './Timeline';
+import Gameplays from './Gameplays';
+import Stream from './Stream';
+import Videos from './Videos';
+import Photos from './Photos';
+import About from './About';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -45,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     },
     selected: {
       backgroundColor : '#ed204b',
-      borderRadius : '4px',
+      borderRadius : '10px',
       color: 'white !important'
     },
     tabRootLight: {
@@ -90,7 +96,7 @@ const ProfileTabs = props => {
                 scrollButtons="off"
                 aria-label="simple tabs example"
                 indicatorColor="none"
-                style={dark ? {border: '1px solid #656565', borderRadius: '4px', minHeight: '60px'} : {border: '1px solid #c5c5c5', borderRadius: '4px', minHeight: '60px'}}
+                style={dark ? {border: '1px solid #656565', borderRadius: '10px', minHeight: '60px'} : {border: '1px solid #c5c5c5', borderRadius: '10px', minHeight: '60px'}}
             >
                 <Tab 
                     label="Timeline" 
@@ -133,22 +139,22 @@ const ProfileTabs = props => {
                 />
             </Tabs>
             <TabPanel value={value} index={0}>
-                Item One
+                <Timeline />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Item Two
+                <Stream />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <Gameplays />
             </TabPanel>
             <TabPanel value={value} index={3}>
-                Item Four
+                <Videos />
             </TabPanel>
             <TabPanel value={value} index={4}>
-                Item Five
+                <Photos />
             </TabPanel>
             <TabPanel value={value} index={5}>
-                Item Six
+                <About />
             </TabPanel>
         </div>
     );
