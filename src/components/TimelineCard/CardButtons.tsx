@@ -1,11 +1,9 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
-import BookmarkOutlinedIcon from '@material-ui/icons/BookmarkOutlined';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>

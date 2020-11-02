@@ -140,14 +140,14 @@ const LoginForm = props => {
 				<InputLabel htmlFor="outlined-adornment-password" className={classes.labelStyles}>
 					Your Password
 				</InputLabel>
-				<Field name="Password" component={renderPass} />
+				<Field name="password" component={renderPass} />
 			</FormControl>
 		);
 	};
 
 	return (
 		<form className="login-form-main-input" onSubmit={props.handleSubmit}>
-			<Field name="Email" component={renderInput} label="Your Email" />
+			<Field name="email" component={renderInput} label="Your Email" />
 			{renderPassword()}
 			<div className="bottom-opt">
 				<Field
