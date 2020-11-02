@@ -16,7 +16,7 @@ const HomeGridLayout = (props: any) => {
 				style={{ backgroundColor: props.backgroundColor }}>
 				<SideDrawer />
 			</div>
-			{url === "home" ? (
+			{url === "home" || url === '' ? (
 				<div
 					className="center-container"
 					style={{ backgroundColor: props.backgroundColor }}>

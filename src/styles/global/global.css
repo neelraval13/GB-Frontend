@@ -7,8 +7,8 @@
   padding: 0;
 }
 
-body ::-webkit-scrollbar {
-  display: none;
+body {
+  
 }
 
 .dark-section-bg {
