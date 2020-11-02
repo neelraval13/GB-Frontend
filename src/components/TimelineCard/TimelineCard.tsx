@@ -7,9 +7,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import CommentSection from './CommentSection';
 import CardButtons from './CardButtons';
-import ThumbUpAlt from '@material-ui/icons/ThumbUpAlt';
 import LikeButtons from './LikeButtons';
-import { heartIcon, inLoveEmoji, likeIcon } from '../../constants/app.icons';
+import { inLoveEmoji, likeIcon } from '../../constants/app.icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,7 +40,6 @@ const TimelineCard = (props:any) => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);  
     const isMenuOpen = Boolean(anchorEl);
-    const menuId = "primary-search-account-menu";
     const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
        setAnchorEl(event.currentTarget);
     };
@@ -80,7 +78,7 @@ const TimelineCard = (props:any) => {
             
             <div className={`${props.theme}-likes-comments-sections likes-comments-sections`}>
                   <div className='likes-inline'>
-                     <img src={`${likeIcon}`} className='reaction-icons'/>  <img src={inLoveEmoji} className='reaction-icons'/> <span className='likes-count'>126</span>
+                     <img src={`${likeIcon}`} className='reaction-icons' alt='reaction-icon'/>  <img src={inLoveEmoji} alt='reaction-icon' className='reaction-icons'/> <span className='likes-count'>126</span>
                   </div>
                   <div className='dot'>
                     

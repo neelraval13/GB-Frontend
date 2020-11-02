@@ -53,6 +53,7 @@ const BottomBar : React.FC<Props> = ({bgColor,textColor}) => {
     const handleModalOpen = () =>{
         setOpenModal(true)
       }
+      
     return (
         <React.Fragment>
         <div className={classes.flex}>

@@ -105,11 +105,18 @@ const useStyles = makeStyles(theme =>
 			padding: theme.spacing(3),
 		},
 		listItems: {
+			marginTop: theme.spacing(4),
+			marginBottom: theme.spacing(2),
+			marginLeft: theme.spacing(1),
+			marginRight: "auto",
+
+			width: "75%",
 			"& a": { textDecoration: "none" },
 			"&:hover, &:active": {
 				borderRadius: "4px",
-				width: "99.9%",
-				margin: "0 auto",
+				marginTop: theme.spacing(4),
+				marginBottom: theme.spacing(2),
+				marginLeft: theme.spacing(1),
 			},
 		},
 		listItemsDark: {
