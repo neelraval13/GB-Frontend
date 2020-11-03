@@ -47,11 +47,11 @@ function a11yProps(index) {
   
 const useStyles = makeStyles((theme) => ({
     root: {
-        paddingTop: theme.spacing(5)
+        paddingTop: "15px"
     },
     selected: {
       backgroundColor : '#ed204b',
-      borderRadius : '10px',
+      borderRadius : '6px',
       color: 'white !important'
     },
     tabRootLight: {
@@ -96,7 +96,7 @@ const ProfileTabs = props => {
                 scrollButtons="off"
                 aria-label="simple tabs example"
                 indicatorColor="none"
-                style={dark ? {border: '1px solid #656565', borderRadius: '10px', minHeight: '60px'} : {border: '1px solid #c5c5c5', borderRadius: '10px', minHeight: '60px'}}
+                style={{border: dark ?'1px solid #656565' : '1px solid #c5c5c5', borderRadius: '6px', minHeight: '60px', marginBottom: '15px'}}
             >
                 <Tab 
                     label="Timeline" 

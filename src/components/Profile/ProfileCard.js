@@ -11,7 +11,7 @@ import { Instagram, Facebook, Twitter, LinkedIn, YouTube } from "@material-ui/ic
 const useStyles = makeStyles((theme) => ({
     root: {
       minWidth: 275,
-      borderRadius: "10px",
+      borderRadius: "6px",
       marginTop: theme.spacing(8)
     },
     media: {
