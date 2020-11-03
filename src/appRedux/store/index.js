@@ -1,9 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { reducer as formReducer } from "redux-form";
-import thunk from "redux-thunk";
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import authReducer from "../reducers/Auth";
 import SettingsReducer from "../reducers/Settings";
 import { composeWithDevTools } from "redux-devtools-extension";
+
+
+const loggerMiddleware = createLogger();
+
 
 const appReducer = combineReducers({
 	authState: authReducer,
@@ -16,6 +21,8 @@ export default function configureStore(preloadedState) {
 		appReducer,
 		composeWithDevTools(),
 		preloadedState,
-		applyMiddleware(thunk)
+		applyMiddleware( 
+			thunkMiddleware,
+			loggerMiddleware)
 	);
 }

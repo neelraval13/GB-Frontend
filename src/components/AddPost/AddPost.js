@@ -6,13 +6,26 @@ import './addpost.scss'
 import BottomBar from './components/BottomBar';
 import { connect } from 'react-redux'
 import InputForm from './components/InputForm';
+import Button from '@material-ui/core/Button';
+import SelectMediaModal from './components/SelectMediaModal';
+
 
 const AddPost = (props) => {
   const [defaultTab,setDefaultTab] = useState('tab-1')
-  const [openModal,setOpenModal] = useState(false)
+  const [openModal,setOpenModal] = React.useState(false)
+
   const onChangeInput = (event) =>{
         setDefaultTab(event.target.name)
   }
+  
+
+  const handleModalClose = () =>{
+      setOpenModal(false)
+    }
+  
+  const handleModalOpen = () =>{
+      setOpenModal(true)
+    }
   
   return (   
     <div className={`addpost-card ${props.theme}-section-bg main-container-card`} style={{backgroundColor:props.cardColor}}>
@@ -28,7 +41,7 @@ const AddPost = (props) => {
           </ul> 
       
           <div class="tab-content">
-              <InputForm theme={props.theme}/>
+              <InputForm theme={props.theme} openModal={handleModalOpen} />
           </div>
       
           <div class="tab-content">
@@ -39,7 +52,17 @@ const AddPost = (props) => {
           <InputForm theme={props.theme}/>
           </div>  
         </div>
-        <BottomBar textColor={props.textColor} bgColor={props.cardColor}/>
+        {/* <BottomBar textColor={props.textColor} bgColor={props.cardColor}/> */}
+        <div style={{margin:6}}>
+        <Button 
+        fullWidth
+        variant="contained" 
+        style={{backgroundColor:'#ed204b',color:'#fff'}}
+        >
+        Add Post
+      </Button>
+        </div>
+      <SelectMediaModal open={openModal} handleModalClose={handleModalClose}/>
     </div>
    
    

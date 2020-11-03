@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
@@ -7,6 +7,8 @@ import { SiGoogle } from "react-icons/si";
 import { FaFacebookF } from "react-icons/fa";
 import {signInWithFacebook, signInWithGoogle} from '../../services/firebase'
 import LoginForm from "./LoginForm";
+import { connect } from 'react-redux'
+import { signInUser } from "../../appRedux/actions/Auth";
 
 const useStyles = theme => ({
 	button: {
@@ -26,19 +28,24 @@ const useStyles = theme => ({
 	},
 });
 
-class Login extends Component {
-	onSubmit = formvalues => {
-		alert(JSON.stringify(formvalues));
+const  Login = (props) => {
+	const { classes } = props;
+	const history = useHistory()
+
+
+	
+	const onSubmit = formvalues => {
+		props.loginUser(formvalues,history)
 	};
-	render() {
-		const { classes } = this.props;
-		return (
+
+	
+	return (
 			<div className="login-form-wrapper">
 				<div className="form-header">
 					<p>Login to your Account</p>
 				</div>
 				<div className="login-form-inner">
-					<LoginForm onSubmit={this.onSubmit} />
+					<LoginForm onSubmit={onSubmit} />
 					<div className="or-container">
 						
 						<h5 className='or'>or Sign Up Using</h5>
@@ -66,6 +73,11 @@ class Login extends Component {
 			</div>
 		);
 	}
+
+const mapDispatchToProps = (dispatch) =>{
+	return{
+		loginUser:(userData,history) => signInUser(userData,dispatch,history)
+	}
 }
 
-export default withStyles(useStyles)(Login);
+export default connect(null,mapDispatchToProps)(withStyles(useStyles)(Login))

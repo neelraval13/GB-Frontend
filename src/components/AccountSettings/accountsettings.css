@@ -1,0 +1,122 @@
+.settings-banner {
+  background-image: url("../../assets/backgrounds/settingsBannerBg.png");
+  background-position: center;
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: repeat;
+  margin: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: slide 50s linear infinite;
+  animation: slide 50s linear infinite;
+  will-change: background-position;
+  background-size: auto;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings-banner img {
+  width: 60%;
+  max-width: 1268px;
+  margin-bottom: 1%;
+}
+
+.settings-banner .welcome-message {
+  width: 50%;
+  min-width: 800px;
+  margin-bottom: 3%;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.settings-banner .welcome-message h1 {
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.settings-banner .welcome-message p {
+  font-size: 14px;
+  margin-top: 2%;
+}
+
+.settings-content {
+  width: 80%;
+  margin: 5% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-content .side-navbar-wrapper {
+  border-radius: 5px;
+  width: 25%;
+}
+
+.settings-content .side-navbar-wrapper .side-navbar-inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.settings-content .side-navbar-wrapper .side-navbar-inner .brdrbtm {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.settings-content .side-navbar-wrapper .side-navbar-inner .tit {
+  padding: 9px 0 9px 20px;
+  font-size: 13px;
+  color: #888da8;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.settings-content .side-navbar-wrapper .side-navbar-inner .nvlst {
+  padding: 15px 0 15px 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.settings-content .side-navbar-wrapper .side-navbar-inner .nvlst .inner-link {
+  width: 100%;
+  height: 100%;
+}
+
+.settings-content .side-settings-tab-wrapper {
+  border-radius: 5px;
+  width: 70%;
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -4000px 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -4000px 0;
+  }
+}
+/*# sourceMappingURL=accountsettings.css.map */

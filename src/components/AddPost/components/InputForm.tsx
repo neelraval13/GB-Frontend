@@ -2,7 +2,6 @@ import React from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,6 +45,7 @@ const InputForm = (props:any) => {
               InputLabelProps={{
                 className:props.theme === 'dark' ?classes.darkText:classes.lightText
               }}
+              onClick={() => props.openModal()}
                />
         </div>
 

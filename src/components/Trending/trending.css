@@ -1,8 +1,28 @@
 .trending-card {
-  height: 200px;
-  margin-top: 50px;
-  padding: 20px;
-  width: 400px;
+  height: 360px;
+  margin-top: 30px;
+  padding: 15px 20px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.trending-card .tc-title {
+  font-size: 16.8px;
+  font-weight: 700;
+}
+
+.trending-card .tc-title-wrapper {
+  margin-bottom: 20px;
+}
+
+.trending-card .dark-title-wrapper {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #504e4e;
+}
+
+.trending-card .light-title-wrapper {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .trending-card .trending-list {
@@ -17,11 +37,24 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .trending-card .trending-list .trending-list-item div {
   margin-left: 10px;
+}
+
+.trending-card .trending-list .trending-list-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trending-card .trending-list .trending-list-item p {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #888DA8;
+  font-weight: 500;
 }
 
 .trending-card .trending-list .dark-trending-list-item {

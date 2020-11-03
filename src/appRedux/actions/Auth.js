@@ -8,6 +8,7 @@ import {
 
 
 export const loginUser = (user) =>{
+    console.log("calling set authUser")
     return {
         type: LOGIN_USER,
         payload: user
@@ -28,16 +29,26 @@ export const logoutUser = () =>{
 }
 
 
-export const siginUser = async (userdata,dispatch) =>{
+
+export const signInUser = async (userdata,dispatch,history) =>{
+    console.log("login action called")
+  
+
     try {
-        let response = await fetch('http://127.0.0.1:8000/users/login/',{
+        let response = await fetch(process.env.REACT_APP_API_URL+'users/login/',{
             method:'POST',
+            headers:{
+                "Content-Type":"application/json"
+            },
             body:JSON.stringify(userdata)
         })
         let res = await response.json()
         if(response.ok){
             console.log(res)
-            dispatch(loginUser(res))
+            localStorage.setItem('token',res.token)
+            dispatch(loginUser(res.token))
+            history.push('/')
+
         }else{
             console.log(res)
         }
@@ -48,9 +59,9 @@ export const siginUser = async (userdata,dispatch) =>{
 }
 
 
-export const siginupUser = async (userdata,dispatch) =>{
+export const signUpUser = async (userdata,dispatch) =>{
     try {
-        let response = await fetch('http://127.0.0.1:8000/users/register/',{
+        let response = await fetch(process.env.REACT_APP_API_URL+'/users/register/',{
             method:'POST',
             body:JSON.stringify(userdata)
         })

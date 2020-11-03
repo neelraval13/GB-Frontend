@@ -1,7 +1,12 @@
 .timeline-card {
   min-height: 550px;
-  margin: 20px 0px;
+  margin: 15px 0px;
   padding: 10px;
+}
+
+.timeline-card .Mui-root.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
+  border-radius: 30px !important;
+  background-color: red !important;
 }
 
 .timeline-card .dark-more-options {
@@ -16,11 +21,25 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 15px 15px 8px;
   border-bottom: 1px solid #f3f3f3;
+}
+
+.timeline-card .likes-comments-sections .dot {
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50px;
+  margin-right: 6px;
+}
+
+.timeline-card .likes-comments-sections .reaction-icons {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
 }
 
 .timeline-card .likes-comments-sections .likes-inline {
@@ -34,10 +53,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 4px;
 }
 
 .timeline-card .likes-comments-sections .likes-inline .likes-count {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .timeline-card .likes-comments-sections .comments-count, .timeline-card .likes-comments-sections .likes-count {
@@ -75,7 +95,7 @@
           align-items: flex-start;
   width: 100%;
   margin-bottom: 10px;
-  padding: 20px 15px 0px;
+  padding: 10px 10px 0px;
 }
 
 .card-header-content .card-header-content-left {
@@ -140,6 +160,7 @@
   font-size: 13px;
   text-transform: capitalize;
   margin: 0px 2px;
+  padding: 0px;
 }
 
 .card-footer-content .light-timeline-btn {
@@ -262,7 +283,7 @@
   left: -8px;
   top: 10px;
   border-top: 8px solid transparent;
-  border-right: 8px solid #000000;
+  border-right: 8px solid #1a1b1c;
   border-left: none;
   border-bottom: 8px solid transparent;
 }
@@ -315,5 +336,32 @@
   border-radius: 20px;
   height: 35px;
   padding: 0px 20px;
+}
+
+.reaction-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 220px;
+  height: 50px;
+  padding: 10px;
+}
+
+.reaction-container .reactions-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.reaction-container .reactions-img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 /*# sourceMappingURL=timelinecard.css.map */
