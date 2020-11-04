@@ -50,12 +50,13 @@ const useStyles = makeStyles((theme) =>
         marginLeft:25,
         marginRight:25,
         marginTop:20,
+        marginBottom:20
     }
   }),
 );
 const PostAction  = (props) => {
     const classes = useStyles();
-    
+    const value =''
     return (
         <div>
             <div className={classes.description}>
@@ -65,6 +66,7 @@ const PostAction  = (props) => {
                 label="Share what you are thinking..." 
                 color='secondary' 
                 multiline
+                value={props.description}
                 rowsMax={3}
                 InputProps={{ 
                     disableUnderline: true,
@@ -72,6 +74,9 @@ const PostAction  = (props) => {
                 }}
                 InputLabelProps={{
                     className:props.theme === 'dark' ?classes.darkText:classes.lightText
+                }}
+                onChange={(event) =>{
+                    props.handleInputChange(event.target.value)
                 }}
                 
                 />

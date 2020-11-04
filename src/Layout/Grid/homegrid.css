@@ -4,23 +4,26 @@
 
 	grid-template-columns: 0.3fr 6fr;
 
-	padding-top: 50px;
+	padding-top: 60px;
 }
+
+
 
 .right-drawer {
 	height: 100%;
 	grid-row: 1;
 	grid-column: 3;
-	background-color: #292b2f;
+	
 }
 
 .center-container {
 	height: 100%;
 	grid-row: 1;
 	grid-column: 2;
-	background-color: #18191c;
 	display: flex;
 	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
 }
 
 .profile-container {
@@ -35,17 +38,16 @@
 	width: 95%;
 }
 
-.container-content {
-	width: 60%;
+ .container-content {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding-right: 15px;
+	margin-right: 18px;
 }
 
-.container-right {
+/* .container-right {
 	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-}
+}  */
