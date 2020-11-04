@@ -54,7 +54,7 @@
 
 .settings-content {
   width: 80%;
-  margin: 5% auto;
+  margin: 5% auto 1% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,6 +103,21 @@
 .settings-content .side-settings-tab-wrapper {
   border-radius: 5px;
   width: 70%;
+}
+
+.settings-content .accntset-sec-wrapper .sectit {
+  padding: 25px;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.settings-content .accntset-sec-wrapper .brdrbtm {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.settings-content .accntset-sec-wrapper .seccntnt {
+  padding: 25px;
 }
 
 @-webkit-keyframes slide {

@@ -41,7 +41,7 @@
 
 	&-content {
 		width: 80%;
-		margin: 5% auto;
+		margin: 5% auto 1% auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -76,6 +76,20 @@
 		.side-settings-tab-wrapper {
 			border-radius: 5px;
 			width: 70%;
+		}
+		.accntset-sec-wrapper {
+			.sectit {
+				padding: 25px;
+				font-weight: 600;
+				font-size: 19px;
+			}
+			.brdrbtm {
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+			}
+			.seccntnt {
+				padding: 25px;
+			}
 		}
 	}
 }
