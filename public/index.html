@@ -30,10 +30,13 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3UnyyYYqpcwjwylHRs66-cztd_lfdnjs&libraries=places"
+    <script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0JAD1YLVkufMbiRBC2ztvAwxaRPEvdZA&libraries=places"
     type="text/javascript"
     ></script>
+     <script defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0JAD1YLVkufMbiRBC2ztvAwxaRPEvdZA&libraries=places&callback=initMap">
+ </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -54,6 +57,9 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
@@ -62,14 +68,14 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyCzjQwUrUk13RjjJytTVJg3a-X2exz1f-0",
-    authDomain: "gamersback-6a285.firebaseapp.com",
-    databaseURL: "https://gamersback-6a285.firebaseio.com",
-    projectId: "gamersback-6a285",
-    storageBucket: "gamersback-6a285.appspot.com",
-    messagingSenderId: "377883977490",
-    appId: "1:377883977490:web:bb517eef017abc28a175cb",
-    measurementId: "G-TWGCX0DX9D"
+    apiKey: "AIzaSyDmNxUK8d36KuzGcGuKdXkCm4JOBELChtI",
+    authDomain: "gamersback-3af64.firebaseapp.com",
+    databaseURL: "https://gamersback-3af64.firebaseio.com",
+    projectId: "gamersback-3af64",
+    storageBucket: "gamersback-3af64.appspot.com",
+    messagingSenderId: "2474120229",
+    appId: "1:2474120229:web:84fd2bbadee41895bd9bcc",
+    measurementId: "G-MLD80VP7FC"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
