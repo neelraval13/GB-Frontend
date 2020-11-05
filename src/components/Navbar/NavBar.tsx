@@ -202,11 +202,11 @@ const NavBar: React.FC<Props> = props => {
 		   vertical: 'top',
 		   horizontal: 'center',
 		 }}
-		 style={{color:'red'}}
-		 PaperProps={{className:'popover-paper'}}
+		 style={{color:'red',overflow:"hidden"}}
+		 PaperProps={{className:'popover-paper',style:{backgroundColor:props.navColor,color:props.textColor}}}
 	   >
 		   	<MenuItem>
-			   <Link to="/profile/uid">Profile</Link>
+			   <Link to="/profile/uid" style={{color:props.textColor}}>Profile</Link>
 			</MenuItem>
 			<MenuItem >
 				Logout

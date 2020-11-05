@@ -10,8 +10,15 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import {FiMonitor} from 'react-icons/fi'
-import {FcGallery} from 'react-icons/fc'
+
+import SelectImages from './SelectImages';
+import PostPreview from './PostPreview';
+import CustomDialogTitle from './CustomDialogTitle';
+import { connect } from 'react-redux';
+import SelectLocation from './SelectLocation';
+import TagFriends from './TagFriends';
+import SelectPostSettings from './SelectPostSettings';
+import { randomIdGenerate } from '../../../utils/utils';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children?: React.ReactElement<any, any> },
@@ -76,66 +83,74 @@ const DialogContent = withStyles((theme: Theme) => ({
 interface Props{
   open :boolean;
   handleModalClose:() => void;
- 
+  theme:string;
+  cardColor:string;
+  textColor:string;
+  
 
 }
 
 const useStyles = makeStyles({
   dialog: {
     position: 'absolute',
-    top: 70
+    top: 50
   },
-  flex:{
-    display:'flex',
-    flexDirection:'row',
-    height:"180px",
-    width:'650px'
-  },
-  row1:{
-    width:'50%',
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  row2:{
-    width:'50%',
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center'
-  },
-  inlineFlex:{
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center'
-  },
-  preview:{
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center',
-    width:'650px',
-  },
-  previewImageContainer:{
-    marginTop:15,
-    marginLeft:25,
-    marginRight:25,
-    height:"450px"
-  },
-  previewImageMain:{
-    height:'60%',
-    width:'100%',
-
-  },
-  previewImageInline:{
-    height:'40%',
-    display:'flex',
-    flexDirection:"row"
-  }
+  
 });
 
-const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
+interface ImagesObj{
+  url:string;
+  id:string;
+}
+
+const SelectMediaModal : React.FC<Props> = ({open,handleModalClose,cardColor,textColor,theme}) => {
   const classes = useStyles()
+
+  //Input Files Refs
+
   const fileRef = useRef<HTMLInputElement>(null);
-  const [imagesUrl,setImagesUrl] = useState('')
+  const extrafileRef = useRef<HTMLInputElement>(null);
+
+  //Tabs State
+  const [openLocation,setOpenLocation] = useState(false)
+  const [openTagFriends,setOpenTagFriends] = useState(false)
+  const [openPostSettings,setOpenPostSettings] = useState(false)
+  const [openGallery,setOpenGallery] = useState(false)
+
+  //Post Detail State
+  const [imagesUrl,setImagesUrl] = useState<ImagesObj[]>([])
+  const [description,setDescription] = useState("")
+  
+  const handleInputChange = (text:string) =>{
+    setDescription(text)
+  } 
+
+  const handleGalleryOpen = () =>{
+    setOpenGallery(true)
+  }
+
+  const handleGalleryClose = () =>{
+    setOpenGallery(false)
+  }
+
+  const handleLocationOpen = () =>{
+      setOpenLocation(true)
+  }
+  const handleLocationClose = () =>{
+    setOpenLocation(false)
+  }
+  const handleTagFriendsOpen = () =>{
+      setOpenTagFriends(true)
+  }
+  const handleTagFriendsClose = () =>{
+    setOpenTagFriends(false)
+  }
+  const handleOpenPostSettings = () =>{
+    setOpenPostSettings(true)
+  }
+  const handleClosePostSettings = () =>{
+    setOpenPostSettings(false)
+  }
 
   const handleFileClick = () =>{
      if(fileRef && fileRef.current){
@@ -143,64 +158,111 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
      }
   }
 
+
   const handleSubmit = (event:any) => {
     event.preventDefault();
     if(fileRef && fileRef.current){
       console.log(URL.createObjectURL(event.target.files[0]))
-       setImagesUrl(URL.createObjectURL(event.target.files[0]))
+       setImagesUrl([{
+         "url":URL.createObjectURL(event.target.files[0]),
+         id:randomIdGenerate(4)
+       }])
     }
    
   }
+
+  const handleAddtionalImagesSubmit = (event:any) =>{
+    event.preventDefault();
+    if(extrafileRef && extrafileRef.current){
+      console.log(URL.createObjectURL(event.target.files[0]))
+       setImagesUrl([...imagesUrl,{
+        "url":URL.createObjectURL(event.target.files[0]),
+        id:randomIdGenerate(4)
+      }])
+    }
+  }
+
+  const handleRemoveImages = (id:string) =>{
+      const data = imagesUrl.filter(img => img.id != id)
+      setImagesUrl(data)
+  }
+  const handleOnClose = () =>{
+    setImagesUrl([])
+    handleModalClose()
+    handleClosePostSettings()
+    handleLocationClose()
+    handleTagFriendsClose()
+  }
+
 
   return (
     <div>
 
       <Dialog 
-      onClose={handleModalClose} 
+      onClose={handleOnClose} 
       aria-labelledby="select-medeia-modal" 
       open={open}
       TransitionComponent={Transition}
       classes={{
         paper:classes.dialog
       }}
+      PaperProps={{
+        style:{
+          backgroundColor:cardColor,
+          color:textColor
+        }
+      }}
       maxWidth="xl"
       >
-        <DialogTitle id="select-medeia-modal" onClose={handleModalClose}>
+       {
+          !(openLocation) && !(openPostSettings) && !(openTagFriends) ?
+          <DialogTitle id="select-medeia-modal" onClose={handleOnClose}>
           Create Post
         </DialogTitle>
-        <DialogContent dividers>
-         {
-           imagesUrl === '' ?
-           <div className={classes.flex}>
-              <div className={classes.row1} onClick={handleFileClick} style={{cursor:"pointer"}}>
-                  
-                    <div className={classes.inlineFlex}>
-                
-                        <input id="file-upload" type="file" ref={fileRef} style={{display:'none'}} onChange={handleSubmit}/>
-                        <FiMonitor  style={{fontSize:25,marginBottom:10}}/>
-                        <h3>Upload Photo</h3>
-                        <p>Browse from your computer</p>
-                    </div>
-              </div>
-              <div className={classes.row2} style={{cursor:"pointer"}}>
-                    <div className={classes.inlineFlex}>
-                    <FcGallery style={{fontSize:25,marginBottom:10}}/>
-                    <h3>Choose from my photos</h3>
-                    <p>Select from your uploads</p>
-                    </div>
-              </div>
-         </div>
-         :
-         <div className={classes.preview}>
-              <div className={classes.previewImageContainer}>
-              <img src={imagesUrl}  className={classes.previewImageMain}/>
-              <div className={classes.previewImageInline}>
-                  
-              </div>
-              </div>
+        :
 
-              <input />
-         </div>
+        (openLocation) && <CustomDialogTitle theme={theme} handleBack={handleLocationClose} title="Select Location"/> ||
+        (openTagFriends) && <CustomDialogTitle theme={theme} handleBack={handleTagFriendsClose} title="Tag Friends"/> ||
+        (openPostSettings) && <CustomDialogTitle theme={theme} handleBack={handleClosePostSettings} title="Select Privacy"/>
+       }
+        <DialogContent dividers style={{padding:"5px"}}>
+         {
+          !(openLocation) && !(openPostSettings) && !(openTagFriends) && imagesUrl.length === 0 ?
+           
+          <SelectImages 
+          fileRef={fileRef} 
+          handleFileClick={handleFileClick} 
+          handleSubmit={handleSubmit}
+          openGallery={openGallery}
+          handleGalleryClose={handleGalleryClose}
+          handleGalleryOpen={handleGalleryOpen}
+          cardColor={cardColor}
+          textColor={textColor}
+          />
+
+         :
+         !(openLocation) && !(openPostSettings) && !(openTagFriends) ?
+
+          <PostPreview 
+          extrafileRef={extrafileRef} 
+          handleAddtionalImagesSubmit={handleAddtionalImagesSubmit} 
+          imagesUrl={imagesUrl} 
+          handleOpenLocation={handleLocationOpen}
+          handleTagFriendsOpen={handleTagFriendsOpen}
+          handleOpenPostSettings={handleOpenPostSettings}
+          theme={theme}
+          handleInputChange={handleInputChange}
+          description={description}
+          mainImageId={imagesUrl[0].id}
+          removeImages={handleRemoveImages}
+          />
+
+          :
+
+          (openLocation) && <SelectLocation theme={theme}/> ||
+          (openTagFriends) && <TagFriends theme={theme}/> ||
+          (openPostSettings) && <SelectPostSettings theme={theme}/>
+
          }
          
         </DialogContent>
@@ -210,4 +272,10 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
   );
 }
 
-export default SelectMediaModal;
+const mapStateToProps = (state:any) =>{
+  return{
+    theme:state.settings.theme
+  }
+}
+
+export default connect(mapStateToProps)(SelectMediaModal);

@@ -1,4 +1,4 @@
-export const darkBgColor = '#18191c'
+export const darkBgColor = '#121212'
 export const lightBgColor = '#FAFAFA'
 
 export const darkCardColor = '#202225'

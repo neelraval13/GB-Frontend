@@ -16,10 +16,14 @@ const HomeGridLayout = (props: any) => {
 				style={{ backgroundColor: props.backgroundColor }}>
 				<SideDrawer />
 			</div>
-			{url === "home" ? (
+			{url === "home" || url === '' ? (
 				<div
 					className="center-container"
 					style={{ backgroundColor: props.backgroundColor }}>
+					<div className="container-left">
+						<TrendingCard />
+			
+					</div>	
 					<div className="container-content">{props.children}</div>
 
 					<div className="container-right">

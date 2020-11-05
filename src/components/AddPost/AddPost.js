@@ -3,7 +3,6 @@ import { MdVideoLibrary } from "react-icons/md";
 import { IoMdImages } from "react-icons/io";
 import { IoLogoGameControllerB } from "react-icons/io";
 import './addpost.scss'
-import BottomBar from './components/BottomBar';
 import { connect } from 'react-redux'
 import InputForm from './components/InputForm';
 import Button from '@material-ui/core/Button';
@@ -52,17 +51,14 @@ const AddPost = (props) => {
           <InputForm theme={props.theme}/>
           </div>  
         </div>
-        {/* <BottomBar textColor={props.textColor} bgColor={props.cardColor}/> */}
-        <div style={{margin:6}}>
-        <Button 
-        fullWidth
-        variant="contained" 
-        style={{backgroundColor:'#ed204b',color:'#fff'}}
-        >
-        Add Post
-      </Button>
-        </div>
-      <SelectMediaModal open={openModal} handleModalClose={handleModalClose}/>
+      
+      <SelectMediaModal 
+      open={openModal} 
+      handleModalClose={handleModalClose}
+      textColor={props.textColor}
+      cardColor={props.cardColor}
+      theme={props.theme}
+      />
     </div>
    
    
