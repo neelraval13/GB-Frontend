@@ -51,9 +51,14 @@ const AddPost = (props) => {
           <InputForm theme={props.theme}/>
           </div>  
         </div>
-        {/* <BottomBar textColor={props.textColor} bgColor={props.cardColor}/> */}
-
-      <SelectMediaModal open={openModal} handleModalClose={handleModalClose}/>
+      
+      <SelectMediaModal 
+      open={openModal} 
+      handleModalClose={handleModalClose}
+      textColor={props.textColor}
+      cardColor={props.cardColor}
+      theme={props.theme}
+      />
     </div>
    
    

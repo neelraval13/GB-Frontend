@@ -18,6 +18,7 @@ import { connect } from 'react-redux';
 import SelectLocation from './SelectLocation';
 import TagFriends from './TagFriends';
 import SelectPostSettings from './SelectPostSettings';
+import { randomIdGenerate } from '../../../utils/utils';
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children?: React.ReactElement<any, any> },
@@ -83,6 +84,9 @@ interface Props{
   open :boolean;
   handleModalClose:() => void;
   theme:string;
+  cardColor:string;
+  textColor:string;
+  
 
 }
 
@@ -99,14 +103,35 @@ interface ImagesObj{
   id:string;
 }
 
-const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
+const SelectMediaModal : React.FC<Props> = ({open,handleModalClose,cardColor,textColor,theme}) => {
   const classes = useStyles()
+
+  //Input Files Refs
+
   const fileRef = useRef<HTMLInputElement>(null);
   const extrafileRef = useRef<HTMLInputElement>(null);
-  const [imagesUrl,setImagesUrl] = useState<ImagesObj[]>([])
+
+  //Tabs State
   const [openLocation,setOpenLocation] = useState(false)
   const [openTagFriends,setOpenTagFriends] = useState(false)
   const [openPostSettings,setOpenPostSettings] = useState(false)
+  const [openGallery,setOpenGallery] = useState(false)
+
+  //Post Detail State
+  const [imagesUrl,setImagesUrl] = useState<ImagesObj[]>([])
+  const [description,setDescription] = useState("")
+  
+  const handleInputChange = (text:string) =>{
+    setDescription(text)
+  } 
+
+  const handleGalleryOpen = () =>{
+    setOpenGallery(true)
+  }
+
+  const handleGalleryClose = () =>{
+    setOpenGallery(false)
+  }
 
   const handleLocationOpen = () =>{
       setOpenLocation(true)
@@ -126,6 +151,7 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
   const handleClosePostSettings = () =>{
     setOpenPostSettings(false)
   }
+
   const handleFileClick = () =>{
      if(fileRef && fileRef.current){
           fileRef.current.click()
@@ -139,7 +165,7 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
       console.log(URL.createObjectURL(event.target.files[0]))
        setImagesUrl([{
          "url":URL.createObjectURL(event.target.files[0]),
-         id:'ss'
+         id:randomIdGenerate(4)
        }])
     }
    
@@ -151,12 +177,15 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
       console.log(URL.createObjectURL(event.target.files[0]))
        setImagesUrl([...imagesUrl,{
         "url":URL.createObjectURL(event.target.files[0]),
-        id:'ee'
+        id:randomIdGenerate(4)
       }])
     }
   }
 
-
+  const handleRemoveImages = (id:string) =>{
+      const data = imagesUrl.filter(img => img.id != id)
+      setImagesUrl(data)
+  }
   const handleOnClose = () =>{
     setImagesUrl([])
     handleModalClose()
@@ -177,6 +206,12 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
       classes={{
         paper:classes.dialog
       }}
+      PaperProps={{
+        style:{
+          backgroundColor:cardColor,
+          color:textColor
+        }
+      }}
       maxWidth="xl"
       >
        {
@@ -186,9 +221,9 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
         </DialogTitle>
         :
 
-        (openLocation) && <CustomDialogTitle handleBack={handleLocationClose} title="Select Location"/> ||
-        (openTagFriends) && <CustomDialogTitle handleBack={handleTagFriendsClose} title="Tag Friends"/> ||
-        (openPostSettings) && <CustomDialogTitle handleBack={handleClosePostSettings} title="Select Privacy"/>
+        (openLocation) && <CustomDialogTitle theme={theme} handleBack={handleLocationClose} title="Select Location"/> ||
+        (openTagFriends) && <CustomDialogTitle theme={theme} handleBack={handleTagFriendsClose} title="Tag Friends"/> ||
+        (openPostSettings) && <CustomDialogTitle theme={theme} handleBack={handleClosePostSettings} title="Select Privacy"/>
        }
         <DialogContent dividers style={{padding:"5px"}}>
          {
@@ -198,6 +233,11 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
           fileRef={fileRef} 
           handleFileClick={handleFileClick} 
           handleSubmit={handleSubmit}
+          openGallery={openGallery}
+          handleGalleryClose={handleGalleryClose}
+          handleGalleryOpen={handleGalleryOpen}
+          cardColor={cardColor}
+          textColor={textColor}
           />
 
          :
@@ -210,13 +250,18 @@ const SelectMediaModal : React.FC<Props> = ({open,handleModalClose}) => {
           handleOpenLocation={handleLocationOpen}
           handleTagFriendsOpen={handleTagFriendsOpen}
           handleOpenPostSettings={handleOpenPostSettings}
+          theme={theme}
+          handleInputChange={handleInputChange}
+          description={description}
+          mainImageId={imagesUrl[0].id}
+          removeImages={handleRemoveImages}
           />
 
           :
 
-          (openLocation) && <SelectLocation /> ||
-          (openTagFriends) && <TagFriends /> ||
-          (openPostSettings) && <SelectPostSettings />
+          (openLocation) && <SelectLocation theme={theme}/> ||
+          (openTagFriends) && <TagFriends theme={theme}/> ||
+          (openPostSettings) && <SelectPostSettings theme={theme}/>
 
          }
          

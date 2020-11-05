@@ -9,23 +9,38 @@ const useStyles = makeStyles({
         justifyContent:'center',
         alignItems:'center'
     },
-    backBtnWrapper:{
+    darkBtnWrapper:{
         position:'absolute',
-        left:20
+        left:8,
+        backgroundColor:"#3A3B3C",
+        borderRadius:"50px"
     },
+    lightBtnWrapper:{
+        position:'absolute',
+        left:8,
+        backgroundColor:"#E4E6EB",
+        borderRadius:"50px"
+    },
+    darkBtn:{
+        color:'white'
+    },
+    lightBtn:{
+        color:'black'
+    }
 
 })
 
 interface Props{
     title:string;
     handleBack:() => void;
+    theme:string
 }
 const CustomDialogTitle :React.FC<Props>= (props) => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
-              <div className={classes.backBtnWrapper}>
-                    <IconButton color="default" onClick={props.handleBack} >
+              <div className={props.theme === 'dark' ? classes.darkBtnWrapper : classes.lightBtnWrapper}>
+                    <IconButton color="default" onClick={props.handleBack} className={props.theme === 'dark' ? classes.darkBtn : classes.lightBtn}>
                         <ArrowBackRoundedIcon />
                     </IconButton>
               </div> 
