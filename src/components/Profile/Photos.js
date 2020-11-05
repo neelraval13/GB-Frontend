@@ -22,6 +22,13 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Avatar from '@material-ui/core/Avatar';
 import Popover from '@material-ui/core/Popover';
+import TextField from '@material-ui/core/TextField';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ChatIcon from '@material-ui/icons/Chat';
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -94,6 +101,10 @@ const useStyles = makeStyles((theme) => ({
         width: "40px",
         height: "40px",
     },
+    commentProfileImage: {
+        width: "30px",
+        height: "30px",
+    },
     editIconWrapper: {
         position: "absolute",
         top: "0",
@@ -131,7 +142,32 @@ const useStyles = makeStyles((theme) => ({
     },
     backdropRoot: {
         backgroundColor: 'rgba(0,0,0,0.75)'
-    }
+    },
+    likeCommentWrapper: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
+    commentDescriptionWrapper: {
+        maxHeight: "180px",
+        overflowY: "scroll"
+    },
+    commentWrapper: {
+        padding: "20px",
+        paddingBottom: "8px"
+    },
+    commentUserWrapper: {
+        width: "100%"
+    },
+    commentIconWrapper: {
+        display: "flex",
+        alignItems: "center"
+    },
+    postWrapper: {
+        display: "flex",
+        padding: "20px",
+        paddingBottom: "30px"
+    },
 }));
 
 const tileData = [
@@ -198,6 +234,23 @@ const tileData = [
     likes: 60,
     comments: 30,
   },
+];
+
+const commentData = [
+    {
+        userImg: "https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+        userName: "Marina Valentine",
+        timeAgo: "46 mins ago",
+        comment: "I had a great time too!! We should do it again!",
+        commentLike: "86"
+    },
+    {
+        userImg: "https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+        userName: "Chris Greyson",
+        timeAgo: "1 hour ago",
+        comment: "Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
+        commentLike: "7"
+    }
 ];
 
 const Photos = props => {
@@ -314,7 +367,10 @@ const Photos = props => {
                                 />
                             </IconButton>
                         </div>  
-                        <Card className={classes.cardRoot}>
+                        <Card 
+                            className={classes.cardRoot}
+                            style={{backgroundColor: dark ? "#151515" : "#fff"}}
+                        >
                             <CardMedia
                                 className={classes.cover}
                                 image={img}
@@ -333,7 +389,7 @@ const Photos = props => {
                                             <ListItemAvatar>
                                                 <Avatar
                                                     src={authorImg}
-                                                    classNmae={classes.profileImage}
+                                                    className={classes.profileImage}
                                                 >
                                                 </Avatar>
                                             </ListItemAvatar>
@@ -372,9 +428,151 @@ const Photos = props => {
                                             {description}
                                         </div>
                                         <hr 
-                                            style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #c5c5c5', borderBottom: 'none',height: '0.1px'}}
+                                            style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
                                         />
-                                    </div>  
+                                        <div
+                                            className={classes.likeCommentWrapper}
+                                        >
+                                            <div
+                                                className={classes.iconGroupWrapper}
+                                                style={{color: dark ? "#c2c5c9" : "#888DAB"}}
+                                            >
+                                                <IconButton
+                                                    style={{paddingLeft: '0px'}}
+                                                >
+                                                    <FavoriteBorderIcon 
+                                                        style={{color: dark ? "#c2c5c9" : "#888DAB"}}
+                                                    />
+                                                </IconButton>
+                                                {likes}
+                                            </div>
+                                            <div
+                                                className={classes.iconGroupWrapper}
+                                                style={{color: dark ? "#c2c5c9" : "#888DAB"}}
+                                            >
+                                                <IconButton>
+                                                    <ChatIcon 
+                                                        style={{color: dark ? "#c2c5c9" : "#888DAB"}}
+                                                    />
+                                                </IconButton>
+                                                {comments}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={classes.commentDescriptionWrapper}
+                                        style={{backgroundColor: dark ? "#29292994" : "#fafbfd",borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5',borderBottom: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5'}}
+                                    >
+                                        {commentData.map((comment, index) => (
+                                            <div key = {index}>
+                                                <div
+                                                    className={classes.commentWrapper}
+                                                    
+                                                >
+                                                    <div
+                                                        className={classes.commentUserWrapper}
+                                                    >
+                                                        <ListItem 
+                                                            ContainerComponent="div"
+                                                            classes={{
+                                                                gutters : classes.listItemGutter
+                                                            }}
+                                                        >
+                                                            <ListItemAvatar
+                                                                style={{minWidth: "42px"}}
+                                                            >
+                                                                <Avatar
+                                                                    src={comment.userImg}
+                                                                    className={classes.commentProfileImage}
+                                                                >
+                                                                </Avatar>
+                                                            </ListItemAvatar>
+                                                            <ListItemText 
+                                                                primary={comment.userName} 
+                                                                secondary={comment.timeAgo}
+                                                                primaryTypographyProps={{
+                                                                    style:{
+                                                                        fontSize: '14px',
+                                                                        fontWeight: '600',
+                                                                        color: dark ? 'white' : '#515365'
+                                                                    },
+                                                                }}
+                                                                secondaryTypographyProps={{
+                                                                    style:{
+                                                                        fontSize: '10px',
+                                                                        fontWeight: 'light',
+                                                                        color: dark ? '#c1c1c1' : '#888DAB'
+                                                                    }
+                                                                }} 
+                                                            />
+                                                            <ListItemSecondaryAction>
+                                                                <IconButton edge="end">
+                                                                    <MoreHorizIcon 
+                                                                        style={ dark ? {color: '#c1c1c1'} : {color: '#888DAB'}}
+                                                                    />
+                                                                </IconButton>
+                                                            </ListItemSecondaryAction>
+                                                        </ListItem>
+                                                    </div>
+                                                    <div
+                                                        style={{
+                                                            paddingTop: "10px",
+                                                            color: dark ? '#c1c1c1' : '#888DAB'
+                                                        }}
+                                                    >
+                                                        {comment.comment}
+                                                    </div>
+                                                    <div
+                                                        className={classes.commentIconWrapper}
+                                                        style={{fontSize: "14px",color: dark ? "#c2c5c9" : "#888DAB"}}
+                                                    >
+                                                        <IconButton
+                                                            style={{paddingLeft: '0px'}}
+                                                        >
+                                                            <FavoriteBorderIcon 
+                                                                style={{fontSize: "20px",color: dark ? "#c2c5c9" : "#888DAB"}}
+                                                            />
+                                                        </IconButton>
+                                                        {comment.commentLike}
+                                                        
+                                                    </div>
+                                                </div>
+                                                <hr 
+                                                    style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div> 
+                                    <div
+                                        className={classes.postWrapper}
+                                    >
+                                        <Avatar 
+                                            src={authorImg}
+                                            style={{
+                                                height: "30px",
+                                                width: "30px"
+                                            }}
+                                        />
+                                        <OutlinedInput
+                                            id="outlined-adornment-password"
+                                            multiline
+                                            rowsMax={3}
+                                            style={{marginLeft: "20px", color: dark ? "#c2c5c9" : "#888DAB", outline: dark ? "none" : "auto", outlineColor: dark ? "" : "#b7bfcc"}}
+                                            placeholder="Press Enter to post"
+                                            fullWidth="true"
+                                            endAdornment={
+                                                <InputAdornment position="end">
+                                                    <IconButton
+                                                        edge="end"
+                                                    >
+                                                        <AddAPhotoIcon 
+                                                            style={{color: dark ? "#a7a7a7" : "#888DAB"}}
+                                                        />
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            }
+                                        />
+                                    </div> 
                                 </CardContent>
                             </div>
                         </Card>
