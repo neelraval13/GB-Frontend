@@ -28,11 +28,13 @@
 .dark-section-bg{
     background-color: #202225;
     box-shadow: 1px 2px 15px 5px  #121211 ;
+    position: relative;
 }
 
 .light-section-bg{
     background-color: #fff;
     box-shadow: 1px 2px 10px 1px #d1d6ee;
+    position: relative;
 
 }
 .dark-text-bg{
@@ -101,3 +103,105 @@
       display: none !important;
   }
   
+
+.card-head-title::before{
+  background: #ed204b;
+    content: "";
+    height: 28px;
+    left: 0px;
+    position: absolute;
+    top:10px;
+    width: 5px;
+}
+.card-head-title{
+    padding-left: 10px;
+}
+
+
+.extra-comments-wrapper{
+      
+  margin-bottom: 8px;
+}
+
+.extra-comments{
+  color: #8d8c8c;
+  cursor: pointer;
+ 
+}
+.user-comments{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 14px;
+}
+.user-comments-inline{
+  padding: 10px;
+  border-radius:10px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.light-user-comments-inline:before
+{
+  content: " ";
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #F1F3F4;
+  border-left: none;
+  border-bottom:8px solid transparent;
+}
+
+.dark-user-comments-inline:before
+{
+  content: " ";
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #1a1b1c;
+  border-left: none;
+  border-bottom:8px solid transparent;
+}
+.dark-user-comments-inline{
+  background-color: #1616169d;
+  color: #fff;
+}
+.light-user-comments-inline{
+  background-color: #F1F3F4;
+  
+}
+
+.current-user-comment{
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: row;
+
+  .comment-input{
+      width: 80%;
+      border: 0;
+      outline: none;
+      border-radius: 20px;
+      height: 35px;
+      padding: 0px 20px;
+  }
+  .dark-comment-input{
+      width: 80%;
+      border: 0;
+      outline: none;
+      background-color: #1616169d;
+      border-radius: 20px;
+      height: 35px;
+      padding: 0px 20px;
+      color: #fff;
+  }
+  .light-comment-input{
+      width: 80%;
+      border: 0;
+      outline: none;
+      background-color: #F1F3F4;
+      border-radius: 20px;
+      height: 35px;
+      padding: 0px 20px;
+  }
+}

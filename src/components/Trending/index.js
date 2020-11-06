@@ -29,7 +29,7 @@ const TrendingCard = (props) => {
     return (
        <div className={`trending-card ${props.theme}-section-bg`}>
             <div className={`${props.theme}-title-wrapper tc-title-wrapper`}>
-            <h3 className={`${props.theme}-text-bg tc-title`}>Top 5 Trending</h3>
+            <h3 className={`${props.theme}-text-bg tc-title card-head-title`}>Top 5 Trending</h3>
             </div>
             <ul className={`${props.theme}-trending-list trending-list`}>
                     {

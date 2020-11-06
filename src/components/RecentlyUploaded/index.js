@@ -9,8 +9,8 @@ SwiperCore.use([Navigation])
 const RecentlyUploaded = (props) => {
     return (
         <div className={`${props.theme}-section-bg recently-uploaded`}>
-              <div className={`${props.theme}-ru-title-wrapper ru-title-wrapper`}>
-                <h3 className={`${props.theme}-text-bg ru-title`}>Recently Uploaded</h3>
+              <div className={`${props.theme}-ru-title-wrapper ru-title-wrapper `}>
+                <h3 className={`${props.theme}-text-bg ru-title `}>Recently Uploaded</h3>
                 <div  className={`${props.theme}-text-bg ru-view-all`}>View All</div> 
               </div>
               <div>

@@ -3,6 +3,17 @@
     width: 300px;
     margin-top:15px;
     border-radius: 5px;
+    position: relative;
+
+    .ru-title-wrapper::before{
+      background: #ed204b;
+      content: "";
+      height: 28px;
+      left: 0px;
+      position: absolute;
+      top: 8px;
+      width: 5px;
+  }
     .ru-title-wrapper{
         display: flex;
         justify-content: space-between;

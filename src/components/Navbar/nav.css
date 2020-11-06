@@ -5,13 +5,75 @@
     box-shadow: 1px 2px 10px 1px #d1d6ee !important; 
 }
 
+.popover-paper::-webkit-scrollbar{
+    display: none !important;
+}
+.popover-paper{
+    height: 80vh !important;
+    overflow-y: scroll;
+    margin-top: 10px !important;
+   
+}
+
+
 
 .nav-logo{
     width: 200px;
     height: 50px;
     object-fit: contain;
 }
+.menu-heading{
+    font-size: 14.8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-top:1px solid #e7e7e7;
+    border-bottom:1px solid #e7e7e7;
+}
 
+.dark-menu-heading{
+    border-top:1px solid rgb(66, 66, 66);;
+    border-bottom:1px solid rgb(66, 66, 66);
+}
+.menu-item{
+    padding: 5px 15px;
+}
+
+.gaming-name-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 8px;
+    width:'100%';
+    position: relative;
+    border: 1px solid #e7e7e7;
+    
+}
+.done-icon-wrapper{
+    position: absolute;
+    right: -1px;
+    background-color: rgb(143, 81, 243);
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done-icon{
+    color: #fff;
+}
+
+.dark-gaming-name-box{
+    border: 1px solid rgb(66, 66, 66);
+}
+
+.inline-menu-item{
+    list-style: none;
+}
+.inline-menu-item li{
+    padding: 10px 0px;
+}
 
 
 

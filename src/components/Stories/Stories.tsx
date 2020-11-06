@@ -15,7 +15,9 @@ const Stories = (props:any) => {
     return (
         <div className={`stories-section ${props.theme}-section-bg main-container-card`}>
      
-                <h4 className={`${props.theme}-text-bg`} >Stories</h4>
+                <div className={`${props.theme}-stories-title stories-title`}>
+                    <h4 className={`${props.theme}-text-bg`} >Stories</h4>
+                </div>
                 
                 <div className='stories-container'>
                 <Swiper
