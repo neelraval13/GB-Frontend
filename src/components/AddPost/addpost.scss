@@ -2,9 +2,9 @@
 .addpost-card{
 
 	margin-top: 15px;
-	min-height: 200px;
+	min-height: 180px;
 	background-color: #fff;
-	
+	border-radius: 10px;
 	::-webkit-scrollbar{
 		display:auto !important;
  	 }
@@ -17,8 +17,8 @@
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
 	margin: 0;
-	height: 220px;
-	
+	height: 180px;
+	border-radius: 10px;
 }
 
 
@@ -43,6 +43,11 @@
 .dark-tabs,.dark-tabbed{
 	border-bottom: 1px solid #2d3136;
 }
+
+.darkblue-tabs,.darkblue-tabbed{
+	border-bottom:1px solid  #313541;
+}
+
 .light-tabs,.light-tabbed{
 	border-bottom: 1px solid #ccc;
 }
@@ -70,6 +75,12 @@
 	background:#2d3136;
 	color: #888DA8;
 	border: 1px solid #2d3136;
+}
+
+.darkblue-tab > label{
+	background:#282E3E;
+	color: #888DA8;
+	border: 1px solid #202730;
 }
 
 .light-tab > label{

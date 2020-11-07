@@ -83,6 +83,9 @@ const useStyles = makeStyles(theme =>
 		drawerLight: {
 			backgroundColor: "#fff",
 		},
+		drawerBlue:{
+			backgroundColor: "#21283B",
+		},
 		textLight: {
 			color: "white",
 		},
@@ -175,7 +178,6 @@ const SideDrawer = props => {
 		},
 	];
 
-	let dark = props.Theme === "dark";
 
 	return (
 		<div className={classes.root}>
@@ -189,8 +191,9 @@ const SideDrawer = props => {
 				classes={{
 					paper: clsx(
 						{
-							[classes.drawerDark]: dark,
-							[classes.drawerLight]: !dark,
+							[classes.drawerDark]: props.Theme === 'dark',
+							[classes.drawerLight]: props.Theme === 'light',
+							[classes.drawerBlue]: props.Theme === 'darkblue',
 						},
 						{
 							[classes.drawerOpen]: props.showDrawer,
@@ -203,15 +206,15 @@ const SideDrawer = props => {
 						{theme.direction === "rtl" ? (
 							<ChevronRightIcon
 								className={clsx(classes.icons, {
-									[classes.textLight]: dark,
-									[classes.textDark]: !dark,
+									[classes.textLight]:  props.Theme === 'dark',
+									[classes.textDark]:  props.Theme === 'light',
 								})}
 							/>
 						) : (
 							<ChevronLeftIcon
 								className={clsx(classes.icons, {
-									[classes.textLight]: dark,
-									[classes.textDark]: !dark,
+									[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+									[classes.textDark]: props.Theme === 'light',
 								})}
 							/>
 						)}
@@ -223,21 +226,21 @@ const SideDrawer = props => {
 						return (
 							<ListItem
 								className={clsx(classes.listItems, {
-									[classes.listItemsDark]: dark,
-									[classes.listItemsLight]: !dark,
+									[classes.listItemsDark]: props.Theme === 'dark' || props.Theme ==='darkblue',
+									[classes.listItemsLight]: props.Theme === 'light',
 								})}
 								button>
 								<ListItemIcon
 									className={clsx(classes.icons, {
-										[classes.textLight]: dark,
-										[classes.textDark]: !dark,
+										[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+										[classes.textDark]:  props.Theme === 'light',
 									})}>
 									{item.icon}
 								</ListItemIcon>
 								<ListItemText
 									className={clsx({
-										[classes.textLight]: dark,
-										[classes.textDark]: !dark,
+										[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+										[classes.textDark]:  props.Theme === 'light',
 									})}>
 									<NavLink
 										to={`/${item.item}`}
