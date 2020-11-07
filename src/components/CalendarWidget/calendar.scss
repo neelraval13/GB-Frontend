@@ -1,0 +1,50 @@
+.calendar-card{
+    margin-top: 15px;
+    min-height: 320px;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgb(236, 232, 232);
+
+    .month-name{
+        padding: 15px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgb(236, 232, 232);
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .calendar-content{
+        padding: 5px 15px;
+    }
+    .calendar{
+        border-radius: 10px;
+        border: none;
+    }
+    .react-calendar__month-view__days__day--weekend{
+        color: #121212;
+    }
+    abbr[title] {
+        text-decoration: none;
+    }
+    .react-calendar__tile--active{
+        color: #fff;
+        background-color:#FA6342;
+    }
+    .react-calendar__navigation__prev-button,.react-calendar__navigation__next-button{
+        display: none;
+    }
+    .react-calendar__navigation__prev2-button,.react-calendar__navigation__next2-button{
+        display: none;
+    }
+    .react-calendar__navigation__label{
+        border-bottom: 1px solid rgb(238, 229, 229);
+        padding: 15px 0px;
+    }
+    .react-calendar__navigation__label:hover{
+        background-color: #fff !important;
+        border-radius: 10px;
+    }
+}

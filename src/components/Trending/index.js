@@ -6,19 +6,19 @@ import './trending.scss'
 const TrendingCard = (props) => {
     const data = [
         {
-            item:'#Gamersback',
+            item:'Gamersback',
             hits:'29k hits'
         },
         {
-            item:'#Pubg',
+            item:'Pubg',
             hits:'39k hits'
         },
         {
-            item:'#Gamersback',
+            item:'Gamersback',
             hits:'29k hits'
         },
         {
-            item:'#Pubg',
+            item:'Pubg',
             hits:'39k hits'
         },
         {
@@ -39,6 +39,11 @@ const TrendingCard = (props) => {
                             <h4>{trend.item}</h4>
                             <p>{trend.hits}</p>
                             </div>
+
+                            <div className='date'>
+                            <p>May <br/> <strong>26</strong></p>
+                            </div>
+
                         </li>
                         })
                     }

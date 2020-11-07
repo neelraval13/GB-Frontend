@@ -78,7 +78,9 @@ const TimelineCard = (props:any) => {
             
             <div className={`${props.theme}-likes-comments-sections likes-comments-sections`}>
                   <div className='likes-inline'>
-                     <img src={`${likeIcon}`} className='reaction-icons' alt='reaction-icon'/>  <img src={inLoveEmoji} alt='reaction-icon' className='reaction-icons'/> <span className='likes-count'>126</span>
+                     <img src={`${likeIcon}`} className='reaction-icons' alt='reaction-icon'/> 
+                      <img src={inLoveEmoji} alt='reaction-icon' className='reaction-icons'/>
+                      <span className='likes-count'>126</span>
                   </div>
                   <div className='dot'>
                     

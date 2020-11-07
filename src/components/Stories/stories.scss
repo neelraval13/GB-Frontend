@@ -9,7 +9,7 @@
     position: relative;
 
     .stories-title::before{
-        background: #ed204b;
+        background: #FA6342;
         content: "";
         height: 28px;
         left: -20px;
@@ -25,6 +25,9 @@
     }
     .dark-stories-title{
         border-bottom: 1px solid rgb(47, 47, 49);
+    }
+    .darkblue-stories-title{
+        border-bottom:1px solid  #313541;
     }
    
     .stories-container{

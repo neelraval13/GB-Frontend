@@ -40,10 +40,10 @@ const InputForm = (props:any) => {
                rowsMax={5}
                InputProps={{ 
                  disableUnderline: true,
-                 className:props.theme === 'dark' ?classes.darkText:classes.lightText
+                 className:props.theme === 'dark' || props.theme === 'darkblue' ?classes.darkText:classes.lightText
               }}
               InputLabelProps={{
-                className:props.theme === 'dark' ?classes.darkText:classes.lightText
+                className:props.theme === 'dark' || props.theme === 'darkblue' ?classes.darkText:classes.lightText
               }}
               onClick={() => props.openModal()}
                />

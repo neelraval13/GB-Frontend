@@ -6,7 +6,7 @@
     position: relative;
 
     .ru-title-wrapper::before{
-      background: #ed204b;
+      background:#FA6342;
       content: "";
       height: 28px;
       left: 0px;
@@ -17,38 +17,41 @@
     .ru-title-wrapper{
         display: flex;
         justify-content: space-between;
-        padding: 15px 15px 10px 15px;
+        padding: 15px 20px;
         border-bottom: .5px solid rgb(231, 231, 231);
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .dark-ru-title-wrapper{
         border-bottom: 1px solid rgb(54, 56, 65);
     }
+    .darkblue-ru-title-wrapper{
+      border-bottom:1px solid  #313541;
+    }
     .ru-title{
         
-        font-size: 16.8px;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 600;
     }
     .ru-view-all{
-        font-size: 14.8px;
+        font-size: 11.8px;
         font-weight: 500;
+        color: #FA6342;
     }
     .slide-img{
         width: 100%;
         height: 180px;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     .swiper-button-next {
     
-        background-image: url(../../arrow.svg);
-        background-color: rgb(255, 255, 255);
         padding: 10px !important;
         border-radius: 50px;
         width: 40px !important;
         height: 40px !important;
         right: 0px !important;
-        top: 120px !important;
+        top: 50% !important;
         background-repeat: no-repeat;
         background-size: 50%;
         background-position: center;
@@ -57,14 +60,13 @@
         box-shadow: 0px 2px 5px -3px rgb(87, 85, 85);
       }
       .swiper-button-prev {
-        background-image: url(../../arrow.svg);
-        background-color: rgb(255, 255, 255);
+
         padding: 10px !important;
         border-radius: 50px;
         width: 40px !important;
         height: 40px !important;
         left: 0px !important;
-        top: 120px !important;
+        top: 50% !important;
         background-repeat: no-repeat;
         background-size: 50%;
         background-position: center;

@@ -27,7 +27,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./nav.css";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { connect } from "react-redux";
-import ToggleSwitch from "../../Layout/Toggle";
+import ThemeColors from "./ThemeColors";
+import clsx from "clsx";
 import {
 	handleDrawerOpen,
 	handleDrawerClose,
@@ -65,6 +66,15 @@ const useStyles = makeStyles((theme: Theme) =>
 				marginLeft: theme.spacing(3),
 				width: "auto",
 			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
 		},
 		lightSearch: {
 			color: "black",
@@ -77,9 +87,45 @@ const useStyles = makeStyles((theme: Theme) =>
 			marginRight: theme.spacing(2),
 			marginLeft: 0,
 			width: "100%",
+
 			[theme.breakpoints.up("sm")]: {
 				marginLeft: theme.spacing(3),
 				width: "auto",
+			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
+		},
+		blueSearch: {
+			color: "#fff",
+			position: "relative",
+			borderRadius: theme.shape.borderRadius,
+			backgroundColor: "#282E3E",
+			"&:hover": {
+				backgroundColor: "#282E3E",
+			},
+			marginRight: theme.spacing(2),
+			marginLeft: 0,
+			width: "100%",
+
+			[theme.breakpoints.up("sm")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
 			},
 		},
 
@@ -105,12 +151,18 @@ const useStyles = makeStyles((theme: Theme) =>
 			transition: theme.transitions.create("width"),
 			width: "100%",
 			[theme.breakpoints.up("md")]: {
-				width: "20ch",
+				width: "auto",
 			},
 			[theme.breakpoints.up("lg")]: {
 				marginLeft: theme.spacing(3),
-				width: 350,
+				width: "auto",
 			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
+		
 		},
 		sectionDesktop: {
 			display: "none",
@@ -226,7 +278,16 @@ const NavBar: React.FC<Props> = props => {
 			   <div className={`${props.theme}-menu-heading menu-heading`}>Theme Preferences</div>
 			   <div className='menu-item'>
 		 			<ul className='inline-menu-item'>
-					 	<li><ToggleSwitch /></li>
+					 	<li><ThemeColors bgColor={props.navColor}/></li>
+		 				
+					 </ul>
+			   </div>
+			</div>
+			<div className={classes.menuItemWrapper}>
+			   <div className={`${props.theme}-menu-heading menu-heading`}>Create</div>
+			   <div className='menu-item'>
+		 			<ul className='inline-menu-item'>
+					 	<li>Create Page</li>
 		 				
 					 </ul>
 			   </div>
@@ -241,27 +302,8 @@ const NavBar: React.FC<Props> = props => {
 					 </ul>
 			   </div>
 			</div>
-			<div className={classes.menuItemWrapper}>
-			   <div className={`${props.theme}-menu-heading menu-heading`}>Create</div>
-			   <div className='menu-item'>
-		 			<ul className='inline-menu-item'>
-					 	<li>Create Page</li>
-		 				
-					 </ul>
-			   </div>
-			</div>
-			<div className={classes.menuItemWrapper}>
-			   <div className={`${props.theme}-menu-heading menu-heading`}>About <strong className='strong'>GAMERSBACK</strong></div>
-			   <div className='menu-item'>
-		 			<ul className='inline-menu-item'>
-					 	<li>Terms and Conditions</li>
-						 <li>Company Guidelines</li>
-						 <li>Careers</li>
-						 <li>Contact</li>
-		 				
-					 </ul>
-			   </div>
-			</div>
+			
+		
 		
 	   </Popover>
 	);
@@ -328,9 +370,12 @@ const NavBar: React.FC<Props> = props => {
 					</IconButton>
 					<img src={props.navLogo} alt="nav-logo" className="nav-logo" />
 					<div
-						className={
-							props.theme === "dark" ? classes.search : classes.lightSearch
-						}>
+						className={clsx({
+							[classes.search]: props.theme === 'dark',
+							[classes.lightSearch]:  props.theme === 'light',
+							[classes.blueSearch]:props.theme === 'darkblue'
+						})}
+						>
 						<div className={classes.searchIcon}>
 							<SearchIcon />
 						</div>

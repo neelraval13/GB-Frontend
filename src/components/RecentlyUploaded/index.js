@@ -19,7 +19,7 @@ const RecentlyUploaded = (props) => {
                 slidesPerView={1}
                 pagination={{ clickable: false }}
                 navigation
-                style={{padding:15,marginTop:0}}
+                style={{padding:18,marginTop:0}}
                 >
                     {
                         images.map(data =>{

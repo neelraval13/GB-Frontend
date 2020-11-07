@@ -1,11 +1,15 @@
 import { 
    SET_DARK_THEME,
    SET_LIGHT_THEME,
-   SET_DRAWER_VISIBLE
+   SET_DRAWER_VISIBLE,
+   SET_DARK_BLUE_THEME
  } from "../../constants/actionTypes"
  
 import { 
     darkBgColor, 
+    darkBlueBgColor, 
+    darkBlueCardColor, 
+    darkBlueNavColor, 
     darkCardColor, 
     darkNavColor, 
     darkTextColor, 
@@ -53,6 +57,16 @@ const SettingsReducer =  (state=INIT_STATE,action) =>{
                 textColor:lightTextColor,
                 navLogo:lightNavLogo
             }
+        case SET_DARK_BLUE_THEME:
+                return {
+                    ...state,
+                    theme:'darkblue',
+                    navBg:darkBlueNavColor,
+                    cardBg:darkBlueCardColor,
+                    bgColor:darkBlueBgColor,
+                    textColor:darkTextColor,
+                    navLogo:darkNavLogo,
+                }
         case SET_DRAWER_VISIBLE:
             return{
                 ...state,

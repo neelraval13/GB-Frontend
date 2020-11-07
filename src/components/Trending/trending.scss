@@ -1,21 +1,25 @@
 
 .trending-card{
-    height: 360px;
+    min-height: 360px;
     margin-top: 30px;
     width: 300px;
     border-radius: 5px;
 
     .tc-title{
-        font-size: 16.8px;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 600;
     }
     .tc-title-wrapper{
         margin-bottom: 20px;
-        padding: 12px 20px;
+        padding: 15px 20px;
     }
     .dark-title-wrapper{
         padding-bottom: 10px;
         border-bottom: 1px solid rgb(47, 47, 49);
+    }
+    .darkblue-title-wrapper{
+        padding-bottom: 10px;
+        border-bottom:1px solid  #313541;
     }
     .light-title-wrapper{
         padding-bottom: 10px;
@@ -24,20 +28,23 @@
     .trending-list{
         list-style: none;
         margin-top: 10px;
-        padding: 0px 20px;
+        padding: 5px 12px;
 
         .trending-list-item{
             display: flex;
             align-items: flex-start;
-            margin-bottom: 15px;
+            height: 60px;
+            margin-bottom: 5px;
             padding-bottom:5px;
+            position: relative;
             & div{
                 margin-left: 10px;
             }
 
             & h4{
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 600;
+                
             }
             & p{
                 margin-top: 2px;
@@ -45,9 +52,37 @@
                 color: #888DA8;
                 font-weight: 500;
             }
+
+            .date{
+                position: absolute;
+                top: 0px;
+                right: -12px;
+                width: 60px;
+                height: 42px;
+                padding: 5px;
+                background-color:#FA6342;
+                border-radius: 20% 0 0 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+               
+            }
+            .date p {
+                line-height: 1.3em;
+                color: #fff;
+            }
+            strong{
+                font-size: 18px;
+            }
         }
 
         .dark-trending-list-item{
+            color: #fff;
+          
+        }
+        .darkblue-trending-list-item{
             color: #fff;
           
         }
