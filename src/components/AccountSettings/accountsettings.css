@@ -54,13 +54,16 @@
 
 .settings-content {
   width: 80%;
-  margin: 5% auto;
+  margin: 5% auto 1% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .settings-content .side-navbar-wrapper {
@@ -100,6 +103,21 @@
 .settings-content .side-settings-tab-wrapper {
   border-radius: 5px;
   width: 70%;
+}
+
+.settings-content .accntset-sec-wrapper .sectit {
+  padding: 25px;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.settings-content .accntset-sec-wrapper .brdrbtm {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.settings-content .accntset-sec-wrapper .seccntnt {
+  padding: 25px;
 }
 
 @-webkit-keyframes slide {

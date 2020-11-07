@@ -2,18 +2,15 @@
 	display: grid;
 	height: 100vh;
 
-	grid-template-columns: 0.3fr 6fr;
+	grid-template-columns: 0fr 6fr;
 
 	padding-top: 60px;
 }
-
-
 
 .right-drawer {
 	height: 100%;
 	grid-row: 1;
 	grid-column: 3;
-	
 }
 
 .center-container {
@@ -37,10 +34,9 @@
 .profile-content {
 	width: 95%;
 	max-width: 1268px;
-
 }
 
- .container-content {
+.container-content {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
