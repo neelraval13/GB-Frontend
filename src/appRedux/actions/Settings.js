@@ -1,4 +1,4 @@
-import { SET_DARK_THEME, SET_LIGHT_THEME,SET_DRAWER_VISIBLE } from "../../constants/actionTypes";
+import { SET_DARK_THEME, SET_LIGHT_THEME,SET_DRAWER_VISIBLE, SET_DARK_BLUE_THEME } from "../../constants/actionTypes";
 
 export const setDarkTheme =  () =>(
     {
@@ -9,6 +9,11 @@ export const setDarkTheme =  () =>(
 export const setLightTheme =  () =>(
     {
         type:SET_LIGHT_THEME
+    }
+)
+export const setDarkBlueTheme =  () =>(
+    {
+        type:SET_DARK_BLUE_THEME
     }
 )
 

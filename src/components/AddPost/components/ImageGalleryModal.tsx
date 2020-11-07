@@ -23,7 +23,13 @@ const styles = (theme: Theme) =>
       position: 'absolute',
       right: theme.spacing(1),
       top: theme.spacing(1),
-      color: theme.palette.grey[500],
+      color: "#fff",
+      backgroundColor:'#ed204b',
+      paddingLeft:8,
+      paddingRight:8,
+      paddingTop:5,
+      paddingBottom:5,
+      borderRadius:3
     },
     
   });

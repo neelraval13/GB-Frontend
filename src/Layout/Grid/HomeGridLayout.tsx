@@ -6,6 +6,8 @@ import ChatDrawer from "../../components/ChatDrawer/ChatDrawer";
 import TrendingCard from "../../components/Trending";
 import "./homegrid.css";
 import RecentlyUploaded from "../../components/RecentlyUploaded";
+import WeatherWidget from "../../components/WeatherWidget";
+import CalendarWidget from "../../components/CalendarWidget";
 
 const HomeGridLayout = (props: any) => {
 	const url = window.location.pathname.split("/")[1];
@@ -21,7 +23,8 @@ const HomeGridLayout = (props: any) => {
 					className="center-container"
 					style={{ backgroundColor: props.backgroundColor }}>
 					<div className="container-left">
-						<TrendingCard />
+						<WeatherWidget />
+						<CalendarWidget />
 			
 					</div>	
 					<div className="container-content">{props.children}</div>
