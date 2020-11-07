@@ -5,6 +5,10 @@ import { Card, CardMedia, Avatar, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { SocialIcon } from 'react-social-icons'
 import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import MessageIcon from '@material-ui/icons/Message';
+import SettingsIcon from '@material-ui/icons/Settings';
 import EditIcon from '@material-ui/icons/Edit';
 
 
@@ -128,6 +132,23 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "40px",
         height: `${theme.spacing(5)}px !important`,
         width: `${theme.spacing(5)}px !important`,
+    },
+    groupIconsWrapper: {
+        position: "absolute",
+        bottom: "-32px",
+        width: "100%",
+        display: "flex",
+        paddingRight: "30px",
+        justifyContent: "flex-end",
+    },
+    groupIconsWrapperInner: {
+        display: "flex",
+    },
+    groupIcons: {
+        borderRadius: "50%",
+        fontSize: "50px",
+        padding: "12.5px",
+        color: "white"
     }
 }));
 
@@ -155,7 +176,46 @@ const ProfileCard = props => {
                             alt="boy"
                         />
                     </div>
-                    
+                    <div
+                        className={classes.groupIconsWrapper}
+                    >
+                        <div
+                            className={classes.groupIconsWrapperInner}
+                        >
+                            <IconButton
+                                style={{padding: "10px"}}
+                            >
+                                <PersonAddIcon
+                                    className={classes.groupIcons}
+                                    style={{backgroundColor: "#38A9FF"}}
+                                />
+                            </IconButton>
+                            <IconButton
+                                style={{padding: "10px"}}
+                            >
+                                <AddIcon 
+                                    className={classes.groupIcons}
+                                    style={{backgroundColor: "#7C5AC2"}}
+                                />
+                            </IconButton>
+                            <IconButton
+                                style={{padding: "10px"}}
+                            >
+                                <MessageIcon 
+                                    className={classes.groupIcons}
+                                    style={{backgroundColor: "#FF5E3A"}}
+                                />
+                            </IconButton>
+                            <IconButton
+                                style={{padding: "10px"}}
+                            >
+                                <SettingsIcon 
+                                    className={classes.groupIcons}
+                                    style={{backgroundColor: "#ED204B"}}
+                                />
+                            </IconButton>
+                        </div>
+                    </div>
                 </CardMedia>
                 <div
                     className={classes.nameWrapper}
