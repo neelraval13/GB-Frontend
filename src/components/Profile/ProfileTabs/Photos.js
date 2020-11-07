@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import clsx from 'clsx';
 import { connect } from "react-redux";
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -31,6 +30,7 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Highlights from './Highlights';
 
 const useStyles = makeStyles((theme) => ({
     root: {
