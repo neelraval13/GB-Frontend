@@ -358,7 +358,7 @@ const NavBar: React.FC<Props> = props => {
 			<AppBar
 				className={`${props.theme}-nav-bar nav-bar`}
 				position="fixed"
-				style={{ backgroundColor: props.navColor, color: props.textColor,height:70 }}>
+				style={{ backgroundColor: props.navColor, color: props.textColor,height:70,zIndex:10 }}>
 				<Toolbar>
 					<IconButton
 						edge="start"
