@@ -455,7 +455,7 @@ const Photos = props => {
                                                 }} 
                                             />
                                             <ListItemSecondaryAction>
-                                                <IconButton edge="end" onMouseOver={handlePopoverOpen}>
+                                                <IconButton edge="end" onClick={handlePopoverOpen}>
                                                     <MoreHorizIcon 
                                                         style={ dark ? {color: '#c1c1c1'} : {color: '#888DAB'}}
                                                     />
