@@ -38,7 +38,7 @@ const HomeGridLayout = (props: any) => {
 				<div
 					className="profile-container"
 					style={{ backgroundColor: props.backgroundColor }}>
-					<div>{props.children}</div>
+					<div className="profile-content">{props.children}</div>
 				</div>
 			) : (
 				<div></div>
