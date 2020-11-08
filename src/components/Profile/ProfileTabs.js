@@ -5,12 +5,13 @@ import PropTypes from 'prop-types'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/core/styles';
-import Timeline from './Timeline';
-import Gameplays from './Gameplays';
-import Stream from './Stream';
-import Videos from './Videos';
-import Photos from './Photos';
-import About from './About';
+import Timeline from './ProfileTabs/Timeline';
+import Gameplays from './ProfileTabs/Gameplays';
+import Stream from './ProfileTabs/Stream';
+import Videos from './ProfileTabs/Videos';
+import Photos from './ProfileTabs/Photos';
+import About from './ProfileTabs/About';
+import "../../styles/global/global.scss";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -75,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ProfileTabs = props => {
     let dark = props.Theme === "dark";
+    let light = props.Theme === "light";
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -96,45 +98,45 @@ const ProfileTabs = props => {
                 scrollButtons="off"
                 aria-label="simple tabs example"
                 indicatorColor="none"
-                style={{border: dark ?'1px solid #656565' : '1px solid #c5c5c5', borderRadius: '6px', minHeight: '60px', marginBottom: '15px'}}
+                className={`${props.Theme}-border`}
+                style={{borderRadius: '6px', minHeight: '60px', marginBottom: '15px'}}
             >
                 <Tab 
                     label="Timeline" 
                     {...a11yProps(0)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
-                    dark = { dark }
                 />
                 <Tab label="Stream" {...a11yProps(1)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
                 />
                 <Tab label="Gameplays" {...a11yProps(2)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
                 />
                 <Tab label="Videos" {...a11yProps(3)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
                 />
                 <Tab label="Photos" {...a11yProps(4)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
                 />
                 <Tab label="About" {...a11yProps(5)} 
                     classes={{
                         selected : classes.selected,
-                        root: dark ? classes.tabRootDark : classes.tabRootLight
+                        root: light ? classes.tabRootLight : classes.tabRootDark
                     }}
                 />
             </Tabs>

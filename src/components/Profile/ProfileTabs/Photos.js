@@ -13,6 +13,7 @@ import Fade from '@material-ui/core/Fade';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Card from '@material-ui/core/Card';
+import MenuItem from "@material-ui/core/MenuItem";
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import ListItem from '@material-ui/core/ListItem';
@@ -29,14 +30,12 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Highlights from './Highlights';
+import '../../../styles/global/global.scss';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: theme.palette.background.paper,
       width: "100%"
     },
     modal: {
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         top: "20px !important",
         justifyContent: 'center',
     },
-    iconButtonWrapper: {
+    iconButtonWrapper: { 
         display: 'flex',
         justifyContent: 'flex-end'
     },
@@ -63,13 +62,15 @@ const useStyles = makeStyles((theme) => ({
     },
     tile: {
         borderRadius: "5px",
+        "& > div" : {
+            height: "100%",
+            opacity: 0,
+            display: "flex",
+            transition: "opacity 0.4s ease-out"
+        },
         "&:hover" : {
-            "& > div" : {
-                display: "flex",
-                height: "48px"
-            },
-            "& > div > div" : {
-                display: "block"
+            "& > div" : {  
+                opacity: 1
             }
         },
     },
@@ -86,16 +87,21 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: "0px !important",
         cursor: "pointer"
     },
-    listTileBarWrapper: {
-        height: "0px",
-        transitionDuration: "0.25s",
-        "& > div" : {
-            display: "none"
+    menuItemPopup: {
+        "&:hover" : {
+            backgroundColor: "rgba(255,255,255,0.1)"
+        }
+    },
+    menuItemPopupBlue : {
+        "&:hover" : {
+            backgroundColor: "#394065"
         }
     },
     listTileBar: {
         display: "flex",
-        alignItems: "center"
+        height: "100%",
+        flexDirection: "column",
+        justifyContent: "space-between"
     },
     profileImage: {
         width: "40px",
@@ -145,12 +151,14 @@ const useStyles = makeStyles((theme) => ({
     },
     likeCommentWrapper: {
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "center"
     },
     commentDescriptionWrapper: {
         maxHeight: "180px",
-        overflowY: "scroll"
+        overflowY: "scroll",
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     },
     commentWrapper: {
         padding: "20px",
@@ -168,6 +176,26 @@ const useStyles = makeStyles((theme) => ({
         padding: "20px",
         paddingBottom: "30px"
     },
+    listTitleWrap: {
+        height: "100%"
+    },
+    tileBarBottom: {
+        display: "flex",
+        paddingBottom: "20px",
+        paddingLeft: "10px",
+        alignItems: "center"
+    },
+    tileBarTop: {
+        display: "flex",
+        paddingTop: "20px",
+        paddingRight: "8px",
+        justifyContent: "flex-end"
+    },
+    outlinedInput: {
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
+    }
 }));
 
 const tileData = [
@@ -256,6 +284,7 @@ const commentData = [
 const Photos = props => {
     const classes = useStyles();
     let dark = props.Theme === "dark";
+    let light = props.Theme === "light";
     let authorName = 'Aravindh Kumar';
     let authorImg = 'https://bestprofilepix.com/wp-content/uploads/2014/02/stylish-little-boy-profile-pic.jpg';
 
@@ -266,6 +295,18 @@ const Photos = props => {
     const [location, setLocation] = useState("");
     const [time, setTime] = useState("");
     const [openModal, setOpenModal] = useState(false);
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
 
     const handleOpenModal = ({image, likesCount, commentsCount, desc, loc, date}) => {
         setImg(image);
@@ -284,16 +325,17 @@ const Photos = props => {
 
     return (
         <div className={classes.root}>
+            <Highlights />
             <GridList 
                 cellHeight={200} 
                 className={classes.gridList} 
                 cols={4}
-                style={{backgroundColor: dark ? '#18191c' : '#fafafa'}}
             >
                 {tileData.map((tile,index) => (
                     <GridListTile 
-                        key={index} 
-                        cols={1}
+                        key={index}
+                        cols={1} 
+                        rows={1.5}
                         className={classes.imageWrapper}
                         classes={{
                             tile: classes.tile
@@ -303,42 +345,44 @@ const Photos = props => {
                         <img src={tile.img} alt={tile.title} />
                         <GridListTileBar
                             className={classes.listTileBarWrapper}
+                            classes={{
+                                titleWrap: classes.listTitleWrap,
+                                title: classes.listTitleWrap
+                            }}
                             title={
                                 <div
                                     className={classes.listTileBar}
                                 >
-                                    <span>
-                                        {tile.likes}
-                                    </span>
-                                    <span>
-                                        <ThumbUpAltOutlinedIcon 
-                                            className={classes.icon}
-                                        />
-                                    </span>
-                                    <span>
-                                        {tile.comments}
-                                    </span>
-                                    <span>
-                                        <ChatBubbleOutlineRoundedIcon 
-                                            className={classes.icon}
-                                        />
-                                    </span>
+                                    <div
+                                        className={classes.tileBarTop}
+                                    >
+                                    </div>
+                                    <div
+                                        className={classes.tileBarBottom}
+                                    >
+                                        <span>
+                                            {tile.likes}
+                                        </span>
+                                        <span>
+                                            <ThumbUpAltOutlinedIcon 
+                                                className={classes.icon}
+                                            />
+                                        </span>
+                                        <span>
+                                            {tile.comments}
+                                        </span>
+                                        <span>
+                                            <ChatBubbleOutlineRoundedIcon 
+                                                className={classes.icon}
+                                            />
+                                        </span>
+                                    </div> 
                                 </div>
                             }
                         />
-                        <div
-                            className={classes.editIconWrapper}
-                        >
-                            <div>
-                                <IconButton>
-                                    <EditIcon 
-                                        style={{padding: "5px", backgroundColor: "white", color: "#4fb6fa", borderRadius: "5px", fontSize: "30px"}}
-                                    />
-                                </IconButton>
-                            </div>
-                        </div>     
                     </GridListTile>
                 ))}
+                
             </GridList>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -368,8 +412,7 @@ const Photos = props => {
                             </IconButton>
                         </div>  
                         <Card 
-                            className={classes.cardRoot}
-                            style={{backgroundColor: dark ? "#151515" : "#fff"}}
+                            className={`${props.Theme}-background  ${classes.cardRoot}`}
                         >
                             <CardMedia
                                 className={classes.cover}
@@ -400,25 +443,56 @@ const Photos = props => {
                                                     style:{
                                                         fontSize: '16px',
                                                         fontWeight: 'bold',
-                                                        color: dark ? 'white' : '#515365'
+                                                        color: light ? '#515365' : 'white'
                                                     },
                                                 }}
                                                 secondaryTypographyProps={{
                                                     style:{
                                                         fontSize: '12px',
                                                         fontWeight: 'light',
-                                                        color: dark ? '#c1c1c1' : '#888DAB'
+                                                        color: light ? '#888DAB' : '#d8d8d8'
                                                     }
                                                 }} 
                                             />
                                             <ListItemSecondaryAction>
-                                                <IconButton edge="end">
+                                                <IconButton edge="end" onMouseOver={handlePopoverOpen}>
                                                     <MoreHorizIcon 
                                                         style={ dark ? {color: '#c1c1c1'} : {color: '#888DAB'}}
                                                     />
                                                 </IconButton>
                                             </ListItemSecondaryAction>
                                         </ListItem>
+                                        <Popover
+                                            id="mouse-over-popover"
+                                            open={open}
+                                            anchorEl={anchorEl}
+                                            anchorOrigin={{
+                                                vertical: 'center',
+                                                horizontal: 'center',
+                                            }}
+                                            transformOrigin={{
+                                                vertical: 'top',
+                                                horizontal: 'right',
+                                            }}
+                                            onClose={handlePopoverClose}
+                                            disableRestoreFocus
+                                            PaperProps={{style:{backgroundColor: light ? "#fff" : dark ? "#2f3238" : "#282c40", color: dark ? "#fff" : "#888DAB"}}}
+                                        >
+                                            <MenuItem
+                                                style={{fontSize: "12px", fontWeight: "600", paddingLeft: "12px" }}
+                                                alignItems="flex-start"
+                                                className={ dark ? classes.menuItemPopup : light ? classes.none : classes.menuItemPopupBlue}
+                                            >
+                                                Edit Post
+                                            </MenuItem>
+                                            <MenuItem 
+                                                style={{fontSize: "12px", fontWeight: "600", paddingLeft: "12px"}}
+                                                alignItems="flex-start"
+                                                className={ dark ? classes.menuItemPopup : light ? classes.none : classes.menuItemPopupBlue}
+                                            >
+                                                Delete Post
+                                            </MenuItem>
+                                        </Popover>
                                         <div 
                                             className={classes.photoDescription}
                                             style={{
@@ -428,7 +502,7 @@ const Photos = props => {
                                             {description}
                                         </div>
                                         <hr 
-                                            style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
+                                            className={`${props.Theme}-border-hr`}                                        
                                         />
                                         <div
                                             className={classes.likeCommentWrapper}
@@ -461,7 +535,7 @@ const Photos = props => {
                                     </div>
                                     <div
                                         className={classes.commentDescriptionWrapper}
-                                        style={{backgroundColor: dark ? "#29292994" : "#fafbfd",borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5',borderBottom: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5'}}
+                                        style={{backgroundColor: dark ? "#29292994" : light ? "#fafbfd" : "#151c2d",borderTop: dark ? '0.1px solid #636363' : light ? '0.1px solid #e6ecf5' : '0.1px solid #60657b',borderBottom: dark ? '0.1px solid #636363' : light ? '0.1px solid #e6ecf5' : '0.1px solid #60657b'}}
                                     >
                                         {commentData.map((comment, index) => (
                                             <div key = {index}>
@@ -494,14 +568,14 @@ const Photos = props => {
                                                                     style:{
                                                                         fontSize: '14px',
                                                                         fontWeight: '600',
-                                                                        color: dark ? 'white' : '#515365'
+                                                                        color: light ? '#515365' : 'white'
                                                                     },
                                                                 }}
                                                                 secondaryTypographyProps={{
                                                                     style:{
                                                                         fontSize: '10px',
                                                                         fontWeight: 'light',
-                                                                        color: dark ? '#c1c1c1' : '#888DAB'
+                                                                        color: light ? '#888DAB' : '#d8d8d8'
                                                                     }
                                                                 }} 
                                                             />
@@ -538,7 +612,7 @@ const Photos = props => {
                                                     </div>
                                                 </div>
                                                 <hr 
-                                                    style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
+                                                    className={`${props.Theme}-border-hr`} 
                                                 />
                                             </div>
                                         ))}
@@ -560,6 +634,10 @@ const Photos = props => {
                                             style={{marginLeft: "20px", color: dark ? "#c2c5c9" : "#888DAB", outline: dark ? "none" : "auto", outlineColor: dark ? "" : "#b7bfcc"}}
                                             placeholder="Press Enter to post"
                                             fullWidth="true"
+                                            className={classes.outlinedInput}
+                                            classes={{
+                                                inputMultiline: classes.outlinedInput
+                                            }}
                                             endAdornment={
                                                 <InputAdornment position="end">
                                                     <IconButton
