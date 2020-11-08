@@ -13,6 +13,10 @@
   color: #fff;
 }
 
+.timeline-card .darkblue-more-options {
+  color: #fff !important;
+}
+
 .timeline-card .likes-comments-sections {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,7 +29,6 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 15px 15px 8px;
-  border-bottom: 1px solid #f3f3f3;
 }
 
 .timeline-card .likes-comments-sections .dot {
@@ -39,7 +42,7 @@
 .timeline-card .likes-comments-sections .reaction-icons {
   width: 20px;
   height: 20px;
-  margin-right: 6px;
+  margin-right: -5px;
 }
 
 .timeline-card .likes-comments-sections .likes-inline {
@@ -57,7 +60,7 @@
 }
 
 .timeline-card .likes-comments-sections .likes-inline .likes-count {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .timeline-card .likes-comments-sections .comments-count, .timeline-card .likes-comments-sections .likes-count {
@@ -67,7 +70,6 @@
 }
 
 .timeline-card .dark-likes-comments-sections {
-  border-bottom: 1px solid #414141;
   color: #fff;
 }
 
@@ -76,6 +78,18 @@
 }
 
 .timeline-card .dark-likes-comments-sections .comments-count {
+  color: #fff;
+}
+
+.timeline-card .darkblue-likes-comments-sections {
+  color: #fff;
+}
+
+.timeline-card .darkblue-likes-comments-sections .likes-count {
+  color: #fff;
+}
+
+.timeline-card .darkblue-likes-comments-sections .comments-count {
   color: #fff;
 }
 
@@ -178,7 +192,7 @@
           box-shadow: 5px 2px 10px 2px #f5f5f5;
 }
 
-.card-footer-content .dark-timeline-btn {
+.card-footer-content .dark-timeline-btn, .card-footer-content .darkblue-timeline-btn {
   background-color: transparent;
   width: 50%;
   border: 0;
@@ -188,8 +202,15 @@
 }
 
 .card-footer-content .dark-timeline-btn:hover {
-  color: rgba(238, 59, 59, 0.664);
+  color: #ED204B;
   background-color: #2c2c2c9f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card-footer-content .darkblue-timeline-btn:hover {
+  color: #ED204B;
+  background-color: #313541;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -197,6 +218,11 @@
 .dark-card-footer-content {
   border-top: 1px solid #161616;
   border-bottom: 1px solid #161616;
+}
+
+.darkblue-card-footer-content {
+  border-top: 1px solid  #313541;
+  border-bottom: 1px solid  #313541;
 }
 
 .post-description {
@@ -221,16 +247,16 @@
   font-weight: 500;
 }
 
-.dark-description {
+.dark-description, .darkblue-description {
   color: #fff;
 }
 
-.dark-description h3 {
+.dark-description h3, .darkblue-description h3 {
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.dark-description h3 span {
+.dark-description h3 span, .darkblue-description h3 span {
   font-size: 13px;
   font-weight: 500;
 }
@@ -339,9 +365,7 @@
 }
 
 .reaction-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;

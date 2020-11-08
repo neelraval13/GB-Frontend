@@ -17,6 +17,8 @@ const styles = makeStyles(theme => ({
 const Report = props => {
 	const classes = styles();
 
+	const theme = props.setTheme;
+
 	const onSubmit = formvalues => {
 		console.log(formvalues);
 	};
@@ -26,7 +28,9 @@ const Report = props => {
 			<div
 				className={clsx(
 					"sectit brdrbtm",
-					props.setTheme === "dark" ? classes.darkB : classes.lightB
+					theme === "dark" || theme === "darkblue"
+						? classes.darkB
+						: classes.lightB
 				)}>
 				Report a Problem
 			</div>

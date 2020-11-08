@@ -16,6 +16,8 @@ const styles = makeStyles(theme => ({
 const ChangePassword = props => {
 	const classes = styles();
 
+	const theme = props.setTheme;
+
 	const onSubmit = formvalues => {
 		console.log(formvalues);
 	};
@@ -25,7 +27,9 @@ const ChangePassword = props => {
 			<div
 				className={clsx(
 					"sectit brdrbtm",
-					props.setTheme === "dark" ? classes.darkB : classes.lightB
+					theme === "dark" || theme === "darkblue"
+						? classes.darkB
+						: classes.lightB
 				)}>
 				Change Password
 			</div>

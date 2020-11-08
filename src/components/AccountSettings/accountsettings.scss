@@ -1,31 +1,37 @@
 .settings {
 	&-banner {
-		background-image: url("../../assets/backgrounds/settingsBannerBg.png");
-		background-position: center;
-		background-size: cover;
-		background-position: 0 0;
-		background-repeat: repeat;
-		margin: 0;
+		// background-image: url("../../assets/backgrounds/settingsBannerBg.png");
+		// background-position: center;
+		// background-size: cover;
+		// background-position: 0 0;
+		// background-repeat: repeat;
+		// margin: 0;
 		text-align: center;
-		box-sizing: border-box;
-		-webkit-animation: slide 50s linear infinite;
-		animation: slide 50s linear infinite;
-		will-change: background-position;
-		background-size: auto;
-		height: 40vh;
+		// box-sizing: border-box;
+		// -webkit-animation: slide 50s linear infinite;
+		// animation: slide 50s linear infinite;
+		// will-change: background-position;
+		// background-size: auto;
+		height: 50vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: center;
+		box-sizing: border-box;
+		max-width: 100vw;
+		#vid-bg {
+			width: 100%;
+		}
 		img {
 			width: 60%;
 			max-width: 1268px;
 			margin-bottom: 1%;
 		}
 		.welcome-message {
+			position: relative;
+			bottom: 50%;
 			width: 50%;
 			min-width: 800px;
-			margin-bottom: 3%;
 			color: rgba(255, 255, 255, 0.9);
 			h1 {
 				text-transform: capitalize;
@@ -40,8 +46,9 @@
 	}
 
 	&-content {
+		overflow-x: hidden;
 		width: 80%;
-		margin: 5% auto 1% auto;
+		margin: 0 auto 1% auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -73,6 +80,16 @@
 				}
 			}
 		}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		/* Firefox */
+		input[type="number"] {
+			-moz-appearance: textfield;
+		}
 		.side-settings-tab-wrapper {
 			border-radius: 5px;
 			width: 70%;
@@ -89,6 +106,20 @@
 			}
 			.seccntnt {
 				padding: 25px;
+			}
+		}
+		.fieldPassForm {
+			display: flex;
+			flex-direction: column;
+			button {
+				align-self: flex-end;
+			}
+		}
+		.flexbpf {
+			display: flex;
+			justify-content: space-between;
+			.im {
+				width: 48%;
 			}
 		}
 	}

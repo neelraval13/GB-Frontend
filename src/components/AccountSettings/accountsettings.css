@@ -1,18 +1,6 @@
 .settings-banner {
-  background-image: url("../../assets/backgrounds/settingsBannerBg.png");
-  background-position: center;
-  background-size: cover;
-  background-position: 0 0;
-  background-repeat: repeat;
-  margin: 0;
   text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-animation: slide 50s linear infinite;
-  animation: slide 50s linear infinite;
-  will-change: background-position;
-  background-size: auto;
-  height: 40vh;
+  height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +14,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 100vw;
+}
+
+.settings-banner #vid-bg {
+  width: 100%;
 }
 
 .settings-banner img {
@@ -35,9 +30,10 @@
 }
 
 .settings-banner .welcome-message {
+  position: relative;
+  bottom: 50%;
   width: 50%;
   min-width: 800px;
-  margin-bottom: 3%;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -53,8 +49,9 @@
 }
 
 .settings-content {
+  overflow-x: hidden;
   width: 80%;
-  margin: 5% auto 1% auto;
+  margin: 0 auto 1% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +61,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  /* Firefox */
 }
 
 .settings-content .side-navbar-wrapper {
@@ -100,6 +98,16 @@
   height: 100%;
 }
 
+.settings-content input::-webkit-outer-spin-button,
+.settings-content input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.settings-content input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .settings-content .side-settings-tab-wrapper {
   border-radius: 5px;
   width: 70%;
@@ -118,6 +126,34 @@
 
 .settings-content .accntset-sec-wrapper .seccntnt {
   padding: 25px;
+}
+
+.settings-content .fieldPassForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.settings-content .fieldPassForm button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.settings-content .flexbpf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-content .flexbpf .im {
+  width: 48%;
 }
 
 @-webkit-keyframes slide {

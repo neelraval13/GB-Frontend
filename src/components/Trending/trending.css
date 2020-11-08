@@ -1,23 +1,28 @@
 .trending-card {
-  height: 360px;
+  min-height: 360px;
   margin-top: 30px;
-  padding: 15px 20px;
   width: 300px;
   border-radius: 5px;
 }
 
 .trending-card .tc-title {
-  font-size: 16.8px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .trending-card .tc-title-wrapper {
   margin-bottom: 20px;
+  padding: 15px 20px;
 }
 
 .trending-card .dark-title-wrapper {
   padding-bottom: 10px;
-  border-bottom: 1px solid #504e4e;
+  border-bottom: 1px solid #2f2f31;
+}
+
+.trending-card .darkblue-title-wrapper {
+  padding-bottom: 10px;
+  border-bottom: 1px solid  #313541;
 }
 
 .trending-card .light-title-wrapper {
@@ -28,6 +33,7 @@
 .trending-card .trending-list {
   list-style: none;
   margin-top: 10px;
+  padding: 5px 12px;
 }
 
 .trending-card .trending-list .trending-list-item {
@@ -37,8 +43,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-bottom: 15px;
+  height: 60px;
+  margin-bottom: 5px;
   padding-bottom: 5px;
+  position: relative;
 }
 
 .trending-card .trending-list .trending-list-item div {
@@ -46,7 +54,7 @@
 }
 
 .trending-card .trending-list .trending-list-item h4 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -57,7 +65,45 @@
   font-weight: 500;
 }
 
+.trending-card .trending-list .trending-list-item .date {
+  position: absolute;
+  top: 0px;
+  right: -12px;
+  width: 60px;
+  height: 42px;
+  padding: 5px;
+  background-color: #FA6342;
+  border-radius: 20% 0 0 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+}
+
+.trending-card .trending-list .trending-list-item .date p {
+  line-height: 1.3em;
+  color: #fff;
+}
+
+.trending-card .trending-list .trending-list-item strong {
+  font-size: 18px;
+}
+
 .trending-card .trending-list .dark-trending-list-item {
+  color: #fff;
+}
+
+.trending-card .trending-list .darkblue-trending-list-item {
   color: #fff;
 }
 /*# sourceMappingURL=trending.css.map */

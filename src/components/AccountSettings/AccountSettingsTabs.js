@@ -21,16 +21,26 @@ const styles = {
 		color: "#888DA8",
 		backgroundColor: "#fff",
 	},
+
+	tabBlue: {
+		color: "#fff",
+		backgroundColor: "#1D2333",
+	},
 };
 
 class AccountSettingsTabs extends Component {
 	render() {
 		const { classes } = this.props;
+		const theme = this.props.setTheme;
 		return (
 			<div
 				className={clsx(
 					"side-settings-tab-wrapper",
-					this.props.setTheme === "dark" ? classes.tabDark : classes.tabLight
+					theme === "dark"
+						? classes.tabDark
+						: theme === "light"
+						? classes.tabLight
+						: classes.tabBlue
 				)}>
 				<Switch>
 					<Route

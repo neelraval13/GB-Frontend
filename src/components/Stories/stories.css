@@ -1,10 +1,36 @@
 .stories-section {
   margin-top: 30px;
   background-color: #4e4c4c;
-  height: 190px;
+  height: 210px;
   border-radius: 5px;
   padding: 10px;
   overflow: hidden;
+  position: relative;
+}
+
+.stories-section .stories-title::before {
+  background: #FA6342;
+  content: "";
+  height: 28px;
+  left: -20px;
+  position: absolute;
+  top: 8px;
+  width: 25px;
+}
+
+.stories-section .stories-title {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.stories-section .dark-stories-title {
+  border-bottom: 1px solid #2f2f31;
+}
+
+.stories-section .darkblue-stories-title {
+  border-bottom: 1px solid  #313541;
 }
 
 .stories-section .stories-container {

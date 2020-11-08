@@ -1,0 +1,66 @@
+.calendar-card {
+  margin-top: 15px;
+  min-height: 320px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ece8e8;
+}
+
+.calendar-card .month-name {
+  padding: 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ece8e8;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.calendar-card .calendar-content {
+  padding: 5px 15px;
+}
+
+.calendar-card .calendar {
+  border-radius: 10px;
+  border: none;
+}
+
+.calendar-card .react-calendar__month-view__days__day--weekend {
+  color: #121212;
+}
+
+.calendar-card abbr[title] {
+  text-decoration: none;
+}
+
+.calendar-card .react-calendar__tile--active {
+  color: #fff;
+  background-color: #FA6342;
+}
+
+.calendar-card .react-calendar__navigation__prev-button, .calendar-card .react-calendar__navigation__next-button {
+  display: none;
+}
+
+.calendar-card .react-calendar__navigation__prev2-button, .calendar-card .react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.calendar-card .react-calendar__navigation__label {
+  border-bottom: 1px solid #eee5e5;
+  padding: 15px 0px;
+}
+
+.calendar-card .react-calendar__navigation__label:hover {
+  background-color: #fff !important;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=calendar.css.map */

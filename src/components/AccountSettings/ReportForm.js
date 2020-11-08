@@ -1,33 +1,14 @@
 import React from "react";
 import clsx from "clsx";
-import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
-import TextField from "@material-ui/core/TextField";
+import CustomTextInput from "../FormComponents/CustomTextInput";
 import Button from "@material-ui/core/Button";
-import {
-	makeStyles,
-	createMuiTheme,
-	ThemeProvider,
-} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
 	field: {
 		marginTop: theme.spacing(1),
 		marginBottom: theme.spacing(2.5),
-	},
-	inputStylesDark: {
-		color: "white",
-		borderColor: "#fff",
-	},
-	labelStylesDark: {
-		color: "white",
-	},
-	inputStylesLight: {
-		color: "#888DA8",
-		borderColor: "#888DA8",
-	},
-	labelStylesLight: {
-		color: "#888DA8",
 	},
 	button: {
 		"&:hover": {
@@ -37,51 +18,19 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-const darkTheme = createMuiTheme({
-	palette: {
-		secondary: {
-			main: "#fff",
-		},
-	},
-});
-
-const lightTheme = createMuiTheme({
-	palette: {
-		secondary: {
-			main: "#888DA8",
-		},
-	},
-});
-
 const ReportForm = props => {
 	const classes = useStyles();
 	const renderInput = formProps => {
 		return (
 			<div className="field">
-				<ThemeProvider
-					theme={props.setTheme === "dark" ? darkTheme : lightTheme}>
-					<TextField
-						{...formProps.input}
-						id="outlined-uncontrolled"
-						label={formProps.label}
-						variant="outlined"
-						className={classes.field}
-						fullWidth
-						InputProps={{
-							className:
-								props.setTheme === "dark"
-									? classes.inputStylesDark
-									: classes.inputStylesLight,
-						}}
-						InputLabelProps={{
-							className:
-								props.setTheme === "dark"
-									? classes.labelStylesDark
-									: classes.labelStylesLight,
-						}}
-						color="secondary"
-					/>
-				</ThemeProvider>
+				<CustomTextInput
+					{...formProps.input}
+					id="outlined-uncontrolled"
+					label={formProps.label}
+					variant="filled"
+					className={classes.field}
+					fullWidth
+				/>
 			</div>
 		);
 	};
@@ -89,32 +38,16 @@ const ReportForm = props => {
 	const renderTA = formProps => {
 		return (
 			<div className="field">
-				<ThemeProvider
-					theme={props.setTheme === "dark" ? darkTheme : lightTheme}>
-					<TextField
-						{...formProps.input}
-						id="outlined-uncontrolled"
-						label={formProps.label}
-						variant="outlined"
-						className={classes.field}
-						fullWidth
-						multiline
-						rows="5"
-						InputProps={{
-							className:
-								props.setTheme === "dark"
-									? classes.inputStylesDark
-									: classes.inputStylesLight,
-						}}
-						InputLabelProps={{
-							className:
-								props.setTheme === "dark"
-									? classes.labelStylesDark
-									: classes.labelStylesLight,
-						}}
-						color="secondary"
-					/>
-				</ThemeProvider>
+				<CustomTextInput
+					{...formProps.input}
+					id="outlined-uncontrolled"
+					label={formProps.label}
+					variant="filled"
+					className={classes.field}
+					fullWidth
+					multiline
+					rows="5"
+				/>
 			</div>
 		);
 	};
@@ -136,8 +69,6 @@ const ReportForm = props => {
 	);
 };
 
-const mapStateToProps = state => ({ setTheme: state.settings.theme });
-
 export default reduxForm({
 	form: "ReportForm",
-})(connect(mapStateToProps, null)(ReportForm));
+})(ReportForm);
