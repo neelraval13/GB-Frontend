@@ -42,7 +42,18 @@
 .menu-item{
     padding: 5px 15px;
 }
-
+.dark-menu-item .inline-menu-item li:hover{
+        background-color: #2e2b2b;
+        border-radius: 5px;
+}
+.darkblue-menu-item .inline-menu-item li:hover{
+    background-color: #182138;
+    border-radius: 5px;
+}
+.light-menu-item .inline-menu-item li:hover{
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
 .gaming-name-box{
     display: flex;
     justify-content: flex-start;
@@ -76,11 +87,21 @@
     border: 1px solid rgb(66, 66, 66);
 }
 
-.inline-menu-item{
+.inline-menu-item {
     list-style: none;
 }
+
+.inline-menu-item .list-item{
+    text-decoration: none;
+    color: inherit;
+}
 .inline-menu-item li{
-    padding: 5px 0px;
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.li-theme:hover{
+    background-color: inherit !important;
 }
 
 .theme-selector{

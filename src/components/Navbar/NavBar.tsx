@@ -36,6 +36,7 @@ import {
 import { Dispatch } from "redux";
 import Popover from '@material-ui/core/Popover';
 import DoneIcon from '@material-ui/icons/Done';
+import { logoutUser } from "../../appRedux/actions/Auth";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -213,6 +214,7 @@ interface Props {
 	isDrawerOpen: Boolean;
 	openDrawer: Dispatch;
 	closeDrawer: Dispatch;
+	logoutUser:Dispatch;
 }
 
 const NavBar: React.FC<Props> = props => {
@@ -265,7 +267,7 @@ const NavBar: React.FC<Props> = props => {
 	   		
 	   		<div className={classes.menuItemWrapper}>
 			   <div className={`${props.theme}-menu-heading menu-heading`}>Gaming Name</div>
-			   <div className='menu-item'>
+			   <div className={`${props.theme}-menu-item menu-item`}>
 			   <div className={`${props.theme}-gaming-name-box gaming-name-box`}>
 		 			<h4>Rocking start</h4>	
 		 			<div className='done-icon-wrapper'>
@@ -276,16 +278,16 @@ const NavBar: React.FC<Props> = props => {
 			</div>
 			<div className={classes.menuItemWrapper}>
 			   <div className={`${props.theme}-menu-heading menu-heading`}>Theme Preferences</div>
-			   <div className='menu-item'>
+			   <div className={`${props.theme}-menu-item menu-item`}>
 		 			<ul className='inline-menu-item'>
-					 	<li><ThemeColors bgColor={props.navColor}/></li>
+					 	<li className='li-theme'><ThemeColors bgColor={props.navColor}/></li>
 		 				
 					 </ul>
 			   </div>
 			</div>
 			<div className={classes.menuItemWrapper}>
 			   <div className={`${props.theme}-menu-heading menu-heading`}>Create</div>
-			   <div className='menu-item'>
+			   <div className={`${props.theme}-menu-item menu-item`}>
 		 			<ul className='inline-menu-item'>
 					 	<li>Create Page</li>
 		 				
@@ -294,11 +296,12 @@ const NavBar: React.FC<Props> = props => {
 			</div>
 			<div className={classes.menuItemWrapper}>
 			   <div className={`${props.theme}-menu-heading menu-heading`}>Account Settings</div>
-			   <div className='menu-item'>
+			   <div className={`${props.theme}-menu-item menu-item`}>
 		 			<ul className='inline-menu-item'>
 					 	<li>Switch User</li>
-		 				<li>Settings and Privacy</li>
-						<li>Logout</li>
+						 <li><Link to='profile/uid' className='list-item'>Profile</Link></li>
+		 				<li><Link to='profile/settings/' className='list-item'>Settings and Privacy</Link></li>
+						<li onClick={props.logoutUser}>Logout</li>
 					 </ul>
 			   </div>
 			</div>
@@ -358,7 +361,7 @@ const NavBar: React.FC<Props> = props => {
 			<AppBar
 				className={`${props.theme}-nav-bar nav-bar`}
 				position="fixed"
-				style={{ backgroundColor: props.navColor, color: props.textColor,height:70 }}>
+				style={{ backgroundColor: props.navColor, color: props.textColor,height:70,zIndex:10 }}>
 				<Toolbar>
 					<IconButton
 						edge="start"
@@ -458,6 +461,7 @@ const mapDispatchToProps = (dispatch: any) => {
 	return {
 		openDrawer: () => dispatch(handleDrawerOpen()),
 		closeDrawer: () => dispatch(handleDrawerClose()),
+		logoutUser:() => dispatch(logoutUser())
 	};
 };
 

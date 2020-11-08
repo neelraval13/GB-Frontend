@@ -7,23 +7,23 @@ const TrendingCard = (props) => {
     const data = [
         {
             item:'Gamersback',
-            hits:'29k hits'
+            hits:'dev'
         },
         {
             item:'Pubg',
-            hits:'39k hits'
+            hits:'devv2'
         },
         {
             item:'Gamersback',
-            hits:'29k hits'
+            hits:'dev'
         },
         {
             item:'Pubg',
-            hits:'39k hits'
+            hits:'devv2'
         },
         {
-            item:'#Pubg',
-            hits:'39k hits'
+            item:'Pubg',
+            hits:'devv2'
         },
     ]
     return (
