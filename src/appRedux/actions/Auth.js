@@ -4,7 +4,7 @@ import {
     REGISTER_USER 
     
 } from "../../constants/actionTypes";
-import { resetMessage, setLoginFailureAlert, setLoginSuccessAlert } from "./Alert";
+import { resetMessage, setLoginFailureAlert, setLoginSuccessAlert, setRegisterFailureAlert, setRegisterSuccessAlert } from "./Alert";
 
 
 
@@ -46,7 +46,7 @@ export const signInUser = async (userdata,dispatch,history) =>{
             console.log(res)
             localStorage.setItem('token',res.token)
             dispatch(loginUser(res.token))
-            history.push('/')
+            window.location.reload()
             dispatch(setLoginSuccessAlert("You have been successfully logged in."))
 
         }else{
@@ -59,17 +59,22 @@ export const signInUser = async (userdata,dispatch,history) =>{
 }
 
 
-export const signUpUser = async (userdata,dispatch) =>{
+export const signUpUser = async (userdata,dispatch,history) =>{
     try {
-        let response = await fetch(process.env.REACT_APP_API_URL+'/users/register/',{
+        let response = await fetch(process.env.REACT_APP_API_URL+'users/register/',{
             method:'POST',
+            headers:{
+                "Content-Type":"application/json"
+            },
             body:JSON.stringify(userdata)
         })
         let res = await response.json()
         if(response.ok){
             dispatch(registerUser(res))
             console.log(res)
+            history.push('/')
         }else{
+            dispatch(setRegisterFailureAlert(res.message))
             console.log(res)
         }
 
