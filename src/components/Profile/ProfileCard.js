@@ -160,16 +160,14 @@ const ProfileCard = props => {
     return(
         <div>
             <Card 
-                className={`${props.Theme}-section-bg ${classes.root}`}
-                style={dark ? {border: "1px solid #656565"} : {border: "1px solid #c5c5c5"}}
+                className={`${props.Theme}-background ${props.Theme}-border ${classes.root}`}
             >
                 <CardMedia 
                     className={classes.media}
                     image="https://www.wallpaperflare.com/static/811/176/33/lake-sunset-horizon-night-wallpaper.jpg"
                 >
                     <div
-                        className={classes.profileImageWrapper}
-                        style={dark ? {backgroundColor: "#202225"} : {backgroundColor: "white"}}
+                        className={`${props.Theme}-background  ${classes.profileImageWrapper}`}
                     >
                         <Avatar 
                             className={classes.profileImage}
@@ -236,14 +234,12 @@ const ProfileCard = props => {
                         className={classes.totalName}
                     >
                         <div
-                            className={classes.name}
-                            style={dark ? {color: "white"} : {color: "#515365"}}
+                            className={`${props.Theme}-text-primary  ${classes.name}`}
                         >
                             Aravind Kumar
                         </div>
                         <div
-                            className={classes.subName}
-                            style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                            className={`${props.Theme}-text-secondary  ${classes.subName}`}
                         >
                             AKG Kurup
                         </div>
@@ -255,13 +251,12 @@ const ProfileCard = props => {
                             className={classes.statsColumn}
                         >
                             <div 
-                                className={classes.statusTitle}
-                                style={dark ? {color: "white"} : {color: "#515365"}}
+                                className={`${props.Theme}-text-primary  ${classes.statusTitle}`}
                             >
                                 1000
                             </div>
                             <div
-                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                                className={`${props.Theme}-text-secondary`}
                             >
                                 Posts
                             </div>
@@ -270,13 +265,12 @@ const ProfileCard = props => {
                             className={classes.statsColumn}
                         >
                             <div 
-                                className={classes.statusTitle}
-                                style={dark ? {color: "white"} : {color: "#515365"}}
+                                className={`${props.Theme}-text-primary  ${classes.statusTitle}`}
                             >
                                 200
                             </div>
                             <div
-                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                                className={`${props.Theme}-text-secondary`}
                             >
                                 Friends
                             </div>
@@ -285,13 +279,12 @@ const ProfileCard = props => {
                             className={classes.statsColumn}
                         >
                             <div 
-                                className={classes.statusTitle}
-                                style={dark ? {color: "white"} : {color: "#515365"}}
+                                className={`${props.Theme}-text-primary  ${classes.statusTitle}`}
                             >
                                 10k
                             </div>
                             <div
-                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                                className={`${props.Theme}-text-secondary`}
                             >
                                 Followers
                             </div>
@@ -300,13 +293,12 @@ const ProfileCard = props => {
                             className={classes.statsColumn}
                         >
                             <div 
-                                className={classes.statusTitle}
-                                style={dark ? {color: "white"} : {color: "#515365"}}
+                                className={`${props.Theme}-text-primary  ${classes.statusTitle}`}
                             >
                                 10
                             </div>
                             <div
-                                style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                                className={`${props.Theme}-text-secondary`}
                             >
                                 Following
                             </div>
@@ -314,7 +306,7 @@ const ProfileCard = props => {
                     </div>
                 </div>
                 <hr 
-                    style={dark ? {borderTop: '0.1px solid #636363', borderBottom: 'none',height: '0.1px'} : {borderTop: '0.1px solid #c5c5c5', borderBottom: 'none',height: '0.1px'}}
+                    className={`${props.Theme}-border-hr`}
                 />
                 <div
                     className={classes.cardBottomWrapper}
@@ -323,20 +315,18 @@ const ProfileCard = props => {
                         className={classes.bioWrapper}
                     >
                         <div
-                            className={classes.bio}
-                            style={dark ? {color: "white"} : {color: "#515365"}}
+                            className={`${props.Theme}-text-primary  ${classes.bio}`}
                         >
                             Bio
                         </div>
                         <IconButton>
                             <EditIcon 
-                                style={dark ? {color: "#f3f3f3"} : {color: "#515365"}}
+                                className={`${props.Theme}-text-primary`}
                             />
                         </IconButton>
                     </div>
                     <div
-                        className={classes.descriptionWrapper}
-                        style={dark ? {color: "#d8d8d8"} : {color: "#888DA8"}}
+                        className={`${props.Theme}-text-secondary ${classes.descriptionWrapper}`}
                     >
                         fsdfsdf sdfsdfsdf sfsdfsd sdf sff. in the Universe|Only Actor to
                         win max dfs f dfs dfsd fsd fds fsd fs sdf sd f sdf sd fs df fsdtitles

@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux";
+import { makeStyles } from '@material-ui/core/styles';
 
 const Highlights = pops => {
     return (

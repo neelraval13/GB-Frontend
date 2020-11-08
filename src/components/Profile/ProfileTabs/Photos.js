@@ -31,14 +31,11 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Highlights from './Highlights';
+import '../../../styles/global/global.scss';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: theme.palette.background.paper,
       width: "100%"
     },
     modal: {
@@ -46,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         top: "20px !important",
         justifyContent: 'center',
     },
-    iconButtonWrapper: {
+    iconButtonWrapper: { 
         display: 'flex',
         justifyContent: 'flex-end'
     },
@@ -92,7 +89,12 @@ const useStyles = makeStyles((theme) => ({
     },
     menuItemPopup: {
         "&:hover" : {
-            backgroundColor: "#525252"
+            backgroundColor: "rgba(255,255,255,0.1)"
+        }
+    },
+    menuItemPopupBlue : {
+        "&:hover" : {
+            backgroundColor: "#394065"
         }
     },
     listTileBar: {
@@ -153,7 +155,10 @@ const useStyles = makeStyles((theme) => ({
     },
     commentDescriptionWrapper: {
         maxHeight: "180px",
-        overflowY: "scroll"
+        overflowY: "scroll",
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     },
     commentWrapper: {
         padding: "20px",
@@ -185,6 +190,11 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "20px",
         paddingRight: "8px",
         justifyContent: "flex-end"
+    },
+    outlinedInput: {
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     }
 }));
 
@@ -274,6 +284,7 @@ const commentData = [
 const Photos = props => {
     const classes = useStyles();
     let dark = props.Theme === "dark";
+    let light = props.Theme === "light";
     let authorName = 'Aravindh Kumar';
     let authorImg = 'https://bestprofilepix.com/wp-content/uploads/2014/02/stylish-little-boy-profile-pic.jpg';
 
@@ -314,16 +325,16 @@ const Photos = props => {
 
     return (
         <div className={classes.root}>
+            <Highlights />
             <GridList 
                 cellHeight={200} 
                 className={classes.gridList} 
                 cols={4}
-                style={{backgroundColor: dark ? '#121212' : '#fafafa'}}
             >
                 {tileData.map((tile,index) => (
                     <GridListTile 
-                        key={index} 
-                        cols={1}
+                        key={index}
+                        cols={1} 
                         rows={1.5}
                         className={classes.imageWrapper}
                         classes={{
@@ -401,8 +412,7 @@ const Photos = props => {
                             </IconButton>
                         </div>  
                         <Card 
-                            className={classes.cardRoot}
-                            style={{backgroundColor: dark ? "#151515" : "#fff"}}
+                            className={`${props.Theme}-background  ${classes.cardRoot}`}
                         >
                             <CardMedia
                                 className={classes.cover}
@@ -433,14 +443,14 @@ const Photos = props => {
                                                     style:{
                                                         fontSize: '16px',
                                                         fontWeight: 'bold',
-                                                        color: dark ? 'white' : '#515365'
+                                                        color: light ? '#515365' : 'white'
                                                     },
                                                 }}
                                                 secondaryTypographyProps={{
                                                     style:{
                                                         fontSize: '12px',
                                                         fontWeight: 'light',
-                                                        color: dark ? '#c1c1c1' : '#888DAB'
+                                                        color: light ? '#888DAB' : '#d8d8d8'
                                                     }
                                                 }} 
                                             />
@@ -466,19 +476,19 @@ const Photos = props => {
                                             }}
                                             onClose={handlePopoverClose}
                                             disableRestoreFocus
-                                            PaperProps={{style:{backgroundColor: dark ? "#212121" : "#fff", color: dark ? "#fff" : "#888DAB"}}}
+                                            PaperProps={{style:{backgroundColor: light ? "#fff" : dark ? "#2f3238" : "#282c40", color: dark ? "#fff" : "#888DAB"}}}
                                         >
                                             <MenuItem
                                                 style={{fontSize: "12px", fontWeight: "600", paddingLeft: "12px" }}
                                                 alignItems="flex-start"
-                                                className={ dark ? classes.menuItemPopup : classes.none}
+                                                className={ dark ? classes.menuItemPopup : light ? classes.none : classes.menuItemPopupBlue}
                                             >
                                                 Edit Post
                                             </MenuItem>
                                             <MenuItem 
                                                 style={{fontSize: "12px", fontWeight: "600", paddingLeft: "12px"}}
                                                 alignItems="flex-start"
-                                                className={ dark ? classes.menuItemPopup : classes.none}
+                                                className={ dark ? classes.menuItemPopup : light ? classes.none : classes.menuItemPopupBlue}
                                             >
                                                 Delete Post
                                             </MenuItem>
@@ -492,7 +502,7 @@ const Photos = props => {
                                             {description}
                                         </div>
                                         <hr 
-                                            style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
+                                            className={`${props.Theme}-border-hr`}                                        
                                         />
                                         <div
                                             className={classes.likeCommentWrapper}
@@ -525,7 +535,7 @@ const Photos = props => {
                                     </div>
                                     <div
                                         className={classes.commentDescriptionWrapper}
-                                        style={{backgroundColor: dark ? "#29292994" : "#fafbfd",borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5',borderBottom: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5'}}
+                                        style={{backgroundColor: dark ? "#29292994" : light ? "#fafbfd" : "#151c2d",borderTop: dark ? '0.1px solid #636363' : light ? '0.1px solid #e6ecf5' : '0.1px solid #60657b',borderBottom: dark ? '0.1px solid #636363' : light ? '0.1px solid #e6ecf5' : '0.1px solid #60657b'}}
                                     >
                                         {commentData.map((comment, index) => (
                                             <div key = {index}>
@@ -558,14 +568,14 @@ const Photos = props => {
                                                                     style:{
                                                                         fontSize: '14px',
                                                                         fontWeight: '600',
-                                                                        color: dark ? 'white' : '#515365'
+                                                                        color: light ? '#515365' : 'white'
                                                                     },
                                                                 }}
                                                                 secondaryTypographyProps={{
                                                                     style:{
                                                                         fontSize: '10px',
                                                                         fontWeight: 'light',
-                                                                        color: dark ? '#c1c1c1' : '#888DAB'
+                                                                        color: light ? '#888DAB' : '#d8d8d8'
                                                                     }
                                                                 }} 
                                                             />
@@ -602,7 +612,7 @@ const Photos = props => {
                                                     </div>
                                                 </div>
                                                 <hr 
-                                                    style={{borderTop: dark ? '0.1px solid #636363' : '0.1px solid #e6ecf5', borderBottom: 'none',height: '0.1px'}}
+                                                    className={`${props.Theme}-border-hr`} 
                                                 />
                                             </div>
                                         ))}
@@ -624,6 +634,10 @@ const Photos = props => {
                                             style={{marginLeft: "20px", color: dark ? "#c2c5c9" : "#888DAB", outline: dark ? "none" : "auto", outlineColor: dark ? "" : "#b7bfcc"}}
                                             placeholder="Press Enter to post"
                                             fullWidth="true"
+                                            className={classes.outlinedInput}
+                                            classes={{
+                                                inputMultiline: classes.outlinedInput
+                                            }}
                                             endAdornment={
                                                 <InputAdornment position="end">
                                                     <IconButton
