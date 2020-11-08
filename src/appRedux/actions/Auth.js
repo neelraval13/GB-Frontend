@@ -4,6 +4,7 @@ import {
     REGISTER_USER 
     
 } from "../../constants/actionTypes";
+import { resetMessage, setLoginFailureAlert, setLoginSuccessAlert } from "./Alert";
 
 
 
@@ -32,8 +33,6 @@ export const logoutUser = () =>{
 
 export const signInUser = async (userdata,dispatch,history) =>{
     console.log("login action called")
-  
-
     try {
         let response = await fetch(process.env.REACT_APP_API_URL+'users/login/',{
             method:'POST',
@@ -48,9 +47,10 @@ export const signInUser = async (userdata,dispatch,history) =>{
             localStorage.setItem('token',res.token)
             dispatch(loginUser(res.token))
             history.push('/')
+            dispatch(setLoginSuccessAlert("You have been successfully logged in."))
 
         }else{
-            console.log(res)
+            dispatch(setLoginFailureAlert(res.message))
         }
 
     } catch (error) {

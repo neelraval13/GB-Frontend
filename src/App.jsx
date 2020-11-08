@@ -10,6 +10,8 @@ import "./styles/global/global.scss";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import ShowAlertSnack from './Layout/Alert/index'
+
 
 const App = props => {
 	useEffect(() => {
@@ -22,7 +24,8 @@ const App = props => {
 	}, []);
 
 	return (
-		<Router forceRefresh={true}>
+		<React.Fragment>
+			<Router forceRefresh={true}>
 			<Switch>
 				<ProtectedRoute  exact path="/" component={HomePage} authUser={props.user} />
 				<Route  path="/home" component={HomePage} />
@@ -30,7 +33,10 @@ const App = props => {
 				<Route  path="/profile/uid" component={Profile} />
 				<Route  path="/profile/settings" component={AccountSettings} />
 			</Switch>
-		</Router>
+			</Router>
+
+			<ShowAlertSnack />
+		</React.Fragment>
 	);
 };
 

@@ -2,7 +2,7 @@
 .addpost-card{
 
 	margin-top: 15px;
-	min-height: 180px;
+	min-height: 165px;
 	background-color: #fff;
 	border-radius: 10px;
 	::-webkit-scrollbar{
@@ -43,7 +43,7 @@
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
 	margin: 0;
-	height: 180px;
+	height: auto;
 	border-radius: 10px;
 }
 
