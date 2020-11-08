@@ -74,10 +74,14 @@
 
 .story-card .add-icon {
   z-index: 10;
-  font-size: 45px;
-  color: white;
+  font-size: 40px;
+  color: #FA6342;
   margin-top: 5px;
   margin-left: 5px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 0px;
 }
 
 .story-card .add-icon:hover {

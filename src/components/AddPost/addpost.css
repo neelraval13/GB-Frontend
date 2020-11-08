@@ -1,12 +1,48 @@
 .addpost-card {
   margin-top: 15px;
-  min-height: 180px;
+  min-height: 165px;
   background-color: #fff;
   border-radius: 10px;
 }
 
 .addpost-card ::-webkit-scrollbar {
   display: auto !important;
+}
+
+.addpost-card .addpost-input {
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  padding-left: 25px;
+  outline: none;
+  border: none;
+  font-size: 14.8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.addpost-card .dark-addpost-input {
+  background-color: #494B4E;
+  color: #fff;
+}
+
+.addpost-card .darkblue-addpost-input {
+  background-color: #282E3E;
+  color: #fff;
+}
+
+.addpost-card .light-addpost-input {
+  background-color: #f5f5f5;
+  color: #a8a7a7;
 }
 
 .icon {
@@ -17,7 +53,7 @@
   overflow-x: hidden;
   /* so we could easily hide the radio inputs */
   margin: 0;
-  height: 180px;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -130,6 +166,20 @@
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .dark-tab:nth-of-type(1) label .icon,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .dark-tab:nth-of-type(2) label .icon,
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .dark-tab:nth-of-type(3) label .icon {
+  color: #FF5E3A;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .darkblue-tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .darkblue-tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .darkblue-tab:nth-of-type(3) label {
+  border: 1px solid #202225;
+  background: #1D2333;
+  color: #888DA8;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .darkblue-tab:nth-of-type(1) label .icon,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .darkblue-tab:nth-of-type(2) label .icon,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .darkblue-tab:nth-of-type(3) label .icon {
   color: #FF5E3A;
 }
 

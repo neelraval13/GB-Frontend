@@ -34,7 +34,7 @@ const Privacy = props => {
 				Privacy
 			</div>
 			<div className="seccntnt">
-				<div className="seccntnt-innner">yo</div>
+				<div className="seccntnt-innner">Privacy</div>
 			</div>
 		</div>
 	);

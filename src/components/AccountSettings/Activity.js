@@ -34,7 +34,7 @@ const Activity = props => {
 				Manage Activity
 			</div>
 			<div className="seccntnt">
-				<div className="seccntnt-innner">yo</div>
+				<div className="seccntnt-innner">Manage Activity</div>
 			</div>
 		</div>
 	);

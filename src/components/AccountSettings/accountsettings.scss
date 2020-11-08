@@ -122,6 +122,22 @@
 				width: 48%;
 			}
 		}
+		.flexbaf {
+			display: flex;
+			justify-content: space-between;
+			.im {
+				width: 80%;
+				margin-bottom: 2%;
+				.h {
+					font-size: 18px;
+					font-weight: 500;
+					margin-bottom: 0.5%;
+				}
+				.p {
+					opacity: 0.8;
+				}
+			}
+		}
 	}
 }
 

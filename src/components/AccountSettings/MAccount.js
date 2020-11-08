@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
+import AccountForm from "./AccountForm";
 
 const styles = makeStyles(theme => ({
 	darkB: {
@@ -34,7 +35,9 @@ const MAccount = props => {
 				Manage Account
 			</div>
 			<div className="seccntnt">
-				<div className="seccntnt-innner">yo</div>
+				<div className="seccntnt-innner">
+					<AccountForm onSubmit={onSubmit} />
+				</div>
 			</div>
 		</div>
 	);

@@ -7,6 +7,72 @@
   padding: 0;
 }
 
+.dark-background {
+  background-color: #202225 !important;
+}
+
+.darkblue-background {
+  background-color: #1D2333 !important;
+}
+
+.light-background {
+  background-color: #fff !important;
+}
+
+.dark-border {
+  border: 1px solid #656565;
+}
+
+.darkblue-border {
+  border: 1px solid #60657b;
+}
+
+.light-border {
+  border: 1px solid #c5c5c5;
+}
+
+.dark-border-hr {
+  border-top: 0.1px solid #656565;
+  height: 0.1px;
+  border-bottom: none;
+}
+
+.darkblue-border-hr {
+  border-top: 0.1px solid #60657b;
+  height: 0.1px;
+  border-bottom: none;
+}
+
+.light-border-hr {
+  border-top: 0.1px solid #c5c5c5;
+  height: 0.1px;
+  border-bottom: none;
+}
+
+.dark-text-primary {
+  color: white;
+}
+
+.darkblue-text-primary {
+  color: white;
+}
+
+.light-text-primary {
+  color: #515365;
+}
+
+.dark-text-secondary {
+  color: #d8d8d8;
+}
+
+.darkblue-text-secondary {
+  color: #888DAB;
+}
+
+.light-text-secondary {
+  color: #888DAB;
+}
+
 .dark-section-bg {
   background-color: #202225;
   -webkit-box-shadow: 1px 2px 15px 5px  #121211;
@@ -220,5 +286,41 @@
 
 .current-user-comment .light-comment-input {
   background-color: #F1F3F4;
+}
+
+.success-alert {
+  background-color: #1f921f;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  min-width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+.failure-alert {
+  background-color: #F31A49;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  min-width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
 }
 /*# sourceMappingURL=global.css.map */
