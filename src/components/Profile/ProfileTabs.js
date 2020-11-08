@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/core/styles';
-import Timeline from './Timeline';
-import Gameplays from './Gameplays';
-import Stream from './Stream';
-import Videos from './Videos';
-import Photos from './Photos';
-import About from './About';
+import Timeline from './ProfileTabs/Timeline';
+import Gameplays from './ProfileTabs/Gameplays';
+import Stream from './ProfileTabs/Stream';
+import Videos from './ProfileTabs/Videos';
+import Photos from './ProfileTabs/Photos';
+import About from './ProfileTabs/About';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

@@ -10,6 +10,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import MessageIcon from '@material-ui/icons/Message';
 import SettingsIcon from '@material-ui/icons/Settings';
 import EditIcon from '@material-ui/icons/Edit';
+import "../../styles/global/global.scss";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -159,8 +160,8 @@ const ProfileCard = props => {
     return(
         <div>
             <Card 
-                className={classes.root}
-                style={dark ? {border: "1px solid #656565", backgroundColor: "#292b2f"} : {border: "1px solid #c5c5c5", backgroundColor: "white"}}
+                className={`${props.Theme}-section-bg ${classes.root}`}
+                style={dark ? {border: "1px solid #656565"} : {border: "1px solid #c5c5c5"}}
             >
                 <CardMedia 
                     className={classes.media}
@@ -168,7 +169,7 @@ const ProfileCard = props => {
                 >
                     <div
                         className={classes.profileImageWrapper}
-                        style={dark ? {backgroundColor: "#292b2f"} : {backgroundColor: "white"}}
+                        style={dark ? {backgroundColor: "#202225"} : {backgroundColor: "white"}}
                     >
                         <Avatar 
                             className={classes.profileImage}
