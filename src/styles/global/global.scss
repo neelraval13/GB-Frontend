@@ -239,3 +239,26 @@ $light-input-color:#F1F3F4;
 }
 
 
+.success-alert{
+  background-color: rgb(31, 146, 31);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.failure-alert{
+  background-color: #F31A49;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
