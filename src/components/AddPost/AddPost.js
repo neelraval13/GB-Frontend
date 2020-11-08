@@ -44,11 +44,11 @@ const AddPost = (props) => {
           </div>
       
           <div class="tab-content">
-          <InputForm theme={props.theme}/>
+          <InputForm theme={props.theme} openModal={handleModalOpen} />
           </div>
       
           <div class="tab-content">
-          <InputForm theme={props.theme}/>
+          <InputForm theme={props.theme} openModal={handleModalOpen} />
           </div>  
         </div>
       

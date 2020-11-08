@@ -4,6 +4,7 @@ import AddPost from '../AddPost/AddPost.js'
 import NavBar from '../Navbar/NavBar'
 import Stories from '../Stories/Stories'
 import TimelineCard from '../TimelineCard/TimelineCard'
+import WelcomeScreen from '../WelcomeScreen'
 
 
 const HomePage = () => {
@@ -17,6 +18,8 @@ const HomePage = () => {
                 <TimelineCard />
                 
             </HomeGridLayout>
+
+            {/* <WelcomeScreen /> */}
         </div>
     )
 }

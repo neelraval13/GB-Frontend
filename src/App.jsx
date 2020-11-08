@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import HomePage from "./components/Home";
-import { setDarkTheme, setLightTheme } from "../src/appRedux/actions/Settings";
+import { setDarkBlueTheme, setDarkTheme, setLightTheme } from "../src/appRedux/actions/Settings";
 import Landing from "./components/Login";
 import AccountSettings from "./components/AccountSettings";
 import Profile from "./components/Profile/Profile";
@@ -16,7 +16,8 @@ const App = props => {
 		let theme = localStorage.getItem("theme");
 		if (theme) {
 			if (theme === "light") props.lightTheme();
-			else props.darkTheme();
+			else if(theme === 'dark') props.darkTheme();
+			else props.blueTheme()
 		}
 	}, []);
 
@@ -43,6 +44,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		darkTheme: () => dispatch(setDarkTheme()),
 		lightTheme: () => dispatch(setLightTheme()),
+		blueTheme: () => dispatch(setDarkBlueTheme()),
 	};
 };
 

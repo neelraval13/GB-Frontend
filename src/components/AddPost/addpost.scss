@@ -2,12 +2,38 @@
 .addpost-card{
 
 	margin-top: 15px;
-	min-height: 200px;
+	min-height: 180px;
 	background-color: #fff;
-	
+	border-radius: 10px;
 	::-webkit-scrollbar{
 		display:auto !important;
- 	 }
+	  }
+	  
+	  .addpost-input{
+		  height: 40px;
+		  width: 100%;
+		  border-radius: 20px;
+		  padding-left: 25px;
+		  outline: none;
+		  border: none;
+		  font-size: 14.8px;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  cursor: pointer;
+	  }
+	  .dark-addpost-input{
+		background-color: #494B4E;	
+		color: #fff;
+	  }	
+	  .darkblue-addpost-input{
+			background-color: #282E3E;
+			color: #fff;
+	  }
+	  .light-addpost-input{
+		background-color: #f5f5f5;	
+		color: rgb(168, 167, 167);
+	  }
 }
 
 .icon{
@@ -17,8 +43,8 @@
 .tabbed {
 	overflow-x: hidden; /* so we could easily hide the radio inputs */
 	margin: 0;
-	height: 220px;
-	
+	height: 180px;
+	border-radius: 10px;
 }
 
 
@@ -43,6 +69,11 @@
 .dark-tabs,.dark-tabbed{
 	border-bottom: 1px solid #2d3136;
 }
+
+.darkblue-tabs,.darkblue-tabbed{
+	border-bottom:1px solid  #313541;
+}
+
 .light-tabs,.light-tabbed{
 	border-bottom: 1px solid #ccc;
 }
@@ -70,6 +101,12 @@
 	background:#2d3136;
 	color: #888DA8;
 	border: 1px solid #2d3136;
+}
+
+.darkblue-tab > label{
+	background:#282E3E;
+	color: #888DA8;
+	border: 1px solid #202730;
 }
 
 .light-tab > label{
@@ -111,6 +148,17 @@
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .dark-tab:nth-of-type(3) label{
 	border: 1px solid #202225;
 	background:#232529;
+	color: #888DA8;
+	& .icon{
+		color: #FF5E3A;
+	}
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .darkblue-tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .darkblue-tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .darkblue-tab:nth-of-type(3) label{
+	border: 1px solid #202225;
+	background:#1D2333;
 	color: #888DA8;
 	& .icon{
 		color: #FF5E3A;

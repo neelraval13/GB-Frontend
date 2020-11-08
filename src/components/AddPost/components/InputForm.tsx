@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
-      alignItems:'flex-start',
+      alignItems:'center',
       '& > *': {
         margin: theme.spacing(1),
       },
@@ -32,21 +32,12 @@ const InputForm = (props:any) => {
     return (
         <div className={classes.root}>
                <Avatar alt="User Profile" src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" className={classes.avatar}/>
-               <TextField 
-               fullWidth
-               label="Share what you are thinking..." 
-               color='secondary' 
-               multiline
-               rowsMax={5}
-               InputProps={{ 
-                 disableUnderline: true,
-                 className:props.theme === 'dark' ?classes.darkText:classes.lightText
-              }}
-              InputLabelProps={{
-                className:props.theme === 'dark' ?classes.darkText:classes.lightText
-              }}
-              onClick={() => props.openModal()}
-               />
+                <div
+                 className={`${props.theme}-addpost-input addpost-input`} 
+                 onClick={props.openModal}
+                >
+                  Share What You Are Thinking ?
+                </div>
         </div>
 
     )

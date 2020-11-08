@@ -23,6 +23,8 @@ import {
 	MdPages,
 } from "react-icons/md";
 import { SiCoursera } from "react-icons/si";
+import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
+import { handleDrawerClose, handleDrawerOpen } from "../../appRedux/actions/Settings";
 
 const drawerWidth = 240;
 
@@ -30,9 +32,11 @@ const useStyles = makeStyles(theme =>
 	createStyles({
 		root: {
 			display: "flex",
+			position:'absolute',
+			zIndex:100
 		},
 		appBar: {
-			zIndex: theme.zIndex.drawer + 1,
+			zIndex:100,
 			transition: theme.transitions.create(["width", "margin"], {
 				easing: theme.transitions.easing.sharp,
 				duration: theme.transitions.duration.leavingScreen,
@@ -56,6 +60,7 @@ const useStyles = makeStyles(theme =>
 			width: drawerWidth,
 			flexShrink: 0,
 			whiteSpace: "nowrap",
+			zIndex:20,
 		},
 		drawerOpen: {
 			width: drawerWidth,
@@ -82,6 +87,9 @@ const useStyles = makeStyles(theme =>
 		},
 		drawerLight: {
 			backgroundColor: "#fff",
+		},
+		drawerBlue:{
+			backgroundColor: "#21283B",
 		},
 		textLight: {
 			color: "white",
@@ -124,6 +132,13 @@ const useStyles = makeStyles(theme =>
 		},
 		listItemsLight: {
 			"&:hover, &:active": { backgroundColor: "#e8f0fe" },
+		},
+		paper:{
+			zIndex:100
+		},
+		menuButton: {
+			marginRight: theme.spacing(2),
+			
 		},
 	})
 );
@@ -175,7 +190,6 @@ const SideDrawer = props => {
 		},
 	];
 
-	let dark = props.Theme === "dark";
 
 	return (
 		<div className={classes.root}>
@@ -187,10 +201,11 @@ const SideDrawer = props => {
 					[classes.drawerClose]: !props.showDrawer,
 				})}
 				classes={{
-					paper: clsx(
+					paper: clsx(classes.paper,
 						{
-							[classes.drawerDark]: dark,
-							[classes.drawerLight]: !dark,
+							[classes.drawerDark]: props.Theme === 'dark',
+							[classes.drawerLight]: props.Theme === 'light',
+							[classes.drawerBlue]: props.Theme === 'darkblue',
 						},
 						{
 							[classes.drawerOpen]: props.showDrawer,
@@ -199,23 +214,31 @@ const SideDrawer = props => {
 					),
 				}}>
 				<div className={classes.toolbar}>
-					<IconButton onClick={props.drawerClose}>
+					<IconButton
+						edge="start"
+						className={classes.menuButton}
+						color='default'
+						aria-label="open drawer"
+						onClick={props.showDrawer ? props.closeDrawer : props.openDrawer}>
+						{props.showDrawer ? <CgMenuRight style={{color:props.textColor}} /> : <CgMenuLeft style={{color:props.textColor}}/>}
+					</IconButton>
+					{/* <IconButton onClick={props.drawerClose}>
 						{theme.direction === "rtl" ? (
 							<ChevronRightIcon
 								className={clsx(classes.icons, {
-									[classes.textLight]: dark,
-									[classes.textDark]: !dark,
+									[classes.textLight]:  props.Theme === 'dark',
+									[classes.textDark]:  props.Theme === 'light',
 								})}
 							/>
 						) : (
 							<ChevronLeftIcon
 								className={clsx(classes.icons, {
-									[classes.textLight]: dark,
-									[classes.textDark]: !dark,
+									[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+									[classes.textDark]: props.Theme === 'light',
 								})}
 							/>
 						)}
-					</IconButton>
+					</IconButton> */}
 				</div>
 				<Divider />
 				<List>
@@ -223,21 +246,21 @@ const SideDrawer = props => {
 						return (
 							<ListItem
 								className={clsx(classes.listItems, {
-									[classes.listItemsDark]: dark,
-									[classes.listItemsLight]: !dark,
+									[classes.listItemsDark]: props.Theme === 'dark' || props.Theme ==='darkblue',
+									[classes.listItemsLight]: props.Theme === 'light',
 								})}
 								button>
 								<ListItemIcon
 									className={clsx(classes.icons, {
-										[classes.textLight]: dark,
-										[classes.textDark]: !dark,
+										[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+										[classes.textDark]:  props.Theme === 'light',
 									})}>
 									{item.icon}
 								</ListItemIcon>
 								<ListItemText
 									className={clsx({
-										[classes.textLight]: dark,
-										[classes.textDark]: !dark,
+										[classes.textLight]: props.Theme === 'dark' || props.Theme ==='darkblue',
+										[classes.textDark]:  props.Theme === 'light',
 									})}>
 									<NavLink
 										to={`/${item.item}`}
@@ -262,4 +285,10 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, null)(SideDrawer);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		openDrawer: () => dispatch(handleDrawerOpen()),
+		closeDrawer: () => dispatch(handleDrawerClose()),
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);

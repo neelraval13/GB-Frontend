@@ -2,6 +2,8 @@
 $timeliner-inner-text-size :13px;
 $timestamp-size :13px;
 $timestamp-color:rgb(67, 186, 255);
+$hover-text-color:#ED204B;
+
 .timeline-card{
     min-height: 550px;
     margin: 15px 0px;
@@ -15,12 +17,16 @@ $timestamp-color:rgb(67, 186, 255);
         color: #fff;
     }
 
+    .darkblue-more-options{
+        color: #fff !important;
+      }
+
     .likes-comments-sections{
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 15px 15px 8px;
-        border-bottom: 1px solid rgb(243, 243, 243);
+       
 
         .dot{
             background-color: #fff;
@@ -32,7 +38,7 @@ $timestamp-color:rgb(67, 186, 255);
         .reaction-icons{
             width: 20px;
             height: 20px;
-            margin-right: 6px;
+            margin-right: -5px;
         }
         .likes-inline{
             display: flex;
@@ -40,7 +46,7 @@ $timestamp-color:rgb(67, 186, 255);
             align-items: center;
             margin-right: 4px;
             .likes-count{
-                margin-left: 5px;
+                margin-left: 15px;
             }
             
         }
@@ -52,7 +58,17 @@ $timestamp-color:rgb(67, 186, 255);
         }
     }
     .dark-likes-comments-sections {
-        border-bottom: 1px solid rgb(65, 65, 65);
+       
+        color: #fff;
+        .likes-count{
+            color: #fff;
+        }
+        .comments-count{
+            color: #fff;
+        }
+    }
+    .darkblue-likes-comments-sections {
+       
         color: #fff;
         .likes-count{
             color: #fff;
@@ -134,7 +150,7 @@ $timestamp-color:rgb(67, 186, 255);
         background-color: #dadada9f;
         box-shadow: 5px 2px 10px 2px #f5f5f5;
     }
-    .dark-timeline-btn{
+    .dark-timeline-btn,.darkblue-timeline-btn{
         background-color: transparent;
         width: 50%;
         border: 0;
@@ -142,8 +158,13 @@ $timestamp-color:rgb(67, 186, 255);
         color: #fff;
     }
     .dark-timeline-btn:hover{
-        color: rgba(238, 59, 59, 0.664);
+        color: $hover-text-color;
         background-color: #2c2c2c9f;
+        box-shadow: none;
+    }
+    .darkblue-timeline-btn:hover{
+        color: $hover-text-color;
+        background-color:#313541;
         box-shadow: none;
     }
 }
@@ -152,6 +173,13 @@ $timestamp-color:rgb(67, 186, 255);
     border-top: 1px solid #161616;
     border-bottom: 1px solid #161616;
 }
+
+.darkblue-card-footer-content{
+    border-top: 1px solid  #313541;
+    border-bottom:1px solid  #313541;
+}
+
+
 .post-description{
     padding:15px;
 
@@ -171,7 +199,7 @@ $timestamp-color:rgb(67, 186, 255);
         font-weight: 500;
     }
 }   
-.dark-description{
+.dark-description,.darkblue-description{
     color: #fff;
     & h3{
         font-size: 14px;
@@ -276,7 +304,7 @@ $timestamp-color:rgb(67, 186, 255);
 
 
 .reaction-container{
-    display: flex;
+    display: inline-block;
     flex-direction: row;
     align-items: center;
     width: 220px;

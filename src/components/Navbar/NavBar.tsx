@@ -27,14 +27,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./nav.css";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { connect } from "react-redux";
-import ToggleSwitch from "../../Layout/Toggle";
+import ThemeColors from "./ThemeColors";
+import clsx from "clsx";
 import {
 	handleDrawerOpen,
 	handleDrawerClose,
 } from "../../appRedux/actions/Settings";
 import { Dispatch } from "redux";
 import Popover from '@material-ui/core/Popover';
-
+import DoneIcon from '@material-ui/icons/Done';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -65,6 +66,15 @@ const useStyles = makeStyles((theme: Theme) =>
 				marginLeft: theme.spacing(3),
 				width: "auto",
 			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
 		},
 		lightSearch: {
 			color: "black",
@@ -77,9 +87,45 @@ const useStyles = makeStyles((theme: Theme) =>
 			marginRight: theme.spacing(2),
 			marginLeft: 0,
 			width: "100%",
+
 			[theme.breakpoints.up("sm")]: {
 				marginLeft: theme.spacing(3),
 				width: "auto",
+			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
+		},
+		blueSearch: {
+			color: "#fff",
+			position: "relative",
+			borderRadius: theme.shape.borderRadius,
+			backgroundColor: "#282E3E",
+			"&:hover": {
+				backgroundColor: "#282E3E",
+			},
+			marginRight: theme.spacing(2),
+			marginLeft: 0,
+			width: "100%",
+
+			[theme.breakpoints.up("sm")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("md")]: {
+				marginLeft: theme.spacing(3),
+				width: "auto",
+			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
 			},
 		},
 
@@ -105,12 +151,18 @@ const useStyles = makeStyles((theme: Theme) =>
 			transition: theme.transitions.create("width"),
 			width: "100%",
 			[theme.breakpoints.up("md")]: {
-				width: "20ch",
+				width: "auto",
 			},
 			[theme.breakpoints.up("lg")]: {
 				marginLeft: theme.spacing(3),
-				width: 350,
+				width: "auto",
 			},
+			[theme.breakpoints.up("xl")]: {
+				marginLeft: theme.spacing(3),
+				width: "350px",
+				
+			},
+		
 		},
 		sectionDesktop: {
 			display: "none",
@@ -143,6 +195,12 @@ const useStyles = makeStyles((theme: Theme) =>
 		btnInlineText:{
 			fontSize:10,
 			color:'grey'
+		},
+		menuItemWrapper:{
+			display:'flex',
+			flexDirection:'column',
+			padding:'10px 0px',
+		
 		}
 	})
 );
@@ -189,31 +247,64 @@ const NavBar: React.FC<Props> = props => {
 	const renderMenu = (
 
 		 <Popover
-		
+		 elevation={4}
 		 open={isMenuOpen}
 		 id={menuId}
 		 anchorEl={anchorEl}
 		 onClose={handleMenuClose}
 		 anchorOrigin={{
-		   vertical: 'bottom',
-		   horizontal: 'center',
-		 }}
-		 transformOrigin={{
-		   vertical: 'top',
-		   horizontal: 'center',
-		 }}
-		 style={{color:'red',overflow:"hidden"}}
-		 PaperProps={{className:'popover-paper',style:{backgroundColor:props.navColor,color:props.textColor}}}
-	   >
-		   	<MenuItem>
-			   <Link to="/profile/uid" style={{color:props.textColor}}>Profile</Link>
-			</MenuItem>
-			<MenuItem >
-				Logout
-			</MenuItem>
-			<MenuItem >
-				<ToggleSwitch />
-			</MenuItem>
+			vertical: 'bottom',
+			horizontal: 'right',
+		  }}
+		  transformOrigin={{
+			vertical: 'top',
+			horizontal: 'right',
+		  }}
+		 PaperProps={{className:'popover-paper',style:{backgroundColor:props.navColor,color:props.textColor,width:'250px'}}}
+	   >	
+	   		
+	   		<div className={classes.menuItemWrapper}>
+			   <div className={`${props.theme}-menu-heading menu-heading`}>Gaming Name</div>
+			   <div className='menu-item'>
+			   <div className={`${props.theme}-gaming-name-box gaming-name-box`}>
+		 			<h4>Rocking start</h4>	
+		 			<div className='done-icon-wrapper'>
+						 <DoneIcon  className='done-icon' />
+					 </div>
+			   </div>
+			   </div>
+			</div>
+			<div className={classes.menuItemWrapper}>
+			   <div className={`${props.theme}-menu-heading menu-heading`}>Theme Preferences</div>
+			   <div className='menu-item'>
+		 			<ul className='inline-menu-item'>
+					 	<li><ThemeColors bgColor={props.navColor}/></li>
+		 				
+					 </ul>
+			   </div>
+			</div>
+			<div className={classes.menuItemWrapper}>
+			   <div className={`${props.theme}-menu-heading menu-heading`}>Create</div>
+			   <div className='menu-item'>
+		 			<ul className='inline-menu-item'>
+					 	<li>Create Page</li>
+		 				
+					 </ul>
+			   </div>
+			</div>
+			<div className={classes.menuItemWrapper}>
+			   <div className={`${props.theme}-menu-heading menu-heading`}>Account Settings</div>
+			   <div className='menu-item'>
+		 			<ul className='inline-menu-item'>
+					 	<li>Switch User</li>
+		 				<li>Settings and Privacy</li>
+						<li>Logout</li>
+					 </ul>
+			   </div>
+			</div>
+			
+		
+		
 	   </Popover>
 	);
 
@@ -267,7 +358,7 @@ const NavBar: React.FC<Props> = props => {
 			<AppBar
 				className={`${props.theme}-nav-bar nav-bar`}
 				position="fixed"
-				style={{ backgroundColor: props.navColor, color: props.textColor,height:70 }}>
+				style={{ backgroundColor: props.navColor, color: props.textColor,height:70,zIndex:10 }}>
 				<Toolbar>
 					<IconButton
 						edge="start"
@@ -279,9 +370,12 @@ const NavBar: React.FC<Props> = props => {
 					</IconButton>
 					<img src={props.navLogo} alt="nav-logo" className="nav-logo" />
 					<div
-						className={
-							props.theme === "dark" ? classes.search : classes.lightSearch
-						}>
+						className={clsx({
+							[classes.search]: props.theme === 'dark',
+							[classes.lightSearch]:  props.theme === 'light',
+							[classes.blueSearch]:props.theme === 'darkblue'
+						})}
+						>
 						<div className={classes.searchIcon}>
 							<SearchIcon />
 						</div>
@@ -320,7 +414,7 @@ const NavBar: React.FC<Props> = props => {
 						<Button
 		
 						aria-controls={menuId}
-						onMouseEnter={handleProfileMenuOpen}
+						onClick={handleProfileMenuOpen}
 						color="inherit"
 						className={classes.navBtn}
 						>
